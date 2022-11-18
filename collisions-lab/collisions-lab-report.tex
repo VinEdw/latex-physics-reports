@@ -1,0 +1,235 @@
+\documentclass[12pt]{iopart} % Document class declaration
+
+% package "imports"
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+
+%%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Declare the title
+\title{Collisions Lab}
+
+% Declare the authors
+\author{Vincent Edwards, Ryan Nguyen and Joanne Zhou}
+
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4A, CRN 26537
+  \item[]October 19, 2022
+  \vspace{10pt}
+  \item[]\textbf{Objective}\\
+    The goal of this experiment was to verify that the total momentum of a system is conserved through any collision (elastic or inelastic), and that the kinetic energy is the same before and after the collision if the collision is elastic.
+    This was done by measuring the velocities of two carts with known mass before and after different collisions.
+\end{indented}
+
+%%%%%%%%%%%%%%%%%%%% Theory %%%%%%%%%%%%%%%%%%%%
+
+\section{Theory}
+
+The law of conservation of momentum states that if the vector sum of the external forces on a system is zero, then the total momentum of the system is constant.
+The condition for that conservation law (the net external force on the system being zero) reasonably applied to the two cart system examined in this experiment.
+The gravitational forces acting on the carts were exactly cancelled out by the normal forces from the track acting on them, assuming the track was level.
+In the horizontal direction, there were no significant forces acting on the system, again assuming the track was level and any resistive forces present were sufficiently small and acting for a short enough time to deliver negligible impulse.
+
+The initial momentum ($P_i$), final momentum ($P_f$), initial kinetic energy ($K_i$), and final kinetic energy ($K_f$), all for the two cart system, are defined below.
+See figure \ref{fig:mainsetup} for clarification on what quantities some of the variables used refer to.
+\begin{IEEEeqnarray}{rCl}
+P_i & = & m_B v_B + m_G v_G \label{eq:initialmomentum}\\
+P_f & = & m_B u_B + m_G u_G \label{eq:finalmomentum}\\
+K_i & = & \frac{1}{2} m_B v_B^2 + \frac{1}{2} m_G v_G^2 \label{eq:initialkineticenergy}\\
+K_f & = & \frac{1}{2} m_B u_B^2 + \frac{1}{2} m_G u_G^2 \label{eq:finalkineticenergy}
+\end{IEEEeqnarray}
+Conservation of momentum states the the initial momentum of the system should equal the final momentum of the system, or in equation form
+\begin{IEEEeqnarray}{rCl}
+P_i & = & P_f \nonumber\\
+P_f - P_i & = & 0 \label{eq:momentumconservation}
+\end{IEEEeqnarray}
+This should apply to all the collisions examined in this experiment.
+For the elastic collisions, it is predicted that the kinetic energy before the collision,
+equals the kinetic energy after the collision,
+This equality can be expressed in equation form as
+\begin{IEEEeqnarray}{rCl}
+K_i & = & K_f \nonumber\\
+K_f - K_i & = & 0 \label{eq:kineticenergyconservation}
+\end{IEEEeqnarray}
+In contrast, for the perfectly inelastic collisions, it would simply be observed whether the kinetic energy of the system decreases after the collision (any collision that is not perfectly elastic dissipates kinetic energy into other forms of energy such as thermal energy, sound, and material deformation).
+The experiment mainly sought to verify equations \ref{eq:momentumconservation} and \ref{eq:kineticenergyconservation} by colliding two carts, measuring the velocities before and after, and checking if $P_f - P_i$ (for all the collisions) and $K_f - K_i$ (for the elastic collisions) equal zero within their uncertainties.
+
+%%%%%%%%%%%%%%%%%%%% Method %%%%%%%%%%%%%%%%%%%%
+
+\section{Method}
+
+Figure \ref{fig:mainsetup} has a diagram of the setup used.
+All measurements were made for use in later momentum and kinetic energy calculations.
+A motion encoder track was set on the table, and a bubble level was used to make sure the track was level.
+This was done because a slightly angled track would have caused the weight of the two cart system to have a component parallel to the track, thereby introducing an unbalanced external force on the system and preventing the system's momentum from remaining constant.
+Two motion encoder receivers were attached to the track, one at each end, and connected through a LabQuest Mini to a computer.
+This configuration allowed the velocity of both carts to be measured simultaneously.
+Both carts, a green motion encoder cart and a blue motion encoder cart, were turned on and placed on the track.
+The motion sensors were both configured to measure motion towards the side of the track with the blue cart as positive.
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{main-setup-diagram.png}
+  \end{indented}
+  \caption{\label{fig:mainsetup}
+  Diagram of the main track and cart setup.
+  $m_G$ is the mass of the green cart, $m_B$ is the mass of the blue cart, $v_G$ is the initial (pre collision) velocity of the green cart, $v_B$ is the initial velocity of the blue cart, $u_G$ is the final (post collision) velocity of the green cart, and $u_B$ is the final velocity of the blue cart.
+  Note that all velocities were measured as positive towards the right (the side of the blue cart) and negative towards the left (the side of the green cart).
+  }
+\end{figure}
+
+Table \ref{tab:trialdescriptions} has a qualitative description of each of the six trials performed, the first three of which were perfectly inelastic with the cart magnets attracting, while the latter three were elastic with the cart magnets repelling.
+To make the carts have similar mass, the green cart had its additional mass block removed, while the blue cart had two hexagonal masses attached.
+To make the carts have noticeably different mass, the green cart had its mass block attached, while the blue cart had all additional masses removed.
+The cart masses were measured before each collision using a balance.
+To get the carts moving initially, they were simply given a quick nudge towards the other cart (if such an initial motion was desired for the trial).
+The motion encoder was set to record this motion from before the collision to after the collision.
+The two graphs of velocity versus time produced were averaged for 4 roughly horizontal segments (two segments on each graph) in order to get measurements for the initial velocities of the carts slightly before the collision ($v_B$ and $v_G$) and the final velocities of the carts slightly after the collision ($u_B$ and $u_G$).
+Care was taken to average the segments as close as possible to the interval where the carts start interacting in order to mitigate the time friction had to reduce the cart speeds.
+
+\begin{table}[htbp]
+\caption{\label{tab:trialdescriptions}
+Descriptions for each of the 6 trials performed are shown.
+It includes a description of the collision type, the relative mass of the carts, and the initial motion of the carts.
+The perfectly inelastic collisions had the cart magnets attracting, while the elastic collisions had the cart magnets repelling.
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}*{4}{l}}
+\br
+Trial&Collision Type     &Mass Comparison        &Initial Motion\\
+\mr
+1    &Perfectly inelastic&Both carts similar mass&Both initially moving\\
+2    &Perfectly inelastic&One cart much heavier  &One cart initially stationary\\
+3    &Perfectly inelastic&One cart much heavier  &Both initially moving\\
+4    &Elastic            &Both carts similar mass&Both initially moving\\
+5    &Elastic            &One cart much heavier  &One cart initially stationary\\
+6    &Elastic            &One cart much heavier  &Both initially moving\\
+\br
+\end{tabular}\end{indented}\end{table}
+
+In order to approximate the uncertainty of the measured velocity, a special trial that produced a consistent, constant velocity was performed 25 times, with the velocity measured each time.
+For these ``uncertainty trials'', one of the motion encoder receivers was removed and replaced with a pulley and a bumper (to prevent the cart from colliding with the pulley).
+A mass hanging off the edge of the table was connected by a string (which passed over the pulley) to one of the carts.
+For each run, the cart was started at rest in the same spot right up against the motion encoder, and then released.
+The string length was such that the hanging mass would start slightly above the floor, but hit it partway through the cart's motion.
+This would deliver a consistent impulse to the cart and get it to the same constant velocity each run.
+The velocity versus time graph was averaged for the full time it had that constant velocity (from the moment the hanging mass hit the floor to right before the cart hit the bumper).
+The standard error of the 25 velocity values was used as the uncertainty in the average velocity.
+Since the measurements for each run were all of the same physical velocity, the uncertainty could be attributed to error in the velocity measurement process.
+The relative error, which came out to be 0.2\%, was used as the uncertainty for all the other velocity measurements.
+Relative error was used rather than absolute error because it was speculated that larger velocities would have more uncertainty, be harder to measure and track the motion of, than lower velocities.
+
+%%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
+
+\section{Results}
+
+Table \ref{tab:meausrements} contains the measurements made during the experiment.
+Descriptions for how the uncertainties were determined are in the caption.
+Note that for trials 1--3, only one measurement was made in each trial for $u_B$ and $u_G$ since the attracting magnets caused the carts to stick together and move with a shared final velocity ($u_B = u_G$).
+This consideration impacts how the uncertainty is propagated in the momentum and kinetic energy calculations; you cannot treat it as two separate but equal velocity measurements.
+
+\begin{table}[htbp]
+\def\.{\phantom{.}}
+\caption{\label{tab:meausrements}
+Raw measurements from the experiment.
+Uncertainty for masses $m_B$ and $m_G$ came from read error ($\pm 0.05~\mathrm{g}$) and calibration error ($\pm 0.05\%$) added in quadrature.
+Uncertainty for velocities $v_B$, $v_G$, $u_B$, and $u_G$ was approximated to be $\pm 0.2\%$, the value found in the ``uncertainty trials'' described at the end of the method section.
+}
+\footnotesize\lineup\begin{tabular}{@{}*{7}{l}}
+\br
+Trial&$m_B$ (g)      &$m_G$ (g)        &$v_B$ (cm/s)      &$v_G$ (cm/s)     &$u_B$ (cm/s)         &$u_G$ (cm/s)\\
+\mr
+1    &599.3 $\pm$ 0.3&\0579.0 $\pm$ 0.3&\-30.01 $\pm$ 0.05&22.91  $\pm$ 0.04&\0\-2.374 $\pm$ 0.004&\0\-2.374 $\pm$ 0.004\\
+2    &350.0 $\pm$ 0.2&1109.8 $\pm$  0.6&\-48.67 $\pm$ 0.09&\00\.\0\0 $\pm$ 0&\-10.03\0 $\pm$  0.02&\-10.03\0  $\pm$ 0.02\\
+3    &350.0 $\pm$ 0.2&1109.8 $\pm$  0.6&\-33.21 $\pm$ 0.06&18.94  $\pm$ 0.03&\06.39\0 $\pm$   0.01&\06.39\0   $\pm$ 0.01\\
+4    &599.0 $\pm$ 0.3&\0579.1 $\pm$ 0.3&\-30.79 $\pm$ 0.05&28.04  $\pm$ 0.05&19.26\0 $\pm$    0.03&\-27.56\0  $\pm$ 0.05\\
+5    &349.8 $\pm$ 0.2&1098.0 $\pm$  0.6&\00\.\0\0 $\pm$  0&42.67  $\pm$ 0.08&61.4\0\0 $\pm$    0.1&20.02\0   $\pm$ 0.04\\
+6    &349.9 $\pm$ 0.2&1097.9 $\pm$  0.6&\-28.50 $\pm$ 0.05&22.14  $\pm$ 0.04&45.19\0 $\pm$    0.08&\0\-2.792 $\pm$ 0.005\\
+\br
+\end{tabular}\end{table}\normalsize
+
+Table \ref{tab:momentumcalculations} contains the calculations involving the momentum of the system.
+In accord with equation \ref{eq:momentumconservation}, if momentum were conserved as theory predicts, then the change in momentum would equal zero within uncertainty.
+This was not the case for any of the trials performed.
+
+\begin{table}[htbp]
+\def\.{\phantom{.}}
+\caption{\label{tab:momentumcalculations}
+Calculations involving the momentum of the system.
+$P_i$ is defined in equation \ref{eq:initialmomentum}, $P_f$ in equation \ref{eq:finalmomentum}, and $P_f - P_i$ in equation \ref{eq:momentumconservation}.
+If momentum were conserved as theory predicts, then $P_f - P_i$ would equal zero within uncertainty.
+The last column states whether that is the case for each trial.
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}*{5}{l}}
+\br
+Trial&$P_i$ (g m/s)     &$P_f$ (g m/s)       &$P_f - P_i$ (g m/s) &Momentum conserved?\\
+\mr
+1    &\0\-47.2 $\pm$ 0.4&\0\-27.97 $\pm$ 0.05&19.2 $\pm$    0.4   &No\\
+2    &\-170.3 $\pm$  0.3&\-146.4\0 $\pm$  0.3&23.9 $\pm$    0.4   &No\\
+3    &\094.0 $\pm$   0.4&\093.3\0 $\pm$   0.2&\0\-0.7 $\pm$ 0.5   &No\\
+4    &\0\-22.1 $\pm$ 0.5&\0\-44.2\0 $\pm$ 0.4&\-22.2 $\pm$  0.6   &No\\
+5    &468.5 $\pm$    0.9&434.7\0 $\pm$    0.6&\-34\.\0 $\pm$  1   &No\\
+6    &143.4 $\pm$    0.5&127.5\0 $\pm$    0.3&\-15.9 $\pm$  0.6   &No\\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:kineticenergycalculations} contains the calculations involving the kinetic energy of the system.
+Theory predicts that for the perfectly inelastic collisions (trials 1--3), the kinetic energy should decrease after the collision ($K_f - K_i < 0$).
+In accord with equation \ref{eq:kineticenergyconservation}, theory predicts that for the elastic collisions (trials 4--6), the kinetic energy be the same before and after the collision.
+The data easily supported these predictions for the perfectly inelastic collisions.
+However, the elastic collisions did not ``conserve'' kinetic energy, within uncertainty, as theory predicts.
+In all the trials, the total kinetic energy decreased after the collision.
+Thus, that kinetic energy must have somehow been transferred into the environment.
+
+\begin{table}[htbp]
+\def\.{\phantom{.}}
+\caption{\label{tab:kineticenergycalculations}
+Calculations involving the kinetic energy of the system.
+$K_i$ is defined in equation \ref{eq:initialkineticenergy}, $K_f$ in equation \ref{eq:finalkineticenergy}, and $K_f - K_i$ in equation.
+Theory predicts that for the perfectly inelastic collisions (trials 1--3), the kinetic energy should decrease after the collision ($K_f - K_i < 0$).
+Theory predicts that for the elastic collisions (trials 4--6), the kinetic energy be the same before and after the collision ($K_f - K_i = 0$).
+The last column states whether the data matches the predictions, within uncertainty, for each trial.
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}*{5}{l}}
+\br
+Trial&$K_i$ (mJ)       &$K_f$ (mJ)         &$K_f - K_i$ (mJ)&Prediction supported?\\
+\mr
+1    &\042.2  $\pm$ 0.1&\00.332 $\pm$ 0.001&\-41.8   $\pm$ 0.1&Yes\\
+2    &\041.5  $\pm$ 0.1&\07.34\0 $\pm$ 0.03&\-34.1   $\pm$ 0.2&Yes\\
+3    &\039.2  $\pm$ 0.1&\02.98\0 $\pm$ 0.01&\-36.2   $\pm$ 0.1&Yes\\
+4    &\051.2  $\pm$ 0.1&33.10\0  $\pm$ 0.09&\-18.1   $\pm$ 0.2&No\\
+5    &100.0   $\pm$ 0.4&88.0\0\0  $\pm$ 0.2&\-12.0   $\pm$ 0.4&No\\
+6    &\041.1  $\pm$ 0.1&36.2\0\0  $\pm$ 0.1&\0\-5.0  $\pm$ 0.2&No\\
+\br
+\end{tabular}\end{indented}\end{table}
+
+%%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+
+The goal of this experiment was to verify that momentum in conserved through collisions, both elastic and inelastic.
+In addition, the experiment looked at whether kinetic energy is the same before and after the collision if it is elastic.
+This was done by using a motion encoder to measure the velocities of two carts with known mass before and after different collisions.
+If the data was consistent with the theory, then $P_f - P_i$ would equal zero within uncertainty for all the collisions, and $K_f - K_i$ would equal zero within uncertainty for the elastic collisions.
+As can be seen by the data in tables \ref{tab:momentumcalculations} and \ref{tab:kineticenergycalculations}, neither of these conditions were met for any of the trials.
+While it is ``tempting'' to conclude that these long verified principles of physics have been contradicted, the error likely lies in the experiment's assumption that there was no net external force acting on the system of two carts.
+
+One potential explanation for the error lies in the assumption that the track was level.
+As described in the theory section, an angled track would have introduced a component of weight force parallel to the track that does not get cancelled out (thereby preventing conservation of momentum from applying).
+This external force would have caused the system momentum to increase in the direction of the lower track side.
+While the track was checked using a bubble level before starting the trials, that check was imperfect.
+It is possible that the track was angled by a slight amount not noticeable by the level user.
+The track angle might also have changed slightly over the course of the experiment, as things got moved, bumped, and shook.
+In addition, the track may have seemed horizontal when checked with the level at one point, but imperfections in the surface may have prevented such flatness conclusions from generalizing to the rest of the track.
+
+Another potential explanation for the error lies in the assumption that resistive forces were negligible.
+In some of the pilot trials, the carts were moving so fast that when they collided, one cart would get knocked off the track edge and stop rolling (the strong magnetic force at close range is likely responsible for these aggressive ``jerks'' in directions not parallel to the track).
+It is possible that this phenomenon happened to a lesser extent in the recorded trials.
+Perhaps the carts were moving so fast that the jerk of the collision knocked them out of the grooves in the track, causing them to experience significantly more resistance.
+And, if there is a significant unbalanced resistive force, then momentum would not be conserved and kinetic energy would be dissipated into the environment.
+This explanation is loosely consistent with the data, as the trial with the lowest $K_i$ (3) had the lowest magnitude for $P_f - P_i$, while the trial with the highest $K_i$ (5) had the highest magnitude for $P_f - P_i$.
+However, a more careful repetition of the experiment would be needed (perhaps with a special effort to check if the carts were still properly on the track after the collision) in order to be sure.
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%

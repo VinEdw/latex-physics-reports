@@ -1,0 +1,79 @@
+\documentclass[12pt]{iopart} % Document class declaration
+
+% package "imports"
+\usepackage{graphicx}
+
+%%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Declare the title
+\title{Test Report}
+
+% Declare the authors
+\author{Vincent Edwards, Ryan Nguyen and Joanne Zhou}
+
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4A, CRN 26537
+  \item[]October 7, 2022
+  \vspace{10pt}
+  \item[]\textbf{Objective}\\
+    State what you want to achieve in this experiment.
+    This should be the scientific goal of the experiment, not the educational goal (though you should understand that too).
+    One or two well thought out sentences is all that you should need for this.
+\end{indented}
+
+\section{Theory}
+Introduce the relevant equations in this section.
+\begin{equation}
+  \vec F = m \vec a \label{eq:n2l}
+\end{equation}
+Throughout the report assume the audience is a reader at your level, perhaps a student taking the same course but at a different school.
+Do not fill pages with calculations.
+Summarize the key moments in the solving process, enough that another person can fill in the blanks and understand how you got your result.
+
+\section{Method}
+
+Briefly describe what you did in the experiment.
+You should demonstrate your understanding of what you measured, how you measured it, and why this measurement is relevant to the objective.
+You should also mention and explain anything in particular you did to reduce error.
+A diagram of the lab setup should be hand drawn, either digitally or physically.
+An example is shown in figure \ref{fig:exampleSetupDiagram}.
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.8\textwidth]{example-setup-diagram.png}
+  \caption{\label{fig:exampleSetupDiagram}Example Setup Diagram}
+\end{figure}
+
+\section{Results}
+
+\Table{\label{tabone}A simple example produced using the standard table commands 
+and $\backslash${\tt lineup} to assist in aligning columns on the 
+decimal point. The width of the 
+table and rules is set automatically by the 
+preamble.} 
+\br                              
+$\0\0A$&$B$&$C$&\m$D$&\m$E$&$F$&$\0G$\cr 
+\mr
+\0\023.5&60  &0.53&$-20.2$&$-0.22$ &\01.7&\014.5\cr
+\0\039.7&\-60&0.74&$-51.9$&$-0.208$&47.2 &146\cr 
+\0123.7 &\00 &0.75&$-57.2$&\m---   &---  &---\cr 
+3241.56 &60  &0.60&$-48.1$&$-0.29$ &41   &\015\cr 
+\br
+\endTable
+
+The raw data, calculated data, and graphs should go in here.
+Tables should be used to organize data.
+Table \ref{tabone} is one such table.
+The relationship shown in most graphs should be noted (e.g.~linear, proportional, quadratic, exponential, etc.).
+You might even make reference to the equation (\ref{eq:n2l}) the graph is consistent with.
+All measurements should have an uncertainty, along with a short note on how that uncertainty estimate was arrived at.
+
+\section{Conclusion}
+Summarize the experiments and results.
+Discuss whether the results agree with the predictions (the theoretical calculations), making sure to justify using the data.
+If not, discuss potential sources of error, as well as improvements that could be made to the experiment that would address those reasons.
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%

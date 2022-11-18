@@ -1,0 +1,169 @@
+% Declare the document class
+\documentclass[12pt]{iopart}
+
+% package "imports"
+\usepackage{graphicx}
+
+% Custom macros
+\gdef\units#1{\ \mathrm{#1}}
+
+%%%%%%%%%% Document starts here %%%%%%%%%%
+\begin{document}
+
+% Declare the title
+\title{Newton's Second Law Lab}
+
+% Declare the authors
+\author{Vincent Edwards, Ryan Nguyen and Joanne Zhou}
+
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4A, CRN 26537
+  \item[]September 28, 2022
+  \vspace{10pt}
+  \item[]\textbf{Objective}\\
+    The goal of this experiment is to verify Newton's second law of motion, specifically the aspect which states the acceleration of a system is proportional to the net force acting on the system.
+\end{indented}
+
+\section{Theory}
+Newton's second law can take the following equation form, where $\Sigma \vec F$ is the vector sum of the forces acting on a system, commonly referred to as $\vec F_{net}$, and $\vec a$ is the acceleration of the system.
+\begin{equation}
+\Sigma \vec F = m \vec a
+\end{equation}
+This implies that the magnitude of the acceleration of a system is proportional to the magnitude of the net force on the system.
+Creating a free body diagram (FBD) for the system examined in this experiment (hanging mass + cart) and applying Newton's second law to it yields the following expression for acceleration (assuming negligible friction) where $a$ is the acceleration of the system, $m_h$ is the hanging mass (plus any slotted masses attached), and $M_c$ is the mass of the cart (plus any slotted masses attached)
+\begin{equation}
+a = \frac{m_h g}{M_c + m_h} \label{eq:acceleration}
+\end{equation}
+
+If it were instead assumed that there were some kind of constant frictional force ($f$) acting opposite the motion of the cart, then the expression for the acceleration of the system while the hanging mass is moving up ($a_{up}$) becomes
+\begin{equation}
+a_{up} = \frac{m_h g + f}{M_c + m_h}
+\end{equation}
+and the expression for the acceleration of the system while the hanging mass is moving down ($a_{down}$) becomes
+\begin{equation}
+a_{down} = \frac{m_h g - f}{M_c + m_h}
+\end{equation}
+both directed down for the hanging mass and towards the pulley for the cart. 
+
+Interestingly, it can be shown algebraically that the average ($a_{avg}$) of the two accelerations, $a_{up}$ and $a_{down}$, equals the acceleration ($a$) found by assuming there was no friction.
+In equation form, this relationship looks like the following.
+\begin{equation}
+a = a_{avg} = \frac{1}{2} (a_{up} + a_{down})
+\end{equation}
+Thus, by using $a_{avg}$ for the analysis instead of just $a_{up}$ or $a_{down}$, the impact of friction can be negated and the system can be examined as if there were negligible friction.
+
+\section{Method}
+
+See figure \ref{fig:setupdiagram} for a diagram of the setup used.
+A motion encoder track was set on the table.
+Care was taken to make sure the track was level so that tension in the string would be the only unbalanced force acting on the cart.
+A motion encoder receiver was attached to one end of the track and connected through a LabQuest Mini to a computer.
+This would allow the cart's motion data to be recorded and analyzed at multiple points in the experiment.
+At the opposite end of the track a pulley was attached with a bumper just before it to prevent the cart from colliding with the pulley.
+5 slotted masses, each with a mass of 5 g, were attached to the cart with a piece of tape.
+The tape was used to secure the slotted masses on the cart and prevent them from moving, which could have impacted the measured acceleration.
+A string was also tied to the cart and connected to a 5 g mass hanger.
+The total mass of this system of objects was measured using a balance.
+The cart was then returned to the track with the string running over the pulley and the hanger going off the edge of the table.
+
+For each trial, the cart was given a slight, quick nudge in the direction away from the pulley with the motion encoder set to record this motion.
+The graph of velocity versus time produced was linear fit for a section where the cart was moving away from the pulley, the slope corresponding to $a_{up}$, followed by a linear fit for a section where the cart was moving towards the pulley, the slope corresponding to $a_{down}$.
+Care was taken to not include in the linear fit the time of the human push nor the time of the collision with the bumper, as the forces involved in those interactions would have undesirably impacted the acceleration.
+Between trials, a slotted mass was transferred from the cart to the mass hanger for a total of 5 trials.
+This kept the system mass constant while increasing the hanging mass.
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{example-setup-diagram.png}
+\end{center}
+\caption{Experiment Setup\label{fig:setupdiagram}}
+\end{figure}
+
+\section{Results}
+
+Table \ref{tab:massacceleration} contains the data gathered in the five trials of the experiment.
+It contains the hanging mass ($m_h$), the acceleration when the hanger was moving up ($a_{up}$), the acceleration when the hanger was moving down ($a_{down}$), and the average of $a_{up}$ and $a_{down}$ ($a_{avg}$).
+Note that for each trial the system mass was kept constant.
+The uncertainty of the system mass ($m_{sys}$) was approximated to be due to read error (± half the smallest digit) and calibration error (± 0.05\% of the measured value).
+
+  \begin{table}
+  \caption{\label{tab:massacceleration}Hanging Mass \& Acceleration Data} 
+  \begin{indented}
+  \lineup
+  \item[]\begin{tabular}{@{}*{4}{l}}
+  \br                              
+  $m_h$ (g)&$a_{up}$ ($\mathrm{m/s^2}$)&$a_{down}$ ($\mathrm{m/s^2}$)&$a_{avg}$ ($\mathrm{m/s^2}$)\\
+  \mr
+  \05&0.1718&0.0823&0.1270\\
+   10&0.2977&0.2075&0.2526\\
+   15&0.4189&0.3426&0.3808\\
+   20&0.5504&0.4611&0.5058\\
+   25&0.6774&0.5852&0.6313\\
+  \br
+   \multicolumn{4}{c}{$m_{sys} = M_c + m_h = 380.6 \pm 0.2 \units{g}$}
+  \end{tabular}
+  \end{indented}
+  \end{table}
+
+Figure \ref{fig:accelerationvsmass} plots the average acceleration of the cart ($a_{avg}$) versus the hanging mass ($m_h$).
+In accord with equation \ref{eq:acceleration}, the plot was given a linear fit.
+The resulting equation is shown below, with uncertainty taken to be the standard error of the fit parameters.
+Since the vertical intercept is very low, it can be assumed that the graph also matches the proportional relationship given by equation \ref{eq:acceleration}.
+\begin{equation}
+a_{avg} = \left(0.02523 \pm 0.00006 \units{\frac{m}{s^2 g}}\right) m_h + \left(0.0010 \pm 0.0009 \units{\frac{m}{s^2}}\right) \label{eq:bestfit}
+\end{equation}
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{hanging-mass-acceleration-graph.png}
+\end{center}
+\caption{Average Acceleration ($a_{avg}$) versus Hanging Mass ($m_h$)\label{fig:accelerationvsmass}}
+\end{figure}
+
+Table \ref{tab:slopecomparison} contains information useful for a comparison of the slopes for a graph of acceleration versus hanging mass.
+$s_e$ came from the experimentally determined slope in equation \ref{eq:bestfit}.
+$s_t$ came from the theoretical slope suggested by equation \ref{eq:acceleration}, with uncertainty due to uncertainty in the system mass.
+$D$ is the difference between these two values, with uncertainty equal to the uncertainty of the two slopes added in quadrature.
+Notice that the difference $D$ with uncertainty does not include the value zero.
+
+\begin{table}
+\caption{\label{tab:slopecomparison}$a_{avg}$ vs $m_h$ Slope Comparison} 
+\begin{indented}
+\lineup
+\item[]\begin{tabular}{@{}*{2}{l}}
+\br                              
+  Quantity&Value\\
+\mr
+  Experimental Slope ($s_e$)&$25.23 \pm 0.06 \units{{m}/(s^2\ kg)}$\\
+  Theoretical Slope ($s_t = g/m_{sys}$)&$25.775 \pm 0.013 \units{{m}/(s^2\ kg)}$\\
+  Slope Difference ($D = s_t - s_e$)&$0.55 \pm 0.06 \units{{m}/(s^2\ kg)}$\\
+\br
+\end{tabular}
+\end{indented}
+\end{table}
+
+\section{Conclusion}
+In this experiment, a cart was placed on a track with a string attached to it over a pulley with a hanging mass at the end.
+The acceleration was measured as the hanging mass was varied, but with the system mass held constant. 
+By averaging the acceleration as the hanger moved up and the acceleration as the hanger moved down, the effects of frictional force and air resistance were canceled and made negligible, thereby allowing average acceleration to be used in place of the theoretical, no friction, acceleration.
+If the results were in agreement with Newton's second law of motion, then the experimental graph of $a_{avg}$ versus $m_h$ (see figure \ref{fig:accelerationvsmass}, essentially a graph of acceleration versus net force with the horizontal axis scaled by a factor of $1/g$) would show a proportional relationship with a slope consistent with the one predicted by applying Newton's laws (see equation \ref{eq:acceleration}).
+
+The graph of acceleration versus hanging mass (figure \ref{fig:accelerationvsmass}) turned out to be well described by a linear/proportional fit, which is consistent with the predictions.
+But, while the difference ($D$, see table \ref{tab:massacceleration}) between the theoretical and experimental slopes turned out to be quite low, its uncertainty range did not include zero.
+In other words, the theoretical and experimental slopes did not agree with each other at this level of precision. 
+The experimental results are not consistent with Newton's second law.
+Thus, it is likely that factors initially assumed to be negligible were actually at play.
+One potential source of error comes from the assumption that the track was properly leveled before starting to gather data.
+When the experiment was carried out, the track was figured to be level just based on visual inspection.
+It is possible that the track was slightly angled, in particular with the side of the pulley slightly higher than the opposite side.
+This would have caused a component of the cart's weight to run parallel to the track and opposite tension in the string, thereby impeding the cart's acceleration and lowering the measured acceleration compared to the theoretical.
+If the lab were to be repeated, a spirit level might be used when setting up the track to make sure it is level before beginning data collection.
+Another potential source of error comes from the assumption that the pulley had negligible mass.
+The pulley obviously had some mass which would have contributed to the inertia of the system, thereby reducing the measured acceleration of the cart compared to the theoretical acceleration (which assumed a massless pulley).
+If the lab were to be repeated, a pulley with a smaller mass and smaller radius might be used, as such adjustments would reduce the pulley's moment of inertia.
+Another option might be to use a pulley with a known (or otherwise findable/calculable) moment of inertia.
+This would be factored into the adjusted theoretical calculations, which would need to incorporate some of the tools of rotational dynamics to account for the inertia of the pulley.
+
+\end{document}
+% Document ends right above

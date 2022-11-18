@@ -1,0 +1,240 @@
+\documentclass[12pt]{iopart} % Document class declaration
+
+% package "imports"
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+
+%%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+% Declare the title
+\title{Angular Momentum Lab}
+
+% Declare the authors
+\author{Vincent Edwards, Ryan Nguyen and Joanne Zhou}
+
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4A, CRN 26537
+  \item[]November 9, 2022
+  \vspace{10pt}
+  \item[]\textbf{Objective}\\
+    The goal of this experiment was to verify that the total angular momentum of a system is conserved through rotational collisions.
+    This was done by measuring the angular velocity of disks, with known moment of inertia, before and after different collisions.
+\end{indented}
+
+%%%%%%%%%%%%%%%%%%%% Theory %%%%%%%%%%%%%%%%%%%%
+
+\section{Theory}
+
+The law of conservation of angular momentum states that if the net external torque on a system is zero, then the total angular momentum of the system is constant.
+The condition for that conservation law reasonably applied to the two disk system examined in this experiment.
+The disks were rotating about an axis through their center.
+The only external forces acting on the disks that would cause a torque about that axis were friction from the axle (on both disks) and friction from the rotation platform (on the bottom disk).
+However, the shortness of the collisions, the smoothness of the disk surfaces, and the cushion of air provided by the rotation apparatus would have made these forces deliver a negligible angular impulse.
+
+The metal disks used were modeled as hollow cylinders of uniform density (a disk with a simple hole through the center).
+The moment of inertia of such a solid is given by the formula below.
+$M$ is the mass of the disk, $R_i$ is the inner radius of the disk, $R_o$ is the outer radius of the disk, $D_i$ is the inner diameter of the disk, and $D_o$ is the outer diameter of the disk.
+\begin{IEEEeqnarray}{rCl}
+I & = & \frac{1}{2}M(R_i^2 + R_o^2) \label{eq:momentofinertia}\\
+& = & \frac{1}{8}M(D_i^2 + D_o^2) \nonumber
+\end{IEEEeqnarray}
+In actuality, the holes were better described as counterbore holes.
+This difference was small enough to be considered negligible, so the simplification was made to make measurements and calculations easier.
+
+The initial angular momentum ($L_i$) and final angular momentum ($L_f$) for the two disk system are defined below.
+See figure \ref{fig:mainsetup} for clarification on what quantities some of the variables used refer to.
+\begin{IEEEeqnarray}{rCl}
+L_i & = & I_b\omega_b + I_t\omega_t \label{eq:initialangularmomentum}\\
+L_f & = & (I_b + I_t) \omega_f \label{eq:finalangularmomentum}
+\end{IEEEeqnarray}
+Conservation of angular momentum states the the initial angular momentum of the system should equal 
+the final angular momentum of the system, or in equation form
+\begin{IEEEeqnarray}{rCl}
+L_i & = & L_f \label{eq:angularmomentumconservation}\\
+L_f - L_i & = & 0 \nonumber
+\end{IEEEeqnarray}
+The experiment mainly sought to verify equation \ref{eq:angularmomentumconservation} by colliding two metal disks, measuring the angular velocities before and after, and checking if $L_f - L_i$ equals zero within its uncertainty.
+
+%%%%%%%%%%%%%%%%%%%% Method %%%%%%%%%%%%%%%%%%%%
+
+\section{Method}
+
+Figure \ref{fig:mainsetup} has a diagram of the main setup used.
+All measurements were made for use in later angular momentum calculations.
+To start, measurements were made of the three disks used (a bottom disk made of steel, a top disk made of steel, and a top disk made of aluminum).
+An electronic balance was used to measure their masses.
+An electronic caliper was used to measure their outer and inner diameters.
+To clarify, since the counterbore holes in the disks had two diameters, the one that held the majority of the disks' thickness was measured.
+This was the diameter that matched that of the axle.
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{main-setup-diagram.png}
+  \end{indented}
+  \caption{\label{fig:mainsetup}
+  Diagram of the main setup used with the rotational dynamics apparatus.
+  $I_b$ is the moment of inertia of the bottom disk.
+  $I_t$ is the moment of inertia of the top disk.
+  $\omega_b$ is the initial (pre collision) angular velocity of the bottom disk.
+  $\omega_t$ is the initial angular velocity of the top disk.
+  $\omega_f$ is the final (post collision) angular velocity of both disks.
+  Note that all angular velocities were measured as positive for rotation counterclockwise when viewed from above.
+  }
+\end{figure}
+
+Table \ref{tab:trialdescriptions} has a qualitative description of each of the six trials performed, the first 
+three of which used the the top steel disk, while the latter three used the top aluminum disk.
+All trials used the same bottom steel disk.
+
+\begin{table}[htbp]
+\caption{\label{tab:trialdescriptions}
+Descriptions for each of the 6 trials performed are shown.
+It includes a description of the top disk used and the initial motion of the two disks.
+All the trials used the bottom disk made of steel.
+In addition, all the trials had the disks stick together for the collision and move with a shared final angular velocity.
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}*{3}{l}}
+\br
+Trial&Top Disk&Initial Motion\\
+\mr
+1    &Steel   &Bottom disk stationary, top disk rotating\\
+2    &Steel   &Both disks rotating, two distinct speeds, same direction\\
+3    &Steel   &Both disks rotating, two distinct speeds, opposite directions\\
+4    &Aluminum&Bottom disk stationary, top disk rotating\\
+5    &Aluminum&Both disks rotating, two distinct speeds, same direction\\
+6    &Aluminum&Both disks rotating, two distinct speeds, opposite directions\\
+\br
+\end{tabular}\end{indented}\end{table}
+
+A special rotational dynamics apparatus was used to carry out these trials.
+It had a platform and axle for the disks to rotate around, among other helpful features.
+For this experiment, it was configured to create a cushion of air below the lower disk, thereby reducing friction.
+In addition, a cushion of air could be put between the two disks, but removed by pulling out a pin through the axle, allowing the air to escape.
+Thus, the disks could be set spinning independently when the pin was in place.
+The pin could then be pulled, allowing the disks to collide and subsequently move with the same angular velocity.
+
+A rotary motion sensor could look at the encoder tape (tape with a pattern of equally spaced black and white bars running perpendicular to the length of the tape) on the edge of the disks and plot the angular speed of both disks for their full motion (before and after the collision).
+The two graphs of angular speed versus time produced were averaged for 4 roughly horizontal segments (two segments on each graph) in order to get measurements for the initial angular velocities of the disks slightly before the collision ($\omega_b$ and $\omega_t$) and the final angular velocity of the disks slightly after the collision ($\omega_f$).
+Care was taken to average the segments as close as possible to the interval where the disks started interacting in order to mitigate the time friction had to reduce their speeds.
+Since the sensor only measured the magnitude of angular velocity, the sign had to be added manually based on human observation of the disks in order to indicate direction.
+In cases where the two graphs disagreed slightly on the final angular velocity, the average between them was recorded instead.
+
+In order to approximate the uncertainty of the measured angular velocity, a special trial that produced a consistent, constant angular velocity was performed 25 times, with the angular velocity measured each time.
+For these "uncertainty trials", a torque pulley was mounted on the top disk, which was set to rotate independent of the bottom disk.
+A string with a mass tied at the end was wrapped around the torque pulley, passed over an air pulley on the edge of the rotation apparatus, and hung over the edge of the table.
+For each run, the hanging mass was started at rest in the same spot right up against the air pulley, and then released.
+The string length was such that the hanging mass would start slightly above a stool, but hit it before the string could fully unwind off the torque pulley.
+This would deliver a consistent angular impulse to the disk and get it to the same constant angular velocity each run.
+The angular speed versus time graph was averaged for the full time it had that constant angular velocity (from the moment the hanging mass hit the stool to right before the string re-wrapped around the torque pulley and started lifting the hanging mass).
+The standard deviation of the 25 angular velocity values was used as the uncertainty in the average angular velocity.
+Since the measurements for each run were all of the same physical quantity, the uncertainty could be attributed to error in the angular velocity measurement process.
+The relative error, which came out to be 0.386\% (when averaged among all the class lab groups), was used as the uncertainty for all the other angular velocity measurements.
+Relative error was used rather than absolute error because it was speculated that larger angular velocities would have more uncertainty, be harder to measure and track the motion of, than lower angular velocities.
+
+%%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
+
+\section{Results}
+
+Table \ref{tab:momentofinertia} contains the measurements made during the experiment related to the moment of inertia of the disks.
+Table \ref{tab:angularvelocity} contains the angular velocity measurements made during the experiment.
+Descriptions for how the uncertainties were determined are in both captions.
+
+\begin{table}[htbp]
+\caption{\label{tab:momentofinertia}
+Measurements from the experiment related to determining the moment of inertia of the disks.
+Uncertainty in the mass measurements ($M$) came from read error ($\pm 0.05~\mathrm{g}$) and calibration error ($\pm 0.05\%$) added in quadrature.
+Uncertainty in the diameter measurements ($D_i$ \& $D_o$) came from read error ($\pm 0.05~\mathrm{mm}$) and calibration error ($\pm 0.05\%$) added in quadrature.
+The moment of inertia ($I$) was calculated with equation \ref{eq:momentofinertia}.
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}*{5}{l}}
+\br
+Disk        &$M$ (g)          &$D_i$ (mm)     &$D_o$ (mm)      &$I$ ($\mathrm{g\ m^2}$)\\
+\mr
+Bottom steel&1347.2  $\pm$ 0.7&15.8 $\pm$ 0.05&126.8 $\pm$ 0.08&2.750 $\pm$ 0.004\\
+Top steel   &1361.2  $\pm$ 0.7&15.5 $\pm$ 0.05&126.6 $\pm$ 0.08&2.768 $\pm$ 0.004\\
+Top aluminum&\0465.8 $\pm$ 0.2&15.7 $\pm$ 0.05&126.7 $\pm$ 0.08&0.949 $\pm$ 0.001\\
+\br
+\end{tabular}\end{indented}\end{table}
+
+\begin{table}[htbp]
+\def\.{\phantom{.}}
+\caption{\label{tab:angularvelocity}
+Angular velocity measurements from the experiment.
+Uncertainty in the angular velocity measurements ($\omega_b$, $\omega_t$, \& $\omega_f$) was approximated to be $\pm 0.386\%$, the value found in the ``uncertainty trials'' described at the end of the method section.
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}*{4}{l}}
+\br
+Trial&$\omega_b$ (rad/s)   &$\omega_t$ (rad/s)  &$\omega_f$ (rad/s)\\
+\mr
+1    &0\.\0\0\0 $\pm$ 0    &6.65\0   $\pm$ 0.03 &3.32\0 $\pm$ 0.01\\
+2    &4.88\0    $\pm$ 0.02 &2.080    $\pm$ 0.008&3.46\0 $\pm$ 0.01\\
+3    &4.16\0    $\pm$ 0.02 &\-1.445  $\pm$ 0.006&1.410  $\pm$ 0.005\\
+4    &0\.\0\0\0 $\pm$ 0    &6.75\0   $\pm$ 0.03 &1.727  $\pm$ 0.007\\
+5    &1.705     $\pm$ 0.007&6.60\0   $\pm$ 0.03 &2.90\0 $\pm$ 0.01\\
+6    &4.48\0    $\pm$ 0.02 &\-3.17\0 $\pm$ 0.01 &2.51\0 $\pm$ 0.01\\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:angularmomentum} contains the calculations involving the angular momentum of the system.
+In accord with equation \ref{eq:angularmomentumconservation}, if angular momentum was conserved as theory predicts, then the change in angular momentum would equal zero within uncertainty.
+This was the case for trials 1, 2, 4, and 6.
+But, it was not the case for trials 3 and 5.
+
+\begin{table}[htbp]
+\caption{\label{tab:angularmomentum}
+Calculations involving the angular momentum of the system.
+$L_i$ is defined in equation \ref{eq:initialangularmomentum}, $L_f$ in equation \ref{eq:finalangularmomentum}, and $L_f - L_i$ in equation \ref{eq:angularmomentumconservation}.
+If angular momentum was conserved as theory predicts, then $L_f - L_i$ would equal zero within uncertainty.
+The last column states whether that is the case for each trial.
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}*{5}{l}}
+\br
+Trial&$L_i~(\mathrm{g~m^2/s})$&$L_f~(\mathrm{g~m^2/s})$&$L_f-L_i~(\mathrm{g~m^2/s})$&$L$ conserved?\\
+\mr
+1    &18.41  $\pm$ 0.08&18.34  $\pm$ 0.07&\-0.07 $\pm$ 0.10&Yes\\
+2    &19.17  $\pm$ 0.06&19.07  $\pm$ 0.08&\-0.10 $\pm$ 0.10&Yes\\
+3    &\07.43 $\pm$ 0.05&\07.78 $\pm$ 0.03&0.35   $\pm$ 0.06&No\\
+4    &\06.41 $\pm$ 0.03&\06.39 $\pm$ 0.03&\-0.02 $\pm$ 0.04&Yes\\
+5    &10.95  $\pm$ 0.03&10.71  $\pm$ 0.04&\-0.23 $\pm$ 0.05&No\\
+6    &\09.30 $\pm$ 0.05&\09.29 $\pm$ 0.04&\-0.01 $\pm$ 0.06&Yes\\
+\br
+\end{tabular}\end{indented}\end{table}
+
+%%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
+
+\section{Conclusion}
+
+The goal of this experiment was to verify that angular momentum in conserved through rotational collisions.
+This was done by using a rotary motion encoder to measure the angular velocities of two disks with known moment of inertia before and after different collisions.
+If the data were consistent with the theory, then $L_f - L_i$ would equal zero within uncertainty for all the collisions.
+As can be seen by the data in table \ref{tab:angularmomentum}, this condition was met for trials 1, 2, 4, and 6.
+But, angular momentum was not shown to be conserved in trials 3 and 5.
+Do note that the initial and final angular momenta for these two trials did match for the first one or two significant figures, so there probably was not any notable gross error.
+Still, trials 3 and 5 had a noticeably larger magnitude for the change in angular momentum compared to the other trials, which does raise suspicion.
+
+One potential explanation for the error lies in the experiment's assumption that there was no significant net external torque acting on the system of two disks.
+For trial 5, that torque must have acted overall in the clockwise direction, leading to the negative change in angular momentum.
+It is easy to attribute that torque to friction, which would have acted opposite the counterclockwise motion of the disks.
+As to why trial 5 experienced more friction than the others, perhaps the air hose was not turned on as strongly for this trial, thereby leading to more friction from the rotation platform on the bottom disk.
+But, this explanation does not work for trial 3, which had a positive change in angular momentum and thus must have had an overall counterclockwise torque act on the system.
+A stronger frictional torque acting on the counterclockwise moving bottom disk would have led to more torque in the clockwise direction, the opposite of what was observed for this trial.
+It is possible that the counterclockwise frictional torque from the axle on the top disk could have outweighed the clockwise frictional torque on the bottom disk.
+But, explaining why this happened for trial 3 and not trial 6, the other trial with disks initially moving in opposite directions, is difficult.
+
+Another potential explanation for the error lies in the way the angular velocity measurements were made.
+For these measurements, roughly constant sections of the angular speed versus time graph were averaged right before the collision and right afterwards.
+There was much room for experimenter discretion when determining what intervals to use.
+On one hand, the experimenter would want to average intervals that are short and as close to the time of the collision as possible in order to minimize the time friction has to act.
+On the other hand, the experimenter would want to average longer intervals in order to reduce the impact of noise in the data.
+In addition, they would want to average an interval that they are sure does not overlap with the collision in order to avoid including such improper data points (but again, the further the interval is from the collision, the more time friction has to act).
+These conflicting interests make it difficult to confidently select proper intervals.
+Perhaps the intervals chosen for trials 3 and 5 randomly happened to be poor choices that did not accurately represent the motion of the disks.
+If the experiment were to be repeated, one goal could be to reduce noise in the angular speed versus time graph so that it is easier to see the transitions and determine what intervals to average.
+When the experiment was carried out, the encoder tape around the disks was slightly dirty in some spots.
+This could have misled the rotary motion sensor, thereby contributing to some of the bumps and valleys seen in the angular velocity versus time graph.
+Cleaning this tape or replacing it with new tape could possibly help reduce noise in the data.
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%
