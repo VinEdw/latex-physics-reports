@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.8.28) (preloaded format=xelatex 2022.10.10)  18 OCT 2022 23:22
+This is XeTeX, Version 3.141592653-2.6-0.999994 (MiKTeX 22.8.28) (preloaded format=xelatex 2022.10.10)  15 DEC 2022 15:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -95,34 +95,34 @@ File: l3backend-xetex.def 2022-09-28 L3 backend support: XeTeX
 ) (collisions-lab-report.aux)
 \openout1 = `collisions-lab-report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 8
-.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 11.
+LaTeX Font Info:    Trying to load font information for TS1+cmr on input line 1
+1.
 
 (C:\Users\miste\AppData\Local\Programs\MiKTeX\tex/latex/base\ts1cmr.fd
 File: ts1cmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 35.
+(Font)              <12> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 35.
+(Font)              <8> on input line 38.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 35.
+(Font)              <6> on input line 38.
 
 [1
 
@@ -130,17 +130,17 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 File: main-setup-diagram.png Graphic file (type bmp)
 <main-setup-diagram.png>
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 80.
+(Font)              <7> on input line 83.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 80.
+(Font)              <5> on input line 83.
  [2] [3] [4] [5] [6] (collisions-lab-report.aux) ) 
 Here is how much of TeX's memory you used:
- 1668 strings out of 410532
- 27625 string characters out of 2813298
- 387006 words of memory out of 3000000
- 22871 multiletter control sequences out of 15000+600000
+ 1669 strings out of 410532
+ 27628 string characters out of 2813298
+ 394026 words of memory out of 3000000
+ 22872 multiletter control sequences out of 15000+600000
  472051 words of font info for 44 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 55i,11n,62p,382b,466s stack positions out of 10000i,1000n,20000p,200000b,80000s
+ 55i,10n,62p,382b,413s stack positions out of 10000i,1000n,20000p,200000b,80000s
 
 Output written on collisions-lab-report.pdf (6 pages).
