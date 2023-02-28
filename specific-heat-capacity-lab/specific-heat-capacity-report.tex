@@ -29,6 +29,16 @@ For part 3 the material was unknown, so its identity was guessed based on the ca
 \section{Results}
 
 All three parts of the experiment involved a calculation of the mass of a sample of DI water ($m_w$).
+In the experiment, we measured the combined mass of the water and the foam calorimeter it was in ($m_{c+w}$), as well as the mass of the dry calorimeter ($m_c$).
+Thus, $m_w$ could be calculated using equation \ref{eq:watermass}.
+\begin{IEEEeqnarray}{rCl}
+m_w & = & m_{c+w} - m_c \label{eq:watermass}
+\end{IEEEeqnarray}
+The uncertainty of $m_w$ is given by equation \ref{eq:watermassuncertainty}.
+\begin{IEEEeqnarray}{rCl}
+\Delta m_w & = & \sqrt{ \left(\frac{\partial m_w}{\partial m_c} \Delta m_c \right)^2 + \left(\frac{\partial m_w}{\partial m_{c+w}} \Delta m_{c+w} \right)^2 }\label{eq:watermassuncertainty} \\
+& = & \sqrt{ (\Delta m_c)^2 + (\Delta m_{c+w})^2 } \nonumber
+\end{IEEEeqnarray}
 \begin{table}[htbp]
 \caption{\label{tab:part1measurements}
 Part 1 Measurements
