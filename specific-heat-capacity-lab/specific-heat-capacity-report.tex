@@ -28,71 +28,8 @@ The goal of the experiment was to determine the specific heat capacities of vari
 For parts 1 and 2 the material was known, so the calculated specific heat capacities could be compared to the accepted values.
 For part 3 the material was unknown, so its identity was guessed based on the calculated specific heat capacity.
 
-%%%%%%%%%%%%%%%%%%%% Results and Uncertainty %%%%%%%%%%%%%%%%%%%%
-\section{Results and Uncertainty}
-
-All the mass measurements in the experiment were made using a digital balance.
-The uncertainty was taken to be the smallest increment of measure, since that is the precision of the equipment.
-A full increment of measure was used rather than a half increment because the school balance is likely worn out after lots of use.
-
-All the temperature measurements in the experiment were made using a temperature probe.
-A special set of ``uncertainty trials'' were performed to help approximate the uncertainty.
-A beaker of DI water was boiled on a hot plate.
-To measure the temperature, the probe was placed in the boiling water, the reading was allowed to stabilize, that stable temperature was recorded, and the temperature probe was removed from the water.
-This process was repeated 25 times, and the measured values are shown in table \ref{tab:uncertaintytrials}.
-Since the water was at its boiling point, its temperature would remain constant.
-Thus, any variation in the measured temperature of the water could be attributed to the uncertainty of the temperature probe.
-Care was taken to make sure that the probe did not make contact with the glass beaker, as that could have been at a slightly different temperature than the water.
-The uncertainty in the temperature measurements was taken to be the max absolute deviation from the mean, as that gives an upper bound for how much the temperature readings tend to fluctuate.
-That value came out to be about 0.4 ℃.
-
-\begin{table}[htbp]
-\caption{\label{tab:uncertaintytrials}
-Uncertainty Trials
-}
-\begin{indented}\lineup\item[]\begin{tabular}{ll}
-\br
-Run  & $T$ ℃ \\
-\mr
-1  & 99.0 \\
-2  & 99.1 \\
-3  & 98.8 \\
-4  & 98.7 \\
-5  & 98.6 \\
-6  & 99.0 \\
-7  & 99.1 \\
-8  & 99.1 \\
-9  & 99.0 \\
-10 & 98.9 \\
-11 & 98.8 \\
-12 & 98.8 \\
-13 & 99.1 \\
-14 & 99.2 \\
-15 & 99.1 \\
-16 & 99.2 \\
-17 & 99.1 \\
-18 & 99.1 \\
-19 & 99.2 \\
-20 & 99.1 \\
-21 & 99.0 \\
-22 & 99.1 \\
-23 & 99.3 \\
-24 & 99.0 \\
-25 & 98.8 \\
-\br
-\end{tabular}\end{indented}\end{table}
-
-All three parts of the experiment involved a calculation of the mass of a sample of DI water ($m_w$).
-In the experiment, the combined mass of the water and the foam calorimeter it was in ($m_{c+w}$), as well as the mass of the dry calorimeter ($m_c$), were measured.
-Thus, $m_w$ could be calculated using equation \ref{eq:watermass}.
-\begin{IEEEeqnarray}{rCl}
-m_w & = & m_{c+w} - m_c \label{eq:watermass}
-\end{IEEEeqnarray}
-The uncertainty of $m_w$ is given by equation \ref{eq:watermassuncertainty}.
-\begin{IEEEeqnarray}{rCl}
-\Delta m_w & = & \sqrt{ \left(\frac{\partial m_w}{\partial m_c} \Delta m_c \right)^2 + \left(\frac{\partial m_w}{\partial m_{c+w}} \Delta m_{c+w} \right)^2 }\label{eq:watermassuncertainty} \\
-& = & \sqrt{ (\Delta m_c)^2 + (\Delta m_{c+w})^2 } \nonumber
-\end{IEEEeqnarray}
+%%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
+\section{Results}
 
 In part 1 of the experiment, a sample of DI water stored in a foam calorimeter was heated using an immersion heater for about 2 minutes, and the resulting change in temperature was measured.
 Table \ref{tab:part1measurements} contains the measured values.
@@ -119,11 +56,6 @@ $H$       & 293 & 1 W \\
 $t$       & 120.2 & 0.2 s \\
 \br
 \end{tabular}\end{indented}\end{table}
-
-While performing the experiment, the reading for $H$ given by the Watt meter fluctuated.
-Thus, the uncertainty in the measurement was taken to be size of the fluctuations, as that gives an upper bound for how much the value could have varied.
-The uncertainty in $t$ was taken to be human reaction time (\~0.2 s).
-The stopwatch uncertainty was negligible compared to the much larger uncertainty in starting/stopping the stopwatch.
 
 \begin{table}[htbp]
 \caption{\label{tab:materialkey}
@@ -172,13 +104,85 @@ Material & \mch{$c$ (J / (kg K))} & \mch{$c_{true}$ (J / (kg K))} & \mch{$c - c_
 \br
 \end{tabular}\end{indented}\end{table}
 
+%%%%%%%%%%%%%%%%%%%% Uncertainty %%%%%%%%%%%%%%%%%%%%
+\section{Uncertainty}
+
+All the mass measurements in the experiment were made using a digital balance.
+The uncertainty was taken to be the smallest increment of measure, since that is the precision of the equipment.
+A full increment of measure was used rather than a half increment because the school balance is likely worn out after lots of use.
+
+All three parts of the experiment involved a calculation of the mass of a sample of DI water ($m_w$).
+In the experiment, the combined mass of the water and the foam calorimeter it was in ($m_{c+w}$), as well as the mass of the dry calorimeter ($m_c$), were measured.
+Thus, $m_w$ could be calculated using equation \ref{eq:watermass}.
+\begin{IEEEeqnarray}{rCl}
+m_w & = & m_{c+w} - m_c \label{eq:watermass}
+\end{IEEEeqnarray}
+The uncertainty of $m_w$ is given by equation \ref{eq:watermassuncertainty}.
+\begin{IEEEeqnarray}{rCl}
+\Delta m_w & = & \sqrt{ \left(\frac{\partial m_w}{\partial m_c} \Delta m_c \right)^2 + \left(\frac{\partial m_w}{\partial m_{c+w}} \Delta m_{c+w} \right)^2 }\label{eq:watermassuncertainty} \\
+& = & \sqrt{ (\Delta m_c)^2 + (\Delta m_{c+w})^2 } \nonumber
+\end{IEEEeqnarray}
+
+All the temperature measurements in the experiment were made using a temperature probe.
+A special set of ``uncertainty trials'' were performed to help approximate the uncertainty.
+A beaker of DI water was boiled on a hot plate.
+To measure the temperature, the probe was placed in the boiling water, the reading was allowed to stabilize, that stable temperature was recorded, and the temperature probe was removed from the water.
+This process was repeated 25 times, and the measured values are shown in table \ref{tab:uncertaintytrials}.
+Since the water was at its boiling point, its temperature would remain constant.
+Thus, any variation in the measured temperature of the water could be attributed to the uncertainty of the temperature probe.
+Care was taken to make sure that the probe did not make contact with the glass beaker, as that could have been at a slightly different temperature than the water.
+The uncertainty in the temperature measurements was taken to be the max absolute deviation from the mean, as that gives an upper bound for how much the temperature readings tend to fluctuate.
+That value came out to be about 0.4 ℃.
+
+\begin{table}[htbp]
+\caption{\label{tab:uncertaintytrials}
+Uncertainty Trials
+}
+\begin{indented}\lineup\item[]\begin{tabular}{ll}
+\br
+Run  & $T$ ℃ \\
+\mr
+1  & 99.0 \\
+2  & 99.1 \\
+3  & 98.8 \\
+4  & 98.7 \\
+5  & 98.6 \\
+6  & 99.0 \\
+7  & 99.1 \\
+8  & 99.1 \\
+9  & 99.0 \\
+10 & 98.9 \\
+11 & 98.8 \\
+12 & 98.8 \\
+13 & 99.1 \\
+14 & 99.2 \\
+15 & 99.1 \\
+16 & 99.2 \\
+17 & 99.1 \\
+18 & 99.1 \\
+19 & 99.2 \\
+20 & 99.1 \\
+21 & 99.0 \\
+22 & 99.1 \\
+23 & 99.3 \\
+24 & 99.0 \\
+25 & 98.8 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+In part 1, measurements of $H$ and $t$ were made.
+The reading for $H$ given by the Watt meter fluctuated.
+Thus, the uncertainty in the measurement was taken to be size of the fluctuations, as that gives an upper bound for how much the value could have varied.
+The uncertainty in $t$ was taken to be human reaction time (0.2 s).
+The stopwatch uncertainty was negligible compared to the much larger uncertainty in starting/stopping the stopwatch.
+
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
 I conclude\ldots that we are bad at lab.
 Science is a lie
 
-%%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
 \section{Citations}
 
 \end{document}
