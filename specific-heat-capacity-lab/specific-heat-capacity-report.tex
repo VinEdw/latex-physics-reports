@@ -181,6 +181,16 @@ Thus, the uncertainty in the measurement was taken to be size of the fluctuation
 The uncertainty in $t$ was taken to be human reaction time (0.2 s).
 The stopwatch uncertainty was negligible compared to the much larger uncertainty in starting/stopping the stopwatch.
 
+The experimental specific heat capacity for part 1 was calculated using equation \ref{eq:cpart1}.
+\begin{IEEEeqnarray}{rCl}
+c & = & \frac{Ht}{m_w (T_f - T_i)} \label{eq:cpart1}
+\end{IEEEeqnarray}
+The uncertainty of $c$ for part 1 is given by equation \ref{eq:cpart1uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+\Delta c & = & \sqrt{ \left(\frac{\partial c}{\partial H} \Delta H \right)^2 + \left(\frac{\partial c}{\partial t} \Delta t \right)^2 + \left(\frac{\partial c}{\partial m_w} \Delta m_w \right)^2 + \left(\frac{\partial c}{\partial T_i} \Delta T_i \right)^2 + \left(\frac{\partial c}{\partial T_f} \Delta T_f \right)^2 }\label{eq:cpart1uncertainty} \\
+  & = & \frac{Ht}{m_w (T_f - T_i)} \sqrt{ \left(\frac{\Delta H}{H} \right)^2 + \left(\frac{\Delta t}{t}\right)^2 + \left(\frac{\Delta m_w}{m_w}\right)^2 + \left(\frac{\Delta T_i}{T_f - T_i}\right)^2 + \left(\frac{\Delta T_f}{T_f - T_i}\right)^2 } \nonumber
+\end{IEEEeqnarray}
+
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
