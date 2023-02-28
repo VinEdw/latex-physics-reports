@@ -32,43 +32,16 @@ All the mass measurements in the experiment were made using a digital balance.
 The uncertainty was taken to be the smallest increment of measure, since that is the precision of the equipment.
 A full increment of measure was used rather than a half increment because the school balance is likely worn out after lots of use.
 
-All three parts of the experiment involved a calculation of the mass of a sample of DI water ($m_w$).
-In the experiment, we measured the combined mass of the water and the foam calorimeter it was in ($m_{c+w}$), as well as the mass of the dry calorimeter ($m_c$).
-Thus, $m_w$ could be calculated using equation \ref{eq:watermass}.
-\begin{IEEEeqnarray}{rCl}
-m_w & = & m_{c+w} - m_c \label{eq:watermass}
-\end{IEEEeqnarray}
-The uncertainty of $m_w$ is given by equation \ref{eq:watermassuncertainty}.
-\begin{IEEEeqnarray}{rCl}
-\Delta m_w & = & \sqrt{ \left(\frac{\partial m_w}{\partial m_c} \Delta m_c \right)^2 + \left(\frac{\partial m_w}{\partial m_{c+w}} \Delta m_{c+w} \right)^2 }\label{eq:watermassuncertainty} \\
-& = & \sqrt{ (\Delta m_c)^2 + (\Delta m_{c+w})^2 } \nonumber
-\end{IEEEeqnarray}
-
-In part 1 of the experiment, a sample of DI water stored in a foam calorimeter was heated using an immersion heater for about 2 minutes, and the resulting change in temperature was measured.
-Table \ref{tab:part1measurements} contains the measured values.
-$m_c$ is the mass of the dry calorimeter.
-$m_{c+w}$ is the combined mass of the water and calorimeter.
-$T_i$ is the initial temperature of the water.
-$H$ is the heat current delivered by the immersion heater.
-$t$ is the time the immersion heater was on.
-$T_f$ is the final temperature of the water.
-
-\begin{table}[htbp]
-\caption{\label{tab:part1measurements}
-Part 1 Measurements
-}
-\begin{indented}\lineup\item[]\begin{tabular}{lr@{ ± }l}
-\br
-Quantity  & \multicolumn{2}{c}{Value} \\
-\mr
-$m_c$     & 33.02 & 0.01 g \\
-$m_{c+w}$ & 439.19 & 0.01 g \\
-$T_i$     & 20.2 & 0.4 ℃ \\
-$H$       & 293 & 1 W \\
-$t$       & 120.2 & 0.2 s \\
-$T_f$     & 38.5 & 0.4 ℃ \\
-\br
-\end{tabular}\end{indented}\end{table}
+All the temperature measurements in the experiment were made using a temperature probe.
+A special set of ``uncertainty trials'' were performed to help approximate the uncertainty.
+A beaker of DI water was boiled on a hot plate.
+To measure the temperature, the probe was placed in the boiling water, the reading was allowed to stabilize, that stable temperature was recorded, and the temperature probe was removed from the water.
+This process was repeated 25 times, and the measured values are shown in table \ref{tab:uncertaintytrials}.
+Since the water was at its boiling point, its temperature would remain constant.
+Thus, any variation in the measured temperature of the water could be attributed to the uncertainty of the temperature probe.
+Care was taken to make sure that the probe did not make contact with the glass beaker, as that could have been at a slightly different temperature than the water.
+The uncertainty in the temperature measurements was taken to be the max absolute deviation from the mean, as that gives an upper bound for how much the temperature readings tend to fluctuate.
+That value came out to be about 0.4 ℃.
 
 \begin{table}[htbp]
 \caption{\label{tab:uncertaintytrials}
@@ -106,7 +79,43 @@ Run  & $T$ ℃ \\
 \br
 \end{tabular}\end{indented}\end{table}
 
+All three parts of the experiment involved a calculation of the mass of a sample of DI water ($m_w$).
+In the experiment, we measured the combined mass of the water and the foam calorimeter it was in ($m_{c+w}$), as well as the mass of the dry calorimeter ($m_c$).
+Thus, $m_w$ could be calculated using equation \ref{eq:watermass}.
+\begin{IEEEeqnarray}{rCl}
+m_w & = & m_{c+w} - m_c \label{eq:watermass}
+\end{IEEEeqnarray}
+The uncertainty of $m_w$ is given by equation \ref{eq:watermassuncertainty}.
+\begin{IEEEeqnarray}{rCl}
+\Delta m_w & = & \sqrt{ \left(\frac{\partial m_w}{\partial m_c} \Delta m_c \right)^2 + \left(\frac{\partial m_w}{\partial m_{c+w}} \Delta m_{c+w} \right)^2 }\label{eq:watermassuncertainty} \\
+& = & \sqrt{ (\Delta m_c)^2 + (\Delta m_{c+w})^2 } \nonumber
+\end{IEEEeqnarray}
 
+In part 1 of the experiment, a sample of DI water stored in a foam calorimeter was heated using an immersion heater for about 2 minutes, and the resulting change in temperature was measured.
+Table \ref{tab:part1measurements} contains the measured values.
+$m_c$ is the mass of the dry calorimeter.
+$m_{c+w}$ is the combined mass of the water and calorimeter.
+$T_i$ is the initial temperature of the water.
+$H$ is the heat current delivered by the immersion heater.
+$t$ is the time the immersion heater was on.
+$T_f$ is the final temperature of the water.
+
+\begin{table}[htbp]
+\caption{\label{tab:part1measurements}
+Part 1 Measurements
+}
+\begin{indented}\lineup\item[]\begin{tabular}{lr@{ ± }l}
+\br
+Quantity  & \multicolumn{2}{c}{Value} \\
+\mr
+$m_c$     & 33.02 & 0.01 g \\
+$m_{c+w}$ & 439.19 & 0.01 g \\
+$T_i$     & 20.2 & 0.4 ℃ \\
+$H$       & 293 & 1 W \\
+$t$       & 120.2 & 0.2 s \\
+$T_f$     & 38.5 & 0.4 ℃ \\
+\br
+\end{tabular}\end{indented}\end{table}
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%
