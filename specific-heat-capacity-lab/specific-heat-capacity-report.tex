@@ -84,7 +84,7 @@ Part 2 and Part 3 Measurements
 }
 \footnotesize\lineup\begin{tabular}{@{}l\mcm\mcm\mcm\mcm\mcm\mcm}
 \br
-Key & \mch{$m_c$ (g)} & \mch{$m_cw$ (g)} & \mch{$m_m$ (g)} & \mch{$T_iw$ (℃)} & \mch{$T_im$ (℃)} & \mch{$T_f$ (℃)} \\
+Key & \mch{$m_c$ (g)} & \mch{$m_{cw}$ (g)} & \mch{$m_m$ (g)} & \mch{$T_{iw}$ (℃)} & \mch{$T_{im}$ (℃)} & \mch{$T_f$ (℃)} \\
 \mr
 2   & 50&0 & 0&01     & 200&0 & 0&01     & 100&0 & 0&01    & 20&0 & 0&4       & 100&0 & 0&4      & 30&0 & 0&4      \\
 3   & 50&0 & 0&01     & 200&0 & 0&01     & 100&0 & 0&01    & 20&0 & 0&4       & 100&0 & 0&4      & 30&0 & 0&4      \\
@@ -187,8 +187,19 @@ c & = & \frac{Ht}{m_w (T_f - T_i)} \label{eq:cpart1}
 \end{IEEEeqnarray}
 The uncertainty of $c$ for part 1 is given by equation \ref{eq:cpart1uncertainty}.
 \begin{IEEEeqnarray}{rCl}
-\Delta c & = & \sqrt{ \left(\frac{\partial c}{\partial H} \Delta H \right)^2 + \left(\frac{\partial c}{\partial t} \Delta t \right)^2 + \left(\frac{\partial c}{\partial m_w} \Delta m_w \right)^2 + \left(\frac{\partial c}{\partial T_i} \Delta T_i \right)^2 + \left(\frac{\partial c}{\partial T_f} \Delta T_f \right)^2 }\label{eq:cpart1uncertainty} \\
-  & = & \frac{Ht}{m_w (T_f - T_i)} \sqrt{ \left(\frac{\Delta H}{H} \right)^2 + \left(\frac{\Delta t}{t}\right)^2 + \left(\frac{\Delta m_w}{m_w}\right)^2 + \left(\frac{\Delta T_i}{T_f - T_i}\right)^2 + \left(\frac{\Delta T_f}{T_f - T_i}\right)^2 } \nonumber
+\Delta c & = & \left[ \left(\frac{\partial c}{\partial H} \Delta H \right)^2 + \left(\frac{\partial c}{\partial t} \Delta t \right)^2 + \left(\frac{\partial c}{\partial m_w} \Delta m_w \right)^2 + \left(\frac{\partial c}{\partial T_i} \Delta T_i \right)^2 + \left(\frac{\partial c}{\partial T_f} \Delta T_f \right)^2 \right]^\frac{1}{2}\label{eq:cpart1uncertainty} \\
+  & = & \frac{Ht}{m_w (T_f - T_i)} \left[ \left(\frac{\Delta H}{H} \right)^2 + \left(\frac{\Delta t}{t}\right)^2 + \left(\frac{\Delta m_w}{m_w}\right)^2 + \left(\frac{\Delta T_i}{T_f - T_i}\right)^2 + \left(\frac{\Delta T_f}{T_f - T_i}\right)^2 \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+The experimental specific heat capacities for parts 2 and 3 were calculated using equation \ref{eq:cpart2and3}.
+\begin{IEEEeqnarray}{rCl}
+c & = & \frac{m_w c_w (T_f - T_{iw})}{m_m (T_{im} - T_f)} \label{eq:cpart2and3}
+\end{IEEEeqnarray}
+The uncertainty of $c$ for part 1 is given by equation \ref{eq:cpart2and3uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+\Delta c & = & \Biggr[ \left(\frac{\partial c}{\partial m_w} \Delta m_w \right)^2 + \left(\frac{\partial c}{\partial m_m} \Delta m_m \right)^2 \label{eq:cpart2and3uncertainty} \\
+& & {}+ \left(\frac{\partial c}{\partial T_{iw}} \Delta T_{iw} \right)^2 + \left(\frac{\partial c}{\partial T_{im}} \Delta T_{im} \right)^2 + \left(\frac{\partial c}{\partial T_f} \Delta T_f \right)^2 \Biggl]^\frac{1}{2} \nonumber \\
+& = & \frac{m_w c_w (T_f - T_{iw})}{m_m (T_{im} - T_f)} \Bigg[ \left(\frac{\Delta m_m}{m_{m}}\right)^2 + \left(\frac{\Delta m_w}{m_w}\right)^2 \nonumber \\
+& & {}+ \left(\frac{\Delta T_{iw}}{T_f - T_{iw}}\right)^2 + \left(\frac{\Delta T_{im}}{T_{im} - T_f}\right)^2 + \left(\left(\frac{1}{T_f - T_{iw} } + \frac{1}{T_{im} - T_f}\right) \Delta T_f\right)^2 \Bigg]^\frac{1}{2} \nonumber
 \end{IEEEeqnarray}
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
