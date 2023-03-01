@@ -7,6 +7,8 @@
 % Custom macros
 \gdef\mcm{r@{.}l@{ ± }r@{.}l} % Multi Column Measurement; Used for decimal aligning & ± aligning
 \gdef\mch#1{\multicolumn{4}{l}{#1}} % Multi Column Header; Used for decimal aligning & ± aligning
+\gdef\mcmnd{r@{ ± }l} % Multi Column Measurement No Decimal; Used for ± aligning when the values don't need a decimal point
+\gdef\mchnd#1{\multicolumn{2}{l}{#1}} % Multi Column Header No Decimal; Used for  ± aligning when the values don't need a decimal point
 
 %%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -72,10 +74,10 @@ Material Key
 Key & Lab Part & Material \\
 \mr
 1   & 1        & Water \\
-2   & 2        & Metal \\
-3   & 2        & Metal \\
-4   & 2        & Metal \\
-5   & 3        & Unknown Rock \\
+2   & 2        & Aluminum (1 piece) \\
+3   & 2        & Lead \\
+4   & 2        & Aluminum (2 pieces) \\
+5   & 3        & Unknown green rock (letter D) \\
 \br
 \end{tabular}\end{indented}\end{table}
 
@@ -98,10 +100,10 @@ Part 2 and Part 3 Measurements
 \br
 Key & \mch{$m_c$ (g)} & \mch{$m_{cw}$ (g)} & \mch{$m_m$ (g)} & \mch{$T_{iw}$ (℃)} & \mch{$T_{im}$ (℃)} & \mch{$T_f$ (℃)} \\
 \mr
-2   & 50&0 & 0&01     & 200&0 & 0&01     & 100&0 & 0&01    & 20&0 & 0&4       & 100&0 & 0&4      & 30&0 & 0&4      \\
-3   & 50&0 & 0&01     & 200&0 & 0&01     & 100&0 & 0&01    & 20&0 & 0&4       & 100&0 & 0&4      & 30&0 & 0&4      \\
-4   & 50&0 & 0&01     & 200&0 & 0&01     & 100&0 & 0&01    & 20&0 & 0&4       & 100&0 & 0&4      & 30&0 & 0&4      \\
-5   & 50&0 & 0&01     & 200&0 & 0&01     & 100&0 & 0&01    & 20&0 & 0&4       & 100&0 & 0&4      & 30&0 & 0&4      \\
+2     & 31&85 & 0&01    & 531&6 & 0&1      &  88&26 & 0&01   & 21&5 & 0&4       & 99&1 & 0&4       & 24&4 & 0&4      \\
+3     & 31&85 & 0&01    & 531&3 & 0&1      & 370&26 & 0&01   & 24&2 & 0&4       & 99&1 & 0&4       & 26&0 & 0&4      \\
+4     & 31&85 & 0&01    & 530&3 & 0&1      & 175&42 & 0&01   & 25&9 & 0&4       & 99&1 & 0&4       & 30&9 & 0&4      \\
+5     & 31&85 & 0&01    & 529&9 & 0&1      & 161&14 & 0&01   & 30&0 & 0&4       & 99&1 & 0&4       & 33&3 & 0&4      \\
 \br
 \end{tabular}\end{table}\normalsize
 
@@ -112,15 +114,15 @@ In addition, it contains the accepted, true specific heat capacity for those mat
 \caption{\label{tab:specificheat}
 Specific Heat Capacity Values
 }
-\begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm\mcm}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcmnd l\mcmnd}
 \br
-Key & \mch{$c$ (J/(kg K))} & \mch{$c_\mathrm{true}$ (J/(kg K))} & \mch{$c - c_\mathrm{true}$ (J/(kg K))} \\
+Key & \mchnd{$c$ (J/(kg K))} & $c_\mathrm{true}$ (J/(kg K)) & \mchnd{$c - c_\mathrm{true}$ (J/(kg K))} \\
 \mr
-1   & 900&0 & 50&0           & 800&0 & 0&0                          & 100&0 & 50&0           \\
-2   & 900&0 & 50&0           & 800&0 & 0&0                          & 100&0 & 50&0           \\
-3   & 900&0 & 50&0           & 800&0 & 0&0                          & 100&0 & 50&0           \\
-4   & 900&0 & 50&0           & 800&0 & 0&0                          & 100&0 & 50&0           \\
-5   & 900&0 & 50&0           & 800&0 & 0&0                          & 100&0 & 50&0           \\
+1     & 4700 & 100         & 4186               & 600 & 100           \\
+2     & 900  & 200         & 910                & 10 & 200           \\
+3     & 140  & 40          & 130                & 9 & 40             \\
+4     & 900  & 100         & 910                &\-38 & 100          \\
+5     & 600  & 100         & 750                &\-200 & 100         \\
 \br
 \end{tabular}\end{indented}\end{table}
 
