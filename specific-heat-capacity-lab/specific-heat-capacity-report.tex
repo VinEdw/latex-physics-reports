@@ -4,17 +4,326 @@
 \usepackage{graphicx}
 \usepackage{IEEEtrantools}
 
-% Custom macro
+% Custom macros
 \gdef\mcm{r@{.}l@{ ± }r@{.}l} % Multi Column Measurement; Used for decimal aligning & ± aligning
 \gdef\mch#1{\multicolumn{4}{l}{#1}} % Multi Column Header; Used for decimal aligning & ± aligning
-
-\title{Collisions Lab}
-\author{Vincent Edwards}
+\gdef\mcmnd{r@{ ± }l} % Multi Column Measurement No Decimal; Used for ± aligning when the values don't need a decimal point
+\gdef\mchnd#1{\multicolumn{2}{l}{#1}} % Multi Column Header No Decimal; Used for  ± aligning when the values don't need a decimal point
 
 %%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
 \begin{document}
 
+%%%%%%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%%%%%%
+\title{Specific Heat Capacity Lab}
+\author{Vincent Edwards, Ali Mortada, Andrew Bringas}
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4B, CRN 42240
+  \item[]March 8, 2023
+\end{indented}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%% Purpose %%%%%%%%%%%%%%%%%%%%
+\section{Purpose}
+
+The goal of the experiment was to determine the specific heat capacities of various substances based on measurements of mass, temperature, power, and/or time.
+For parts 1 and 2 the material was known, so the calculated specific heat capacities could be compared to the accepted values.
+For part 3 the material was unknown, so its identity was guessed based on the calculated specific heat capacity.
+
+%%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
 \section{Results}
+
+In part 1 of the experiment, a sample of DI water stored in a foam calorimeter was heated using an immersion heater for about 2 minutes, causing the temperature of the water to increase.
+Table \ref{tab:part1measurements} contains the measured values.
+$m_c$ is the mass of the dry calorimeter.
+$m_{c+w}$ is the combined mass of the water and calorimeter.
+$T_i$ is the initial temperature of the water.
+$T_f$ is the final temperature of the water.
+$H$ is the heat current delivered by the immersion heater, measured using a Watt meter.
+$t$ is the time the immersion heater was on, measured using a stopwatch.
+
+\begin{table}[htbp]
+\centering
+\caption{\label{tab:part1measurements}
+Part 1 Measurements
+}
+\begin{indented}\lineup\item[]\begin{tabular}{lr@{ ± }l}
+\br
+Quantity  & \multicolumn{2}{c}{Value} \\
+\mr
+$m_c$     & 33.02 & 0.01 g \\
+$m_{c+w}$ & 439.19 & 0.01 g \\
+$T_i$     & 20.2 & 0.4 ℃ \\
+$T_f$     & 38.5 & 0.4 ℃ \\
+$H$       & 293 & 1 W \\
+$t$       & 120.2 & 0.2 s \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:materialkey} contains a material key.
+A number was given to each material for which the specific heat capacity was calculated.
+In addition, the table notes the lab part where the substance was examined.
+These numbers are used to index tables \ref{tab:part2and3measurements} and \ref{tab:specificheat}.
+
+\begin{table}[htbp]
+\caption{\label{tab:materialkey}
+Material Key
+}
+\begin{indented}\lineup\item[]\begin{tabular}{lll}
+\br
+Key & Lab Part & Material \\
+\mr
+1   & 1        & Water \\
+2   & 2        & Aluminum (1 piece) \\
+3   & 2        & Lead \\
+4   & 2        & Aluminum (2 pieces) \\
+5   & 3        & Unknown green rock (letter D) \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+In parts 2 and 3 of the experiment, samples of various materials were submerged in boiling water for about 2 minutes to heat them up to a high temperature (the boiling point of water).
+One at a time, these samples were transferred to a foam calorimeter containing room temperature DI water.
+This caused the sample temperature to decrease and the water temperature to increase until they reached thermal equilibrium.
+Table \ref{tab:part2and3measurements} contains the measured values.
+$m_c$ is the mass of the dry calorimeter.
+$m_{c+w}$ is the combined mass of the water and calorimeter.
+$m_m$ is the mass of the sample material.
+$T_{iw}$ is the initial temperature of the water.
+$T_{im}$ is the initial temperature of the sample material.
+$T_f$ is the final temperature of the water and sample material.
+
+\begin{table}[htbp]
+\caption{\label{tab:part2and3measurements}
+Part 2 and Part 3 Measurements
+}
+\footnotesize\lineup\begin{tabular}{@{}l\mcm\mcm\mcm\mcm\mcm\mcm}
+\br
+Key & \mch{$m_c$ (g)} & \mch{$m_{c+w}$ (g)} & \mch{$m_m$ (g)} & \mch{$T_{iw}$ (℃)} & \mch{$T_{im}$ (℃)} & \mch{$T_f$ (℃)} \\
+\mr
+2     & 31&85 & 0&01    & 531&6 & 0&1      &  88&26 & 0&01   & 21&5 & 0&4       & 99&1 & 0&4       & 24&4 & 0&4      \\
+3     & 31&85 & 0&01    & 531&3 & 0&1      & 370&26 & 0&01   & 24&2 & 0&4       & 99&1 & 0&4       & 26&0 & 0&4      \\
+4     & 31&85 & 0&01    & 530&3 & 0&1      & 175&42 & 0&01   & 25&9 & 0&4       & 99&1 & 0&4       & 30&9 & 0&4      \\
+5     & 31&85 & 0&01    & 529&9 & 0&1      & 161&14 & 0&01   & 30&0 & 0&4       & 99&1 & 0&4       & 33&3 & 0&4      \\
+\br
+\end{tabular}\end{table}\normalsize
+
+Table \ref{tab:specificheat} contains the calculated specific heat capacity ($c$) for each material examined in the experiment.
+In addition, it contains the accepted, true specific heat capacity for those materials ($c_\mathrm{true}$) and how far off the experimental values were from the true values ($c - c_\mathrm{true}$).
+
+\begin{table}[htbp]
+\caption{\label{tab:specificheat}
+Specific Heat Capacity Values
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcmnd l\mcmnd}
+\br
+Key & \mchnd{$c$ (J/(kg K))} & $c_\mathrm{true}$ (J/(kg K)) & \mchnd{$c - c_\mathrm{true}$ (J/(kg K))} \\
+\mr
+1     & 4740 & 150         & 4186               & 550 & 150           \\
+2     & 920  & 180         & 910                & 10 & 180           \\
+3     & 140  & 40          & 130                & 10 & 40             \\
+4     & 870  & 100         & 910                &\-40 & 100          \\
+5     & 650  & 110         & 750                &\-100 & 110         \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+%%%%%%%%%%%%%%%%%%%% Uncertainty %%%%%%%%%%%%%%%%%%%%
+\section{Uncertainty}
+
+All the mass measurements in the experiment were made using a digital balance.
+The uncertainty was taken to be the smallest increment of measure, since that is the precision of the equipment.
+A full increment of measure was used rather than a half increment because the school balance is likely worn out after lots of use.
+
+All three parts of the experiment involved a calculation of the mass of a sample of DI water ($m_w$).
+In the experiment, $m_{c+w}$ (the combined mass of the water and the foam calorimeter it was it) and $m_c$ (the mass of the dry calorimeter) were measured.
+Thus, $m_w$ could be calculated using equation \ref{eq:watermass}.
+\begin{IEEEeqnarray}{rCl}
+m_w & = & m_{c+w} - m_c \label{eq:watermass}
+\end{IEEEeqnarray}
+The uncertainty of $m_w$ is given by equation \ref{eq:watermassuncertainty}.
+\begin{IEEEeqnarray}{rCl}
+\Delta m_w & = & \sqrt{ \left(\frac{\partial m_w}{\partial m_c} \Delta m_c \right)^2 + \left(\frac{\partial m_w}{\partial m_{c+w}} \Delta m_{c+w} \right)^2 }\label{eq:watermassuncertainty} \\
+& = & \sqrt{ (\Delta m_c)^2 + (\Delta m_{c+w})^2 } \nonumber
+\end{IEEEeqnarray}
+
+All the temperature measurements were made using a temperature probe.
+In order to get an idea of the uncertainty present in readings with the temperature probe, a special set of ``uncertainty trials'' were performed.
+A beaker of DI water was boiled on a hot plate.
+To measure the temperature, the probe was placed in the boiling water, the reading was allowed to stabilize, that stable temperature was recorded, and the temperature probe was removed from the water.
+This process was repeated 25 times, and the measured values are shown in table \ref{tab:uncertaintytrials}.
+Since the water was at its boiling point, its temperature would remain constant.
+Thus, any variation in the measured temperature of the water could be attributed to the uncertainty of the temperature probe.
+Care was taken to make sure that the probe did not make contact with the glass beaker, as that could have been at a slightly different temperature than the water.
+The uncertainty in the temperature measurements was taken to be the max absolute deviation from the mean, as that gives an upper bound for how much the temperature readings tend to fluctuate.
+That value came out to be 0.4 ℃.
+
+\begin{table}[htbp]
+\caption{\label{tab:uncertaintytrials}
+Uncertainty Trials
+}
+\begin{indented}\lineup\item[]\begin{tabular}{ll}
+\br
+Run  & $T$ (℃) \\
+\mr
+1  & 99.0 \\
+2  & 99.1 \\
+3  & 98.8 \\
+4  & 98.7 \\
+5  & 98.6 \\
+6  & 99.0 \\
+7  & 99.1 \\
+8  & 99.1 \\
+9  & 99.0 \\
+10 & 98.9 \\
+11 & 98.8 \\
+12 & 98.8 \\
+13 & 99.1 \\
+14 & 99.2 \\
+15 & 99.1 \\
+16 & 99.2 \\
+17 & 99.1 \\
+18 & 99.1 \\
+19 & 99.2 \\
+20 & 99.1 \\
+21 & 99.0 \\
+22 & 99.1 \\
+23 & 99.3 \\
+24 & 99.0 \\
+25 & 98.8 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+In part 1, measurements of $H$ and $t$ were made.
+The reading for $H$ given by the Watt meter fluctuated.
+Thus, the uncertainty in the measurement was taken to be size of the fluctuations, as that gives an upper bound for how much the value could have varied.
+The uncertainty in $t$ was taken to be human reaction time (0.2 s).
+The stopwatch uncertainty was negligible compared to the much larger uncertainty in starting/stopping the stopwatch.
+
+The experimental specific heat capacity for part 1 was calculated using equation \ref{eq:cpart1}.
+\begin{IEEEeqnarray}{rCl}
+c & = & \frac{Ht}{m_w (T_f - T_i)} \label{eq:cpart1}
+\end{IEEEeqnarray}
+The uncertainty of $c$ for part 1 is given by equation \ref{eq:cpart1uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+\Delta c & = & \left[ \left(\frac{\partial c}{\partial H} \Delta H \right)^2 + \left(\frac{\partial c}{\partial t} \Delta t \right)^2 + \left(\frac{\partial c}{\partial m_w} \Delta m_w \right)^2 + \left(\frac{\partial c}{\partial T_i} \Delta T_i \right)^2 + \left(\frac{\partial c}{\partial T_f} \Delta T_f \right)^2 \right]^\frac{1}{2}\label{eq:cpart1uncertainty} \\
+  & = & \frac{Ht}{m_w (T_f - T_i)} \left[ \left(\frac{\Delta H}{H} \right)^2 + \left(\frac{\Delta t}{t}\right)^2 + \left(\frac{\Delta m_w}{m_w}\right)^2 + \left(\frac{\Delta T_i}{T_f - T_i}\right)^2 + \left(\frac{\Delta T_f}{T_f - T_i}\right)^2 \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+The experimental specific heat capacities for parts 2 and 3 were calculated using equation \ref{eq:cpart2and3}.
+\begin{IEEEeqnarray}{rCl}
+c & = & \frac{m_w c_w (T_f - T_{iw})}{m_m (T_{im} - T_f)} \label{eq:cpart2and3}
+\end{IEEEeqnarray}
+The uncertainty of $c$ for parts 2 and 3 is given by equation \ref{eq:cpart2and3uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+\Delta c & = & \Biggr[ \left(\frac{\partial c}{\partial m_w} \Delta m_w \right)^2 + \left(\frac{\partial c}{\partial m_m} \Delta m_m \right)^2 \label{eq:cpart2and3uncertainty} \\
+& & {}+ \left(\frac{\partial c}{\partial T_{iw}} \Delta T_{iw} \right)^2 + \left(\frac{\partial c}{\partial T_{im}} \Delta T_{im} \right)^2 + \left(\frac{\partial c}{\partial T_f} \Delta T_f \right)^2 \Biggl]^\frac{1}{2} \nonumber \\
+& = & \frac{m_w c_w (T_f - T_{iw})}{m_m (T_{im} - T_f)} \Bigg[ \left(\frac{\Delta m_w}{m_w}\right)^2 + \left(\frac{\Delta m_m}{m_m}\right)^2 \nonumber \\
+& & {}+ \left(\frac{\Delta T_{iw}}{T_f - T_{iw}}\right)^2 + \left(\frac{\Delta T_{im}}{T_{im} - T_f}\right)^2 + \left(\left(\frac{1}{T_f - T_{iw} } + \frac{1}{T_{im} - T_f}\right) \Delta T_f\right)^2 \Bigg]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
+%%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+The goal of the experiment was to determine the specific heat capacities of various substances based on measurements of mass, temperature, power, and/or time.
+For parts 1 and 2 the material was known, so the calculated specific heat capacities could be compared to the accepted values.
+For part 3 the material was unknown, so its identity was guessed based on the calculated specific heat capacity and its visual appearance.
+Since specific heat capacity is an intensive property, the masses of the samples (the materials and/or the water) should not have mattered, so long as the masses used in the experiment were properly measured.
+As such, the exact same amount of water did not need to be used in all the trials.
+The results for materials 2 and 4 support this notion.
+Both trials used the same material, aluminum, but in different amounts.
+The trial for material 2 used $88.26 \pm 0.01$ g of aluminum, and had a specific heat capacity of $920 \pm 180$ J/(kg K).
+The trial for material 4 used $175.42 \pm 0.01$ g of aluminum, and had a specific heat capacity of $870 \pm 100$ J/(kg K).
+These $c$ values are within each other's uncertainty, thereby supporting the idea that specific heat capacity does not depend on the mass of the sample.
+
+It might be noticed that the initial temperature of the water ($T_{iw}$) was different in each trial for parts 2 and 3.
+However, even if the initial temperature of the water had been noticeably different, it would not have impacted the results for specific heat capacity.
+Specific heat capacity is a property of the material that does not depend on the situation it is put into.
+Looking at equation \ref{eq:cpart2and3}, even if $T_{iw}$ were to increase/decrease, $T_f$ would also increase/decrease in such a way to keep the calculated $c$ value the same.
+
+The calculated specific heat capacity for each trial is shown in table \ref{tab:specificheat}, as well as how they compare to the theoretical values.
+Materials 1, 2, and 3 had a higher measured specific heat capacity than their true, accepted value, while material 4 and 5 had a lower value.
+The experimental values were not consistently higher or lower that the expected values; they were all over.
+This seems to suggest that multiple factors were at play, some that would cause the measured specific heat capacity to be higher than expected and some that would cause it to be lower than expected.
+Material 1's specific heat capacity did not match the accepted value within uncertainty, while for all the other trials the measured specific heat capacities did match the accepted value within uncertainty.
+This seems to suggest that the method used in part 1 to determine specific heat capacity is more error prone than the method used in parts 2 and 3.
+
+The identity of material 5, the unknown green rock, was guessed to be malachite based on its measured specific heat capacity and its greenish appearance.
+The experimental specific heat capacity was $650 \pm 110$ J/(kg K).
+Assuming the true value lied within that uncertainty, then the true value could fall between 540 J/(kg K) and 760 J/(kg K).
+Malachite, with a specific heat capacity of 750 J/(kg K), was one possible material.
+While other materials in the list of possibilities had closer specific heat capacities, malachite was the only material in range that had the distinctive green color of the sample.
+Thus, it was concluded that the unknown material was malachite.
+Though, it should be noted that the uncertainty in the specific heat capacity for material 5 had to be rounded to two significant figures in order for the range of possible values to include the true value for malachite.
+Since the first digit of the uncertainty in the measurement is 1, rounding to two significant figures prevents a significant reduction in uncertainty.
+In addition, while carrying out the trial a small piece broke off the unknown sample and was left in the beaker.
+Thus, the sample mass recorded was slightly larger than the actual mass present in the calorimeter.
+This higher mass would have caused the calculated specific heat capacity to be lower than expected.
+
+Focusing on the result for part 1, the calculated specific heat capacity for water (material 1) was $4740 \pm 150$ J/(kg K).
+This result is much higher than the accepted value of 4186 J/(kg K).
+The difference between them, 550 J/(kg K), is more than the magnitude of the propagated uncertainty.
+Thus, this result is not consistent with what theory predicts.
+The calculations assumed that all the heat generated by the immersion was transferred into the water, and that the water transferred no heat to the environment.
+However, that assumption may not have been reasonable for this part of the experiment.
+Perhaps some of the electrical energy transferred into the immersion heater was converted into thermal energy in the cord rather than the thermal energy in the main heating element.
+This would have resulted in less power being put into the water than what the Watt meter suggested.
+Or, perhaps the water sample transferred some heat to the environment.
+This would include any heat transferred to the walls of the calorimeter, transferred to the air above the water, or radiated away (the water would be expected to radiate more heat than it absorbed since it was at a higher temperature than the surrounding environment).
+The latter two heat transfers, transfer to the nearby air and radiation, were made more pronounced due to the lid of the foam calorimeter not being used.
+Having the lid on would have better insulated the water from the environment (though it also would impede stirring).
+In essence, all these effects would have caused water to not receive the full amount of heat generated by the immersion heater.
+Thus, $Ht$, the amount of heat used for the calculation, is likely higher than the actual amount of heat transferred to the water.
+As a result, this would cause the calculated specific heat capacity to also be higher than expected.
+
+Turning to the results of parts 2 and 3, some of the specific heat capacity values were higher than the accepted values, while some were lower.
+The single piece of aluminum (material 2) had a specific heat capacity of $920 \pm 180$ J/(kg K), 10 J/(kg K) higher than the true value (910 J/(kg K)).
+The lead (material 3) had a specific heat capacity of $140 \pm 40$ J/(kg K), 10 J/(kg K) higher than the true value (130 J/(kg K)).
+The two pieces of aluminum (material 4) had a specific heat capacity of $870 \pm 100$ J/(kg K), 40 J/(kg K) lower than the true value (910 J/(kg K)).
+The unknown rock (material 5) had a specific heat capacity of $650 \pm 110$ J/(kg K), 100 J/(kg K) lower than what the true value is guessed to be (750 J/(kg K)).
+For each of these materials, the deviations from the accepted value were not larger than the propagated uncertainty.
+Thus, these results are consistent with what theory predicts.
+The calculations assumed that all the heat transferred out of the material was transferred into the water, and that no heat was exchanged with the environment.
+While it seems like that assumption was reasonable for this part of the experiment, it likely wasn't perfect.
+For instance, when transferring the samples from the boiling water to the calorimeter, some water tended to cling to the sample surfaces.
+This extra hot water would have added thermal energy to the material, cold water system.
+As a result, the final temperature would be increased, thereby causing the experimental specific heat capacity to be higher than expected.
+Another possibility is that some heat was transferred to the environment (perhaps into the walls of the calorimeter, the air above the water, or radiated away).
+This loss of thermal energy would have decreased the final temperature of the system, thereby causing the experimental specific heat capacity to be lower than expected.
+It's possible that both these effects (heat being added to the system and heat being removed) did occur to some extent.
+This would have helped keep deviations from the expected value small, though some trials may have randomly had more heat gained or lost.
+With that line of reasoning, the trials for materials 2 and 3 would have gained heat overall, while the trials for materials 4 and 5 would have lost heat overall.
+
+%%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
+\section{Citations}
+
+\begin{thebibliography}{9}
+
+\bibitem{labpacket}
+  Karen Schnurbusch,
+  \textit{Physics 4B Lab Book},
+  Mt. San Antonio College,
+  2023,
+  pp. 11-16.
+
+\bibitem{equationsheet}
+  Karen Schnurbusch,
+  \textit{Physics 4B Equations},
+  Mt. San Antonio College,
+  2023,
+  pp. 2, 7.
+
+\bibitem{specificheats}
+  Engineering ToolBox,
+  \textit{Solids - Specific Heats},
+  2003,
+  https://www.engineeringtoolbox.com/specific-heat-solids-d\textunderscore{}154.html,
+  Accessed 4 March 2023.
+
+\bibitem{malachite}
+  Hobart M. King,
+  \textit{Malachite},
+  https://geology.com/minerals/malachite.shtml,
+  Accessed 7 March 2023.
+
+\end{thebibliography}
 
 \end{document}
 %%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%
