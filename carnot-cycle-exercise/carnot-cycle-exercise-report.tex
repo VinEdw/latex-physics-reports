@@ -9,6 +9,8 @@
 \gdef\mch#1{\multicolumn{4}{l}{#1}} % Multi Column Header; Used for decimal aligning & ± aligning
 \gdef\mcmnd{r@{ ± }l} % Multi Column Measurement No Decimal; Used for ± aligning when the values don't need a decimal point
 \gdef\mchnd#1{\multicolumn{2}{l}{#1}} % Multi Column Header No Decimal; Used for  ± aligning when the values don't need a decimal point
+\gdef\sci#1#2{#1 \times 10^{#2}}
+\gdef\units#1{~\mathrm{#1}}
 
 %%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -22,7 +24,7 @@
   \item[]March 27, 2023
   \item[]
   \item[]$T_H = 490~\mathrm{K}$
-  \item[]$V_c = 1.90 \times 10^{-3}~\mathrm{m^3}$
+  \item[]$V_c = \sci{1.90}{-3} \units{m^3}$
 \end{indented}
 \newpage
 
@@ -39,18 +41,58 @@ The goal of the exercise is to perform various calculations related to the Carno
 \noindent{}Given:
 \begin{itemize}
   \item[]$PV = nRT$
-  \item[]$p_i V_i^\gamma = p_f V_f^\gamma$
+  \item[]$P_i V_i^\gamma = P_f V_f^\gamma$
 \end{itemize}
 
 \begin{IEEEeqnarray*}{rCl}
-p_i V_i^\gamma & = & p_f V_f^\gamma \\
-p_i V_i V_i^{\gamma-1} & = & p_f V_f V_f^{\gamma-1} \\
-n R T_i V_i^{\gamma-1} & = & n R T_f V_f^{\gamma-1} \\
-T_i V_i^{\gamma-1} & = & T_f V_f^{\gamma-1} 
+  P_i V_i^\gamma & = & P_f V_f^\gamma \\
+  P_i V_i V_i^{\gamma-1} & = & P_f V_f V_f^{\gamma-1} \\
+  n R T_i V_i^{\gamma-1} & = & n R T_f V_f^{\gamma-1} \\
+  T_i V_i^{\gamma-1} & = & T_f V_f^{\gamma-1} 
 \end{IEEEeqnarray*}
 
 %%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
 \section{Results}
+
+\subsection{Moles of Gas ($n$)}
+
+\begin{IEEEeqnarray*}{rCl}
+P_c V_c & = & n R T_c \\
+P_c V_c & = & n R T_C \\
+n & = & \frac{P_c V_c}{R T_C} \\
+n & = & 0.0770 \units{mol} 
+\end{IEEEeqnarray*}
+
+\subsection{Pressure ($P_b$) and Volume ($V_b$) at b}
+
+\begin{IEEEeqnarray*}{rCl}
+  T_b V_b^{\gamma-1} & = & T_c V_c^{\gamma-1} \\
+  V_b & = & V_c \left( \frac{T_c}{T_b} \right)^{\frac{1}{\gamma-1}} \\
+  V_b & = & V_c \left( \frac{T_C}{T_H} \right)^{\frac{1}{\gamma-1}} \\
+  V_b & = & \sci{5.57}{-4} \units{m^3}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  P_b V_b & = & n R T_b \\
+  P_b V_b & = & n R T_H \\
+  P_b & = & \frac{n R T_H}{V_b} \\
+  P_b & = & \sci{5.63}{5} \units{Pa}
+\end{IEEEeqnarray*}
+
+\begin{table}[htbp]
+\caption{\label{tab:pvtkeypoints}
+Pressure, Volume, and Temperature for Key Points
+}
+\begin{indented}\lineup\item[]\begin{tabular}{llll}
+\br
+Point & $P$ (Pa) & $V~\mathrm{(m^3)}$ & $T$ (K) \\
+\mr
+a &  &  & 490 \\
+b & $\sci{5.63}{5}$ & $\sci{5.57}{-4}$ & 490 \\
+c & $\sci{1.01}{5}$ & $\sci{1.90}{-3}$ & 300 \\
+d &  &  & 300 \\
+\br
+\end{tabular}\end{indented}\end{table}
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
