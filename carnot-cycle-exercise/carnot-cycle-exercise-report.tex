@@ -82,10 +82,10 @@ Note: $T_a = T_b = T_H$ and $T_c = T_d = T_impC$
 \br
 Point & $P$ (Pa) & $V~\mathrm{(m^3)}$ & $T$ (K) \\
 \mr
-a & $\sci{1.46}{6}$  & $\sci{2.14}{-4}$ & 490 \\
+a & $\sci{1.46}{6}$ & $\sci{2.14}{-4}$ & 490 \\
 b & $\sci{5.62}{5}$ & $\sci{5.57}{-4}$ & 490 \\
 c & $\sci{1.01}{5}$ & $\sci{1.90}{-3}$ & 300 \\
-d &  &  & 300 \\
+d & $\sci{2.63}{5}$ & $\sci{7.30}{-4}$ & 300 \\
 \br
 \end{tabular}\end{indented}\end{table}
 
@@ -130,6 +130,22 @@ n & = & 0.0770 \units{mol}
   P_a & = & \frac{n R T_a}{V_a} \\
   P_a & = & \frac{n R T_H}{V_a} \\
   P_a & = & \sci{1.46}{6} \units{Pa}
+\end{IEEEeqnarray*}
+
+\subsection{Pressure ($P_d$) and Volume ($V_d$) at d}
+
+\begin{IEEEeqnarray*}{rCl}
+  T_d V_d^{\gamma-1} & = & T_a V_a^{\gamma-1} \\
+  V_d & = & V_a \left( \frac{T_a}{T_d} \right)^{\frac{1}{\gamma-1}} \\
+  V_d & = & V_a \left( \frac{T_H}{T_C} \right)^{\frac{1}{\gamma-1}} \\
+  V_d & = & \sci{7.30}{-4} \units{m^3}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  P_d V_d & = & n R T_d \\
+  P_d & = & \frac{n R T_d}{V_d} \\
+  P_d & = & \frac{n R T_C}{V_d} \\
+  P_d & = & \sci{2.63}{5} \units{Pa}
 \end{IEEEeqnarray*}
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%

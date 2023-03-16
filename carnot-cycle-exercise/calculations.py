@@ -34,3 +34,6 @@ P_b = n * R * T_b / V_b
 # Point a
 V_a = V_b * math.exp(-Q_ab / (n * R * T_H))
 P_a = n * R * T_a / V_a
+# Point d
+V_d = V_a * (T_a / T_d)**(1 / (gamma - 1))
+P_d = n * R * T_d / V_d
