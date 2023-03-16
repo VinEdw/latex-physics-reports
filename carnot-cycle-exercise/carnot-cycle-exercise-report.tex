@@ -97,7 +97,7 @@ Heat Transferred, Change in Internal Energy, Work Done, and Change in Entropy fo
 \br
 Process & Type & $Q$ (J) & $W$ (J) & $\Delta U$ (J) & $\Delta S$ (J/K) \\
 \mr
-$a \to b$ & isothermal expansion   &  &  & 0 &  \\
+$a \to b$ & isothermal expansion   & 300 & 300 & 0 & 0.612 \\
 $b \to c$ & adiabatic expansion    & 0 &  &  & 0 \\
 $c \to d$ & isothermal compression &  &  & 0 &  \\
 $d \to a$ & adiabatic compression  & 0 &  &  & 0 \\
@@ -155,6 +155,26 @@ n & = & 0.0770 \units{mol}
   P_d V_d & = & n R T_d \\
   P_d & = & \frac{n R T_d}{V_d} \\
   P_d & = & \sci{2.63}{5} \units{Pa}
+\end{IEEEeqnarray*}
+
+\subsection{Process Variables $a \to b$}
+
+\begin{IEEEeqnarray*}{rCl}
+  \Delta U_{a \to b} & = & 0
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \Delta U_{a \to b} & = & Q_{a \to b} - W_{a \to b} \\
+  0 & = & Q_{a \to b} - W_{a \to b} \\
+  W_{a \to b} & = & Q_{a \to b} \\
+  W_{a \to b} & = & 300 \units{J}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \Delta S_{a \to b} & = & \int\limits_{a \to b} \frac{dQ}{T} \\
+  \Delta S_{a \to b} & = & \frac{1}{T_H} \int\limits_{a \to b} dQ \\
+  \Delta S_{a \to b} & = & \frac{Q_{a \to b}}{T_H} \\
+  \Delta S_{a \to b} & = & 0.612 \units{J/K}
 \end{IEEEeqnarray*}
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%

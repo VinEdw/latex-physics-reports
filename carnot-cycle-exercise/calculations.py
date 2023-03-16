@@ -1,14 +1,20 @@
 import math
 import numpy as np
 
+# Constants
+R = 8.31
+
 def print_sf(val: float, sig_figs: int) -> None:
     """
     Print the input value to the specified number of sig figs.
     """
     print(f"{val:.{sig_figs}}")
 
-# Constants
-R = 8.31
+def isothermal_work(n: float, T: float, V_i: float, V_f: float) -> float:
+    """
+    Return the work done by a gas during an isothermal process.
+    """
+    return n * R * T * math.log(V_f / V_i)
 
 # Givens
 T_H = 490
@@ -37,3 +43,9 @@ P_a = n * R * T_a / V_a
 # Point d
 V_d = V_a * (T_a / T_d)**(1 / (gamma - 1))
 P_d = n * R * T_d / V_d
+
+# Process variables at key transitions
+# a -> b
+Delta_U_ab = 0
+W_ab = Q_ab
+Delta_S_ab = Q_ab / T_H
