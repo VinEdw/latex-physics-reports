@@ -16,6 +16,12 @@ def isothermal_work(n: float, T: float, V_i: float, V_f: float) -> float:
     """
     return n * R * T * math.log(V_f / V_i)
 
+def adiabatic_work(gamma: float, P_i: float, V_i: float, P_f: float, V_f: float) -> float:
+    """
+    Return the work done by a gas during an adiabatic process.
+    """
+    return (P_i * V_i - P_f * V_f) / (gamma - 1)
+
 # Givens
 T_H = 490
 T_C = 300
@@ -49,3 +55,8 @@ P_d = n * R * T_d / V_d
 Delta_U_ab = 0
 W_ab = Q_ab
 Delta_S_ab = Q_ab / T_H
+# b -> c
+Q_bc = 0
+W_bc = adiabatic_work(gamma, P_b, V_b, P_c, V_c)
+Delta_U_bc = - W_bc
+Delta_S_bc = 0
