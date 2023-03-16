@@ -60,3 +60,8 @@ Q_bc = 0
 W_bc = adiabatic_work(gamma, P_b, V_b, P_c, V_c)
 Delta_U_bc = - W_bc
 Delta_S_bc = 0
+# c -> d
+Delta_U_cd = 0
+W_cd = isothermal_work(n, T_C, V_c, V_d)
+Q_cd = W_cd
+Delta_S_bc = Q_cd / T_C

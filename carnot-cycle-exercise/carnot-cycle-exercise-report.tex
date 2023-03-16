@@ -110,10 +110,10 @@ Heat Transferred, Change in Internal Energy, Work Done, and Change in Entropy fo
 \br
 Process & Type & $Q$ (J) & $W$ (J) & $\Delta U$ (J) & $\Delta S$ (J/K) \\
 \mr
-$a \to b$ & isothermal expansion   & 300 & 300 & 0     & 0.612 \\
-$b \to c$ & adiabatic expansion    & 0   & 304 & \-304 & 0     \\
-$c \to d$ & isothermal compression &  &  & 0 &  \\
-$d \to a$ & adiabatic compression  & 0 &  &  & 0 \\
+$a \to b$ & isothermal expansion   & 300  & 300  & 0    & 0.612  \\
+$b \to c$ & adiabatic expansion    & 0    & 304  &\-304 & 0      \\
+$c \to d$ & isothermal compression &\-184 &\-184 & 0    &\-0.612 \\
+$d \to a$ & adiabatic compression  & 0    &      &      & 0      \\
 \br
 \end{tabular}\end{indented}\end{table}
 
@@ -210,6 +210,31 @@ n & = & 0.0770 \units{mol}
 \begin{IEEEeqnarray*}{rCl}
   \Delta S_{b \to c} & = & \int\limits_{b \to c} \frac{dQ}{T} \\
   \Delta S_{b \to c} & = & 0
+\end{IEEEeqnarray*}
+
+\subsection{Process Variables $c \to d$}
+
+\begin{IEEEeqnarray*}{rCl}
+  \Delta U_{c \to d} & = & 0
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  W_{c \to d} & = & n R T_C \ln\left( \frac{V_d}{V_c} \right) \\
+  W_{c \to d} & = & -184 \units{J}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \Delta U_{c \to d} & = & Q_{c \to d} - W_{c \to d} \\
+  0 & = & Q_{c \to d} - W_{c \to d} \\
+  Q_{c \to d} & = & W_{c \to d} \\
+  Q_{c \to d} & = & -184 \units{J}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \Delta S_{c \to d} & = & \int\limits_{c \to d} \frac{dQ}{T} \\
+  \Delta S_{c \to d} & = & \frac{1}{T_C} \int\limits_{c \to d} dQ \\
+  \Delta S_{c \to d} & = & \frac{Q_{c \to d}}{T_C} \\
+  \Delta S_{c \to d} & = & -0.612 \units{J/K}
 \end{IEEEeqnarray*}
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
