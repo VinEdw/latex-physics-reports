@@ -63,11 +63,24 @@ The goal of the exercise is to perform various calculations related to the Carno
 \subsection{Work by Gas for Isothermal Process}
 
 \begin{IEEEeqnarray*}{rCl}
-  W & = & \int\limits_{V=V_i}^{V=V_f} P dV \\
+  W & = & \int\limits_{i \to f} P dV \\
   W & = & \int\limits_{V_i}^{V_f} \frac{nRT}{V} dV \\
   W & = & nRT \ln(V) \vert_{V_i}^{V_f} \\
   W & = & nRT (\ln(V_f) - \ln(V_i)) \\
   W & = & nRT \ln\left( \frac{V_f}{V_i} \right)
+\end{IEEEeqnarray*}
+
+\subsection{Work by Gas for Adiabatic Process}
+
+\begin{IEEEeqnarray*}{rCl}
+  W & = & \int\limits_{i \to f} P dV \\
+  W & = & \int\limits_{V_i}^{V_f} (P_i V_i^\gamma) V^{-\gamma} dV \\
+  W & = & \frac{P_i V_i^\gamma}{1-\gamma} V^{1-\gamma} \vert_{V_i}^{V_f} \\
+  W & = & \frac{P_i V_i^\gamma}{1-\gamma} (V_f^{1-\gamma} - V_i^{1-\gamma}) \\
+  W & = & \frac{P_i V_i^\gamma V_f^{1-\gamma} - P_i V_i^\gamma V_i^{1-\gamma}}{1-\gamma} \\
+  W & = & \frac{P_f V_f^\gamma V_f^{1-\gamma} - P_i V_i^\gamma V_i^{1-\gamma}}{1-\gamma} \\
+  W & = & \frac{P_f V_f - P_i V_i}{1-\gamma} \\
+  W & = & \frac{P_i V_i - P_f V_f}{\gamma-1}
 \end{IEEEeqnarray*}
 
 %%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
