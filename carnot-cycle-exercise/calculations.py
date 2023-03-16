@@ -1,5 +1,6 @@
 import math
 import numpy as np
+import pandas as pd
 
 # Constants
 R = 8.31
@@ -49,6 +50,14 @@ P_a = n * R * T_a / V_a
 # Point d
 V_d = V_a * (T_a / T_d)**(1 / (gamma - 1))
 P_d = n * R * T_d / V_d
+# Print results
+df_key_PVT = pd.DataFrame([
+    [P_a, V_a, T_a],
+    [P_b, V_b, T_b],
+    [P_c, V_c, T_c],
+    [P_d, V_d, T_d],
+], index=["a", "b", "c", "d"], columns=["P (Pa)", "V (m^3)", "T (K)"])
+print(df_key_PVT)
 
 # Process variables at key transitions
 # a -> b
@@ -64,9 +73,17 @@ Delta_S_bc = 0
 Delta_U_cd = 0
 W_cd = isothermal_work(n, T_C, V_c, V_d)
 Q_cd = W_cd
-Delta_S_bc = Q_cd / T_C
+Delta_S_cd = Q_cd / T_C
 # d -> a
 Q_da = 0
 W_da = adiabatic_work(gamma, P_d, V_d, P_a, V_a)
 Delta_U_da = - W_da
 Delta_S_da = 0
+# Print results
+df_key_processes = pd.DataFrame([
+    [Q_ab, W_ab, Delta_U_ab, Delta_S_ab],
+    [Q_bc, W_bc, Delta_U_bc, Delta_S_bc],
+    [Q_cd, W_cd, Delta_U_cd, Delta_S_cd],
+    [Q_da, W_da, Delta_U_da, Delta_S_da],
+], index=["a->b", "b->c", "c->d", "d->a"], columns=["Q (J)", "W (J)", "ΔU (J)", "ΔS (J/K)"])
+print(df_key_processes)
