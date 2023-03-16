@@ -98,6 +98,24 @@ n & = & 0.0770 \units{mol}
   P_b & = & \sci{5.62}{5} \units{Pa}
 \end{IEEEeqnarray*}
 
+\subsection{Pressure ($P_a$) and Volume ($V_a$) at a}
+
+\begin{IEEEeqnarray*}{rCl}
+  \Delta U_{a \to b} & = & Q_{a \to b} - W_{a \to b} \\
+  0 & = & Q_{a \to b} - nRT_H \ln\left( \frac{V_b}{V_a} \right) \\
+  \ln\left( \frac{V_b}{V_a} \right) & = & \frac{Q_{a \to b}}{nRT_H} \\
+  \frac{V_b}{V_a} & = & e^{Q_{a \to b}/(nRT_H)} \\
+  V_a & = & V_b e^{-Q_{a \to b}/(nRT_H)} \\
+  V_a & = & \sci{2.14}{-4} \units{m^3}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  P_a V_a & = & n R T_a \\
+  P_a & = & \frac{n R T_a}{V_a} \\
+  P_a & = & \frac{n R T_H}{V_a} \\
+  P_a & = & \sci{1.46}{6} \units{Pa}
+\end{IEEEeqnarray*}
+
 \begin{table}[htbp]
 \caption{\label{tab:pvtkeypoints}
 Pressure, Volume, and Temperature for Key Points \\
