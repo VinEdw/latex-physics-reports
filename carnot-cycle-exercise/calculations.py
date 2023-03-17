@@ -63,6 +63,19 @@ def plot_labeled_point(ax: plt.Axes, x: float, y: float, label: str) -> None:
     ax.plot(x, y, "ko")
     ax.annotate(label, xy=(x, y), xycoords="data", xytext=(2.5, 2.5), textcoords="offset points")
 
+def draw_midline_arrow(ax: plt.Axes, x_i: float, y_i: float, x_f: float, y_f: float):
+    """
+    Plot an arrow in the middle of the line pointing from the starting point to the ending point.
+    """
+    scale = 0.01
+    x = (x_i + x_f) / 2
+    y = (y_i + y_f) / 2
+    displacement = complex(x_f - x_i, y_f - y_i)
+    direction = displacement / abs(displacement) * scale
+    dx = direction.real
+    dy = direction.imag
+    ax.annotate("", (x+dx, y+dx), (x-dx, y-dy), arrowprops=dict(arrowstyle="-|>"))
+
 # Givens
 T_H = 490
 T_C = 300
@@ -171,3 +184,38 @@ V_full = np.concatenate([V_a, V_ab, V_b, V_bc, V_c, V_cd, V_d, V_da], axis=None)
 labels = np.concatenate(["$a$", ["$a \\to b$"]*10, "$b$", ["$b \\to c$"]*10, "$c$", ["$c \\to d$"]*10, "$d$", ["$d \\to a$"]*10], axis=None)
 df_PV_points = pd.DataFrame({"$P$ (Pa)": P_full, "$V$ (m^3)": V_full}, index=labels)
 print(df_PV_points.to_latex(float_format="%.2e", escape=False))
+
+# Create the temperature entropy (TS) diagram
+# Assume an initial entropy value
+S_a = 0.05
+# Calculate the rest of the entropy values
+S_b = S_a + Delta_S_ab
+S_c = S_b + Delta_S_bc
+S_d = S_c + Delta_S_cd
+# Plot the TS values
+S_arr = np.array([S_a, S_b, S_c, S_d, S_a])
+T_arr = np.array([T_a, T_b, T_c, T_d, T_a])
+fig, ax = plt.subplots(figsize=(8,6))
+ax.plot(S_arr, T_arr)
+# Remove the top and right spines
+ax.spines["top"].set_visible(False)
+ax.spines["right"].set_visible(False)
+# Set the axes labels and title
+ax.set_xlabel("$S$ (J/K)")
+ax.set_ylabel("$T$ (K)")
+ax.set_title("Carnot Cycle $TS$ Diagram")
+# Include (0, 0)
+ax.set_xlim(left=0, right=0.75)
+ax.set_ylim(bottom=0, top=650)
+# Add the labeled key points
+plot_labeled_point(ax, S_a, T_a, "a")
+plot_labeled_point(ax, S_b, T_b, "b")
+plot_labeled_point(ax, S_c, T_c, "c")
+plot_labeled_point(ax, S_d, T_d, "d")
+# Add the arrows
+draw_midline_arrow(ax, S_a, T_a, S_b, T_b)
+draw_midline_arrow(ax, S_b, T_b, S_c, T_c)
+draw_midline_arrow(ax, S_c, T_c, S_d, T_d)
+draw_midline_arrow(ax, S_d, T_d, S_a, T_a)
+# Save the figure
+fig.savefig("ts-diagram-carnot-cycle.png")
