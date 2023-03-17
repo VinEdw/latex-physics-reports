@@ -1,6 +1,8 @@
 import math
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
+from typing import Callable
 
 # Constants
 R = 8.31
@@ -22,6 +24,43 @@ def adiabatic_work(gamma: float, P_i: float, V_i: float, P_f: float, V_f: float)
     Return the work done by a gas during an adiabatic process.
     """
     return (P_i * V_i - P_f * V_f) / (gamma - 1)
+
+def get_isotherm_func(P_i: float, V_i: float) -> Callable[[float], float]:
+    """
+    Return a function that takes volume as an input and returns pressure.
+    The function will be an isotherm that passes through the inital point.
+    """
+    return lambda V: P_i * V_i / V
+
+def get_adiabat_func(gamma: float, P_i: float, V_i: float) -> Callable[[float], float]:
+    """
+    Return a function that takes volume as an input and returns pressure.
+    The function will be an adiabat that passes through the inital point.
+    """
+    return lambda V: P_i * (V_i / V)**gamma
+
+def plot_pv_section(ax: plt.Axes, V_i: float, V_f: float, P_func: Callable[[float], float], label: str) -> tuple[np.ndarray, np.ndarray]:
+    """
+    Plot a section of the PV diagram on the given ax from V_i to V_f.
+    Use the P_func to get pressure values based on volume values.
+    Return the N (V, P) points plotted.
+    """
+    N = 10
+    big_N = 1000
+    V_arr_big = np.linspace(V_i, V_f, big_N)
+    P_arr_big = P_func(V_arr_big)
+    ax.plot(V_arr_big, P_arr_big, "0.3", zorder=0)
+    V_arr = np.linspace(V_i, V_f, N+2)
+    P_arr = P_func(V_arr)
+    ax.scatter(V_arr, P_arr, label=label)
+    return (V_arr, P_arr)
+
+def plot_labeled_point(ax: plt.Axes, x: float, y: float, label: str) -> None:
+    """
+    Plot a black labeled point on the specified ax.
+    """
+    ax.plot(x, y, "ko")
+    ax.annotate(label, xy=(x, y), xycoords="data", xytext=(2.5, 2.5), textcoords="offset points")
 
 # Givens
 T_H = 490
@@ -87,3 +126,39 @@ df_key_processes = pd.DataFrame([
     [Q_da, W_da, Delta_U_da, Delta_S_da],
 ], index=["a->b", "b->c", "c->d", "d->a"], columns=["Q (J)", "W (J)", "ΔU (J)", "ΔS (J/K)"])
 print(df_key_processes)
+
+# 40 additional PV points
+# Create the figure
+fig, ax = plt.subplots(figsize=(8,6))
+# Set the axes labels and title
+ax.set_xlabel("$V$ ($\mathrm{m^3}$)")
+ax.set_ylabel("$P$ ($\mathrm{Pa}$)")
+ax.set_title("Carnot Cycle $PV$ Diagram")
+# Remove the top and right spines
+ax.spines["top"].set_visible(False)
+ax.spines["right"].set_visible(False)
+# a -> b
+isotherm_ab = get_isotherm_func(P_a, V_a)
+V_ab, P_ab = plot_pv_section(ax, V_a, V_b, isotherm_ab, "$a \\to b$")
+# b -> c
+adiabat_bc = get_adiabat_func(gamma, P_b, V_b)
+V_bc, P_bc = plot_pv_section(ax, V_b, V_c, adiabat_bc, "$b \\to c$")
+# c -> d
+isotherm_cd = get_isotherm_func(P_c, V_c)
+V_cd, P_cd = plot_pv_section(ax, V_c, V_d, isotherm_cd, "$c \\to d$")
+# d -> a
+adiabat_da = get_adiabat_func(gamma, P_d, V_d)
+V_da, P_da = plot_pv_section(ax, V_d, V_a, adiabat_da, "$d \\to a$")
+# Add the labeled key points
+plot_labeled_point(ax, V_a, P_a, "a")
+plot_labeled_point(ax, V_b, P_b, "b")
+plot_labeled_point(ax, V_c, P_c, "c")
+plot_labeled_point(ax, V_d, P_d, "d")
+# Turn off scientific notation for the tick marks
+ax.ticklabel_format(useOffset=False, style="plain")
+# Add a legend
+ax.legend()
+# Save the figure
+fig.savefig("pv-diagram-carnot-cycle.png")
+# Show the figure
+fig.show()
