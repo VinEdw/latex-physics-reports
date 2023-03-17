@@ -51,6 +51,7 @@ def plot_pv_section(ax: plt.Axes, V_i: float, V_f: float, P_func: Callable[[floa
     P_arr_big = P_func(V_arr_big)
     ax.plot(V_arr_big, P_arr_big, "0.3", zorder=0)
     V_arr = np.linspace(V_i, V_f, N+2)
+    V_arr = V_arr[1:-1]
     P_arr = P_func(V_arr)
     ax.scatter(V_arr, P_arr, label=label)
     return (V_arr, P_arr)
