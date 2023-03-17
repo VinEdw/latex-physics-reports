@@ -161,5 +161,3 @@ ax.ticklabel_format(useOffset=False, style="plain")
 ax.legend()
 # Save the figure
 fig.savefig("pv-diagram-carnot-cycle.png")
-# Show the figure
-fig.show()
