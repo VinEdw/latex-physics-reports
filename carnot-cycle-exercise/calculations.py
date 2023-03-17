@@ -49,7 +49,7 @@ def plot_pv_section(ax: plt.Axes, V_i: float, V_f: float, P_func: Callable[[floa
     big_N = 1000
     V_arr_big = np.linspace(V_i, V_f, big_N)
     P_arr_big = P_func(V_arr_big)
-    ax.plot(V_arr_big, P_arr_big, "0.3", zorder=0)
+    ax.plot(V_arr_big, P_arr_big, zorder=0)
     V_arr = np.linspace(V_i, V_f, N+2)
     V_arr = V_arr[1:-1]
     P_arr = P_func(V_arr)
@@ -155,6 +155,9 @@ plot_labeled_point(ax, V_a, P_a, "a")
 plot_labeled_point(ax, V_b, P_b, "b")
 plot_labeled_point(ax, V_c, P_c, "c")
 plot_labeled_point(ax, V_d, P_d, "d")
+# Include (0, 0)
+ax.set_xlim(left=0)
+ax.set_ylim(bottom=0)
 # Turn off scientific notation for the tick marks
 ax.ticklabel_format(useOffset=False, style="plain")
 # Add a legend
