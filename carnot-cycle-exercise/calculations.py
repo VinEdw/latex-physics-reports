@@ -176,7 +176,7 @@ ax.ticklabel_format(useOffset=False, style="plain")
 # Add a legend
 ax.legend()
 # Save the figure
-fig.savefig("pv-diagram-carnot-cycle.png")
+fig.savefig("pv-diagram-carnot-cycle.eps")
 
 # Print the PV points that were plotted
 P_full = np.concatenate([P_a, P_ab, P_b, P_bc, P_c, P_cd, P_d, P_da], axis=None)
@@ -218,4 +218,4 @@ draw_midline_arrow(ax, S_b, T_b, S_c, T_c)
 draw_midline_arrow(ax, S_c, T_c, S_d, T_d)
 draw_midline_arrow(ax, S_d, T_d, S_a, T_a)
 # Save the figure
-fig.savefig("ts-diagram-carnot-cycle.png")
+fig.savefig("ts-diagram-carnot-cycle.eps")
