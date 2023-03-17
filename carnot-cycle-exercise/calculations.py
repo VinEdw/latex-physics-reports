@@ -97,7 +97,7 @@ df_key_PVT = pd.DataFrame([
     [P_c, V_c, T_c],
     [P_d, V_d, T_d],
 ], index=["a", "b", "c", "d"], columns=["P (Pa)", "V (m^3)", "T (K)"])
-print(df_key_PVT)
+print(df_key_PVT.to_string(float_format="%.3g"))
 
 # Process variables at key transitions
 # a -> b
@@ -126,7 +126,7 @@ df_key_processes = pd.DataFrame([
     [Q_cd, W_cd, Delta_U_cd, Delta_S_cd],
     [Q_da, W_da, Delta_U_da, Delta_S_da],
 ], index=["a->b", "b->c", "c->d", "d->a"], columns=["Q (J)", "W (J)", "ΔU (J)", "ΔS (J/K)"])
-print(df_key_processes)
+print(df_key_processes.to_string(float_format="%.3g"))
 
 # 40 additional PV points
 # Create the figure
