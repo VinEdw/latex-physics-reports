@@ -51,6 +51,33 @@ The goal of the exercise is to perform various calculations related to the Carno
 %%%%%%%%%%%%%%%%%%%% Derivations %%%%%%%%%%%%%%%%%%%%
 \section{Derivations}
 
+\subsection{Pressure--Volume Relationship for Adiabatic Process}
+
+\begin{IEEEeqnarray*}{rCl}
+  \Delta U & = & Q - W \\
+  \Delta U & = & - W \\
+  d U & = & - dW \\
+  n C_v dT & = & - P dV \\
+  n dT & = & - \frac{P dV}{C_v}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  P V & = & n R T \\
+  P dV + V dP & = & n R dT \\
+  P dV + V dP & = & (C_p - C_v) n dT \\
+  P dV + V dP & = & - (C_p - C_v) \frac{P dV}{C_v} \\
+  P dV + V dP & = & \left(1 - \frac{C_p}{C_v} \right) P dV \\
+  V dP & = & - \frac{C_p}{C_v} P dV \\
+  V dP & = & - \gamma P dV \\
+  \frac{dP}{P} & = & - \gamma \frac{dV}{V} \\
+  \int\frac{dP}{P} & = & -\int\gamma \frac{dV}{V} \\
+  \ln(P) & = & -\gamma \ln(V) + \mathrm{const.} \\
+  \ln(P) + \ln(V^\gamma) & = & \mathrm{const.} \\
+  \ln(P V^\gamma) & = & \mathrm{const.} \\
+  P V^\gamma & = & \mathrm{const.} \\
+  P_i V_i^\gamma & = & P_f V_f^\gamma
+\end{IEEEeqnarray*}
+
 \subsection{Temperature--Volume Relationship for Adiabatic Process}
 
 \begin{IEEEeqnarray*}{rCl}
