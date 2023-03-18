@@ -61,7 +61,7 @@ def plot_labeled_point(ax: plt.Axes, x: float, y: float, label: str) -> None:
     Plot a black labeled point on the specified ax.
     """
     ax.plot(x, y, "ko")
-    ax.annotate(label, xy=(x, y), xycoords="data", xytext=(2.5, 2.5), textcoords="offset points")
+    ax.annotate(label, xy=(x, y), xycoords="data", xytext=(2.5, 2.5), textcoords="offset points", fontsize="x-large")
 
 def draw_midline_arrow(ax: plt.Axes, x_i: float, y_i: float, x_f: float, y_f: float):
     """
@@ -145,9 +145,9 @@ print(df_key_processes.to_string(float_format="%.3g"))
 # Create the figure
 fig, ax = plt.subplots(figsize=(8,6))
 # Set the axes labels and title
-ax.set_xlabel("$V$ ($\mathrm{m^3}$)")
-ax.set_ylabel("$P$ ($\mathrm{Pa}$)")
-ax.set_title("Carnot Cycle $PV$ Diagram")
+ax.set_xlabel("$V$ ($\mathrm{m^3}$)", fontsize="x-large")
+ax.set_ylabel("$P$ ($\mathrm{Pa}$)", fontsize="x-large")
+ax.set_title("Carnot Cycle $PV$ Diagram", fontsize="x-large")
 # Remove the top and right spines
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
@@ -201,9 +201,9 @@ ax.plot(S_arr, T_arr)
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
 # Set the axes labels and title
-ax.set_xlabel("$S$ (J/K)")
-ax.set_ylabel("$T$ (K)")
-ax.set_title("Carnot Cycle $TS$ Diagram")
+ax.set_xlabel("$S$ (J/K)", fontsize="x-large")
+ax.set_ylabel("$T$ (K)", fontsize="x-large")
+ax.set_title("Carnot Cycle $TS$ Diagram", fontsize="x-large")
 # Include (0, 0)
 ax.set_xlim(left=0, right=0.75)
 ax.set_ylim(bottom=0, top=650)
