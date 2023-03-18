@@ -110,6 +110,50 @@ The goal of the exercise is to perform various calculations related to the Carno
   W & = & \frac{P_i V_i - P_f V_f}{\gamma-1}
 \end{IEEEeqnarray*}
 
+\subsection{Carnot Cycle Heat Ratio Equals Temperature Ratio}
+
+\begin{IEEEeqnarray*}{rClrCl}
+  \Delta U_{a \to b} & = & Q_{a \to b} - W_{a \to b} \\
+  0 & = & Q_H - nRT_H \ln\left( \frac{V_b}{V_a} \right) \\
+  Q_H & = & nRT_H \ln\left( \frac{V_b}{V_a} \right)
+\end{IEEEeqnarray*}
+\begin{IEEEeqnarray*}{rCl}
+  \Delta U_{c \to d} & = & Q_{c \to d} - W_{c \to d} \\
+  0 & = & Q_C - nRT_C \ln\left( \frac{V_d}{V_c} \right) \\
+  Q_C & = & nRT_C \ln\left( \frac{V_d}{V_c} \right) \\
+  Q_C & = & -nRT_C \ln\left( \frac{V_c}{V_d} \right)
+\end{IEEEeqnarray*}
+\begin{IEEEeqnarray*}{rCl}
+  \frac{Q_H}{Q_C} & = & \frac{nRT_H \ln(V_b / V_a )}{-nRT_C \ln( V_c / V_d )} \\
+  -\frac{Q_H}{Q_C} & = & \frac{T_H \ln(V_b / V_a )}{T_C \ln( V_c / V_d )}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  T_b V_b^{\gamma-1} & = & T_c V_c^{\gamma-1} \\
+  \frac{T_b}{T_c} & = & \left( \frac{V_c}{V_b} \right)^{\gamma-1} \\
+  \frac{T_H}{T_C} & = & \left( \frac{V_c}{V_b} \right)^{\gamma-1}
+\end{IEEEeqnarray*}
+\begin{IEEEeqnarray*}{rCl}
+  T_a V_a^{\gamma-1} & = & T_d V_d^{\gamma-1} \\
+  \frac{T_a}{T_d} & = & \left( \frac{V_d}{V_a} \right)^{\gamma-1} \\
+  \frac{T_H}{T_C} & = & \left( \frac{V_d}{V_a} \right)^{\gamma-1}
+\end{IEEEeqnarray*}
+\begin{IEEEeqnarray*}{rCl}
+  \left( \frac{V_c}{V_b} \right)^{\gamma-1} & = & \left( \frac{V_d}{V_a} \right)^{\gamma-1} \\
+  \frac{V_c}{V_b} & = & \frac{V_d}{V_a} \\
+  \frac{V_c}{V_d} & = & \frac{V_b}{V_a} \\
+  \ln\left( \frac{V_c}{V_d} \right) & = & \ln\left( \frac{V_b}{V_a} \right) \\
+  1 & = & \frac{\ln(V_b / V_a )}{\ln( V_c / V_d )}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  -\frac{Q_H}{Q_C} & = & \frac{T_H \ln(V_b / V_a )}{T_C \ln( V_c / V_d )} \\
+  -\frac{Q_H}{Q_C} & = & \frac{T_H}{T_C} \\
+  \left| -\frac{Q_H}{Q_C} \right| & = & \left| \frac{T_H}{T_C} \right| \\
+  \frac{|Q_H|}{|Q_C|} & = & \frac{T_H}{T_C} \\
+  \frac{T_C}{T_H} & = & \frac{|Q_C|}{|Q_H|}
+\end{IEEEeqnarray*}
+
 %%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
@@ -131,7 +175,8 @@ d & $\sci{2.63}{5}$ & $\sci{7.30}{-4}$ & 300 \\
 
 \begin{table}[htbp]
 \caption{\label{tab:process_variables}
-Heat Transferred, Change in Internal Energy, Work Done, and Change in Entropy for Key Processes
+Heat Transferred, Change in Internal Energy, Work Done, and Change in Entropy for Key Processes \\
+Note: $Q_{a \to b} = Q_H$ and $Q_{c \to d} = Q_C$
 }
 \begin{indented}\lineup\item[]\begin{tabular}{llllll}
 \br
