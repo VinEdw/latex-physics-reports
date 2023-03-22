@@ -157,6 +157,12 @@ The goal of the exercise is to perform various calculations related to the Carno
 %%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
 \section{Results}
 
+Table \ref{tab:state_variables_key_points} contains the values for pressure, volume, and temperature at the key points of the Carnot cycle.
+Table \ref{tab:process_variables} contains the values for heat transferred, work done, change in internal energy, and change in entropy for the key processes.
+Table \ref{tab:pv_diagram_points} contains the pressure and volume points plotted on figure \ref{fig:pv_diagram}, the $PV$ diagram for the process.
+Figure \ref{fig:ts_diagram} is the $TS$ diagram for the process.
+Various calculations are shown in the subsections below.
+
 \begin{table}[htbp]
 \caption{\label{tab:state_variables_key_points}
 Pressure, Volume, and Temperature for Key Points \\
@@ -175,7 +181,7 @@ d & $\sci{2.63}{5}$ & $\sci{7.30}{-4}$ & 300 \\
 
 \begin{table}[htbp]
 \caption{\label{tab:process_variables}
-Heat Transferred, Change in Internal Energy, Work Done, and Change in Entropy for Key Processes \\
+Heat Transferred, Work Done, Change in Internal Energy, and Change in Entropy for Key Processes \\
 Note: $Q_{a \to b} = Q_H$ and $Q_{c \to d} = Q_C$
 }
 \begin{indented}\lineup\item[]\begin{tabular}{llllll}
@@ -186,6 +192,7 @@ $a \to b$ & isothermal expansion   & 300  &  300 &  0   &  0.612 \\
 $b \to c$ & adiabatic expansion    & 0    &  304 &\-304 &  0     \\
 $c \to d$ & isothermal compression &\-184 &\-184 &  0   &\-0.612 \\
 $d \to a$ & adiabatic compression  & 0    &\-304 &  304 &  0     \\
+Total     & Carnot cycle           & 116  &  116 &  0   &  0     \\
 \br
 \end{tabular}\end{indented}\end{table}
 

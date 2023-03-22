@@ -82,6 +82,7 @@ T_C = 300
 P_c = 1.01E5
 V_c = 1.90E-3
 Q_ab = 300
+Q_H = Q_ab
 gamma = 1.40
 
 # Temperatures at key points
@@ -126,19 +127,26 @@ Delta_S_bc = 0
 Delta_U_cd = 0
 W_cd = isothermal_work(n, T_C, V_c, V_d)
 Q_cd = W_cd
+Q_C = Q_cd
 Delta_S_cd = Q_cd / T_C
 # d -> a
 Q_da = 0
 W_da = adiabatic_work(gamma, P_d, V_d, P_a, V_a)
 Delta_U_da = - W_da
 Delta_S_da = 0
+# Total
+Q_tot = Q_H + Q_C
+W_tot = W_ab + W_bc + W_cd + W_da
+Delta_U_tot = Delta_U_ab + Delta_U_bc + Delta_U_cd + Delta_U_da
+Delta_S_tot = Delta_S_ab + Delta_S_bc + Delta_S_cd + Delta_S_da
 # Print results
 df_key_processes = pd.DataFrame([
     [Q_ab, W_ab, Delta_U_ab, Delta_S_ab],
     [Q_bc, W_bc, Delta_U_bc, Delta_S_bc],
     [Q_cd, W_cd, Delta_U_cd, Delta_S_cd],
     [Q_da, W_da, Delta_U_da, Delta_S_da],
-], index=["a->b", "b->c", "c->d", "d->a"], columns=["Q (J)", "W (J)", "ΔU (J)", "ΔS (J/K)"])
+    [Q_tot, W_tot, Delta_U_tot, Delta_S_tot],
+], index=["a->b", "b->c", "c->d", "d->a", "Total"], columns=["Q (J)", "W (J)", "ΔU (J)", "ΔS (J/K)"])
 print(df_key_processes.to_string(float_format="%.3g"))
 
 # 40 additional PV points
