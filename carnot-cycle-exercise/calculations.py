@@ -44,14 +44,13 @@ P_a = n * R * T_a / V_a
 # Point d
 V_d = V_a * (T_a / T_d)**(1 / (gamma - 1))
 P_d = n * R * T_d / V_d
-# Print results
+# Put results in table
 df_key_PVT = pd.DataFrame([
     [P_a, V_a, T_a],
     [P_b, V_b, T_b],
     [P_c, V_c, T_c],
     [P_d, V_d, T_d],
 ], index=["a", "b", "c", "d"], columns=["P (Pa)", "V (m^3)", "T (K)"])
-print(df_key_PVT.to_string(float_format="%.3g"))
 
 # Process variables at key transitions
 # a -> b
@@ -79,7 +78,7 @@ Q_tot = Q_H + Q_C
 W_tot = W_ab + W_bc + W_cd + W_da
 Delta_U_tot = Delta_U_ab + Delta_U_bc + Delta_U_cd + Delta_U_da
 Delta_S_tot = Delta_S_ab + Delta_S_bc + Delta_S_cd + Delta_S_da
-# Print results
+# Put results in table
 df_key_processes = pd.DataFrame([
     [Q_ab, W_ab, Delta_U_ab, Delta_S_ab],
     [Q_bc, W_bc, Delta_U_bc, Delta_S_bc],
@@ -87,4 +86,7 @@ df_key_processes = pd.DataFrame([
     [Q_da, W_da, Delta_U_da, Delta_S_da],
     [Q_tot, W_tot, Delta_U_tot, Delta_S_tot],
 ], index=["a->b", "b->c", "c->d", "d->a", "Total"], columns=["Q (J)", "W (J)", "ΔU (J)", "ΔS (J/K)"])
-print(df_key_processes.to_string(float_format="%.3g"))
+
+if __name__ == "__main__":
+    print(df_key_PVT.to_string(float_format="%.3g"))
+    print(df_key_processes.to_string(float_format="%.3g"))
