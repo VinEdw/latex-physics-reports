@@ -59,7 +59,7 @@ fig, ax = plt.subplots(figsize=(8,6))
 # Set the axes labels and title
 ax.set_xlabel("$V$ ($\mathrm{m^3}$)", fontsize="x-large")
 ax.set_ylabel("$P$ ($\mathrm{Pa}$)", fontsize="x-large")
-ax.set_title("Carnot Cycle $PV$ Diagram", fontsize="x-large")
+ax.set_title("Carnot Cycle $PV$-Diagram", fontsize="x-large")
 # Remove the top and right spines
 ax.spines["top"].set_visible(False)
 ax.spines["right"].set_visible(False)
@@ -116,7 +116,7 @@ ax.spines["right"].set_visible(False)
 # Set the axes labels and title
 ax.set_xlabel("$S$ (J/K)", fontsize="x-large")
 ax.set_ylabel("$T$ (K)", fontsize="x-large")
-ax.set_title("Carnot Cycle $TS$ Diagram", fontsize="x-large")
+ax.set_title("Carnot Cycle $TS$-Diagram", fontsize="x-large")
 # Include (0, 0)
 ax.set_xlim(left=0, right=0.75)
 ax.set_ylim(bottom=0, top=650)
