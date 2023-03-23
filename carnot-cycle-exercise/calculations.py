@@ -4,12 +4,6 @@ import pandas as pd
 # Constants
 R = 8.31
 
-def print_sf(val: float, sig_figs: int) -> None:
-    """
-    Print the input value to the specified number of sig figs.
-    """
-    print(f"{val:.{sig_figs}}")
-
 def isothermal_work(n: float, T: float, V_i: float, V_f: float) -> float:
     """
     Return the work done by a gas during an isothermal process.
