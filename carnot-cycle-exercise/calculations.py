@@ -34,6 +34,9 @@ T_d = T_C
 # Moles of gas (n)
 n = (P_c * V_c) / (R * T_c)
 
+# Efficiency (e)
+e = 1 - T_C / T_H
+
 # Pressure and volume at key points
 # Point b
 V_b = V_c * (T_c / T_b)**(1 / (gamma - 1))
