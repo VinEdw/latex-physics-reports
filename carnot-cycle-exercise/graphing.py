@@ -45,14 +45,14 @@ def draw_midline_arrow(ax: plt.Axes, x_i: float, y_i: float, x_f: float, y_f: fl
     """
     Plot an arrow in the middle of the line pointing from the starting point to the ending point.
     """
-    scale = 0.01
+    scale = 0.001
     x = (x_i + x_f) / 2
     y = (y_i + y_f) / 2
     displacement = complex(x_f - x_i, y_f - y_i)
-    direction = displacement / abs(displacement) * scale
-    dx = direction.real
-    dy = direction.imag
-    ax.annotate("", (x+dx, y+dx), (x-dx, y-dy), arrowprops=dict(arrowstyle="-|>"))
+    direction = displacement / abs(displacement)
+    dx = direction.real * scale
+    dy = direction.imag * scale
+    ax.annotate("", xytext=(x-dx, y-dy), xy=(x+dx, y+dx), arrowprops=dict(arrowstyle="-|>", color="black"), size=16)
 
 # Create the figure
 fig, ax = plt.subplots(figsize=(8,6))
