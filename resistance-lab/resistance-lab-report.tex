@@ -9,6 +9,8 @@
 \gdef\mch#1{\multicolumn{4}{l}{#1}} % Multi Column Header; Used for decimal aligning & ± aligning
 \gdef\mcmnd{r@{ ± }l} % Multi Column Measurement No Decimal; Used for ± aligning when the values don't need a decimal point
 \gdef\mchnd#1{\multicolumn{2}{l}{#1}} % Multi Column Header No Decimal; Used for  ± aligning when the values don't need a decimal point
+\gdef\sci#1#2{#1 \times 10^{#2}}
+\gdef\units#1{~\mathrm{#1}}
 
 %%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
 \begin{document}
@@ -32,6 +34,29 @@ In addition, the results of the three methods of determining resistance were com
 
 %%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
 \section{Results}
+
+Table \ref{tab:resistance_coils} contains the properties of the resistance coils used in part 1.
+$\rho$ is the resistivity of the material.
+$L$ is the length of the coil of wire.
+$D$ is the diameter of the wire.
+
+\begin{table}[htbp]
+\caption{\label{tab:resistance_coils}
+Resistance Coils
+}
+\begin{indented}\lineup\item[]\begin{tabular}{llrrr}
+\br
+  Coil & Material      & $\rho~(\mathrm{\Omega~m})$ & $L$ (cm) & $D$ (cm) \\
+\mr
+  1    & Nickel-Silver & $\sci{44}{-8}$            &       40 & 0.0254 \\
+  2    & Nickel-Silver & $\sci{44}{-8}$            &       80 & 0.0254 \\
+  3    & Nickel-Silver & $\sci{44}{-8}$            &      120 & 0.0254 \\
+  4    & Nickel-Silver & $\sci{44}{-8}$            &      160 & 0.0254 \\
+  5    & Nickel-Silver & $\sci{44}{-8}$            &      200 & 0.0254 \\
+  6    & Nickel-Silver & $\sci{44}{-8}$            &      200 & 0.0320 \\
+  7    & Copper        & $\sci{1.72}{-8}$          &     2000 & 0.0254 \\
+\br
+\end{tabular}\end{indented}\end{table}
 
 %%%%%%%%%%%%%%%%%%%% Uncertainty %%%%%%%%%%%%%%%%%%%%
 \section{Uncertainty}
