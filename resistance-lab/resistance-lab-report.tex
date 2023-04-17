@@ -1,0 +1,60 @@
+\documentclass[12pt]{iopart} % Document class declaration
+
+% package "imports"
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+
+% Custom macros
+\gdef\mcm{r@{.}l@{ ± }r@{.}l} % Multi Column Measurement; Used for decimal aligning & ± aligning
+\gdef\mch#1{\multicolumn{4}{l}{#1}} % Multi Column Header; Used for decimal aligning & ± aligning
+\gdef\mcmnd{r@{ ± }l} % Multi Column Measurement No Decimal; Used for ± aligning when the values don't need a decimal point
+\gdef\mchnd#1{\multicolumn{2}{l}{#1}} % Multi Column Header No Decimal; Used for  ± aligning when the values don't need a decimal point
+
+%%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%%%%%%
+\title{Resistance Lab}
+\author{Vincent Edwards, Ali Mortada, Andrew Bringas}
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4B, CRN 42240
+  \item[]April 26, 2023
+\end{indented}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%% Purpose %%%%%%%%%%%%%%%%%%%%
+\section{Purpose}
+
+%%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
+\section{Results}
+
+%%%%%%%%%%%%%%%%%%%% Uncertainty %%%%%%%%%%%%%%%%%%%%
+\section{Uncertainty}
+
+%%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+%%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
+\section{Citations}
+
+\begin{thebibliography}{9}
+
+\bibitem{labpacket}
+  Karen Schnurbusch,
+  \textit{Physics 4B Lab Book},
+  Mt. San Antonio College,
+  2023,
+  pp. 65-70.
+
+\bibitem{equationsheet}
+  Karen Schnurbusch,
+  \textit{Physics 4B Equations},
+  Mt. San Antonio College,
+  2023,
+  pp. 4, 10.
+
+\end{thebibliography}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%
