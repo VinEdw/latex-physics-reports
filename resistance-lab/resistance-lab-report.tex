@@ -108,6 +108,44 @@ $R_{\mathrm{th}}$ is the theoretical resistance determined using the dimensions 
 %%%%%%%%%%%%%%%%%%%% Uncertainty %%%%%%%%%%%%%%%%%%%%
 \section{Uncertainty}
 
+All the voltage, current, and resistance measurements in the experiment were made using a multimeter.
+If there were fluctuations in a particular reading with the multimeter (voltage, current, or resistance), then the uncertainty was taken to be the magnitude of the fluctuations, as that gives an upper bound for how much the value could have varied.
+If the reading with the multimeter (voltage, current, or resistance) was stable and did not fluctuate, then the uncertainty was taken to be the smallest increment of measure, since that was the limiting precision of the equipment.
+
+In part 1, $R_{V/I}$ was calculated using equation \ref{eq:r_from_vi}.
+\begin{IEEEeqnarray}{rCl}
+  R_{V/I} & = & \frac{\Delta V}{I} \label{eq:r_from_vi}
+\end{IEEEeqnarray}
+The uncertainty of $R_{V/I}$ is given by equation \ref{eq:r_from_vi_uncertainty}
+\begin{IEEEeqnarray}{rCl}
+  \Delta R_{V/I} & = & \left[
+    \left(\frac{\partial R_{V/I}}{\partial \Delta V} \Delta \Delta V \right)^2
+    + \left(\frac{\partial R_{V/I}}{\partial I} \Delta I \right)^2
+  \right]^\frac{1}{2} \label{eq:r_from_vi_uncertainty} \\
+  & = & \frac{\Delta V}{I} \left[
+    \left( \frac{\Delta \Delta V}{\Delta V} \right)^2
+    + \left( \frac{\Delta I}{I} \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
+In part 1, $R_\mathrm{m}$ was calculated using equation \ref{eq:r_from_m}.
+Note that the combined value $R_\mathrm{m} + r$ was measured, as was the value for $r$.
+But $R_\mathrm{m}$ was not measured, hence why it is being calculated as a difference of two values.
+\begin{IEEEeqnarray}{rCl}
+  R_\mathrm{m} & = & (R_\mathrm{m} + r) - r \label{eq:r_from_m}
+\end{IEEEeqnarray}
+The uncertainty of $R_\mathrm{m}$ is given by equation \ref{eq:r_from_m_uncertainty}
+\begin{IEEEeqnarray}{rCl}
+  \Delta R_\mathrm{m} & = & \left[
+    \left(\frac{\partial R_\mathrm{m}}{\partial (R_\mathrm{m} + r)} \Delta (R_\mathrm{m} + r) \right)^2
+    + \left(\frac{\partial R_\mathrm{m}}{\partial r} \Delta r \right)^2
+  \right]^\frac{1}{2} \label{eq:r_from_m_uncertainty} \\
+  & = & \left[
+    \left( \Delta (R_\mathrm{m} + r) \right)^2
+    + \left( \Delta r \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
