@@ -62,16 +62,16 @@ Resistance Coils
 \br
 \end{tabular}\end{indented}\end{table}
 
-Table \ref{tab:measurements} contains the measurements made during part 1.
+Table \ref{tab:measurements_part_1} contains the measurements made during part 1.
 $\Delta V$ is the voltage across the resistance coil.
 $I$ is the current through the resistance coil.
 ($R_\mathrm{m} + r$) is the resistance, measured using the multimeter, of the resistance coil and the wires connecting it to the multimeter.
-$r$ is the resistance, measured using the multimeter to be $(0.1 \pm 0.1) \units{\Omega}$, of just the wires used for connecting the multimeter to the resistance coil.
+$r$ is the resistance, measured using the multimeter to be $0.1 \pm 0.1 \units{\Omega}$, of just the wires used for connecting the multimeter to the resistance coil.
 
 \begin{table}[htbp]
-\caption{\label{tab:measurements}
+\caption{\label{tab:measurements_part_1}
 Part 1 Measurements \\
-Note: $r$, the resistance of the two wires connected to the multimeter, was measured to be $(0.1 \pm 0.1) \units{\Omega}$.
+Note: $r$, the resistance of the two wires connected to the multimeter, was measured to be $0.1 \pm 0.1 \units{\Omega}$.
 }
 \begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm\mcm}
 \br
@@ -87,13 +87,13 @@ Note: $r$, the resistance of the two wires connected to the multimeter, was meas
 \br
 \end{tabular}\end{indented}\end{table}
 
-Table \ref{tab:resistances} contains the two experimental values for resistance in the coil ($R_{V/I}$ and $R_{\mathrm{m}}$) and the theoretical value ($R_{\mathrm{th}}$).
+Table \ref{tab:resistances_part_1} contains the two experimental values for resistance in the coil ($R_{V/I}$ and $R_{\mathrm{m}}$) and the theoretical value ($R_{\mathrm{th}}$).
 $R_{V/I}$ is the experimental resistance determined using measured values for $\Delta V$ and $I$.
 $R_{\mathrm{m}}$ is the experimental resistance determined using the readings from the multimeter.
 $R_{\mathrm{th}}$ is the theoretical resistance determined using the dimensions of the wires ($L$ and $D$) and the resistivity of the material ($\rho$).
 
 \begin{table}[htbp]
-\caption{\label{tab:resistances}
+\caption{\label{tab:resistances_part_1}
 Part 1 Experimental and Theoretical Resistances
 }
   \begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm r@{.}l}
@@ -175,6 +175,20 @@ Thus, $R_\mathrm{th}$ would have no uncertainty as well.
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
+
+In part 1, the resistances of 7 different resistance coils were determined using three different techniques.
+Descriptions of the coils are in table \ref{tab:resistance_coils}, and the calculated resistance values are in table \ref{tab:resistances_part_1}.
+The experimental resistances $R_{V/I}$ and $R_\mathrm{m}$ had similar values for all the coils.
+Coils 1, 4, and 5 had resistance values that overlapped within uncertainty, while the rest of the coils (2, 3, 6, and 7) had values that were still fairly close and almost within uncertainty.
+While the experimental resistances were similar, their values were all higher than the corresponding theoretical resistances $R_\mathrm{th}$.
+One possible explanation is that when measuring voltage and resistance, the multimeter was connected to the resistance coils through a small bit of copper wire.
+This copper wire section was not included when measuring $r$, but it was included when measuring $(R_\mathrm{m} + r)$.
+As a result, this would cause $R_\mathrm{m}$ to be higher than expected.
+This extra resistance would also have increased the measured value for $\Delta V$, thereby causing $R_{V/I}$ to be higher than expected.
+Another possibility is that the temperature of the room did not match the reference temperature of 20 ℃.
+The table the resistivity values were taken from used a reference temperature of 20 ℃.
+If the room were warmer than 20 ℃, then the actual resistivity values would have been slightly higher than the $\rho$ values used for calculations.
+This would cause $R_\mathrm{th}$ to be lower than expected.
 
 %%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
 \section{Citations}
