@@ -63,7 +63,7 @@ Resistance Coils
 \end{tabular}\end{indented}\end{table}
 
 Table \ref{tab:measurements_part_1} contains the measurements made during part 1.
-$\Delta V$ is the voltage across the resistance coil.
+$V$ is the voltage across the resistance coil.
 $I$ is the current through the resistance coil.
 ($R_\mathrm{m} + r$) is the resistance, measured using the multimeter, of the resistance coil and the wires connecting it to the multimeter.
 $r$ is the resistance, measured using the multimeter to be $0.1 \pm 0.1 \units{\Omega}$, of just the wires used for connecting the multimeter to the resistance coil.
@@ -75,7 +75,7 @@ Note: $r$, the resistance of the two wires connected to the multimeter, was meas
 }
 \begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm\mcm}
 \br
-  Coil & \mch{$\Delta V$ (V)} & \mch{$I$ (mA)}   & \mch{$R_\mathrm{m} + r$ (Ω)} \\
+  Coil & \mch{$V$ (V)} & \mch{$I$ (mA)}   & \mch{$R_\mathrm{m} + r$ (Ω)} \\
 \mr
   1    & 0&214 & 0&001        & 55&07 & 0&05     & 4&0 & 0&1        \\
   2    & 0&400 & 0&001        & 49&72 & 0&01     & 8&3 & 0&1        \\
@@ -88,7 +88,7 @@ Note: $r$, the resistance of the two wires connected to the multimeter, was meas
 \end{tabular}\end{indented}\end{table}
 
 Table \ref{tab:resistances_part_1} contains the two experimental values for resistance in the coil ($R_{V/I}$ and $R_{\mathrm{m}}$) and the theoretical value ($R_{\mathrm{th}}$).
-$R_{V/I}$ is the experimental resistance determined using measured values for $\Delta V$ and $I$.
+$R_{V/I}$ is the experimental resistance determined using measured values for $V$ and $I$.
 $R_{\mathrm{m}}$ is the experimental resistance determined using the readings from the multimeter.
 $R_{\mathrm{th}}$ is the theoretical resistance determined using the dimensions of the wires ($L$ and $D$) and the resistivity of the material ($\rho$).
 
@@ -132,16 +132,16 @@ If the reading with the multimeter (voltage, current, or resistance) was stable 
 
 In part 1, $R_{V/I}$ was calculated using equation \ref{eq:r_from_vi}.
 \begin{IEEEeqnarray}{rCl}
-  R_{V/I} & = & \frac{\Delta V}{I} \label{eq:r_from_vi}
+  R_{V/I} & = & \frac{V}{I} \label{eq:r_from_vi}
 \end{IEEEeqnarray}
 The uncertainty of $R_{V/I}$ is given by equation \ref{eq:r_from_vi_uncertainty}.
 \begin{IEEEeqnarray}{rCl}
   \Delta R_{V/I} & = & \left[
-    \left(\frac{\partial R_{V/I}}{\partial \Delta V} \Delta \Delta V \right)^2
+    \left(\frac{\partial R_{V/I}}{\partial V} \Delta V \right)^2
     + \left(\frac{\partial R_{V/I}}{\partial I} \Delta I \right)^2
   \right]^\frac{1}{2} \label{eq:r_from_vi_uncertainty} \\
-  & = & \frac{\Delta V}{I} \left[
-    \left( \frac{\Delta \Delta V}{\Delta V} \right)^2
+  & = & \frac{V}{I} \left[
+    \left( \frac{\Delta V}{V} \right)^2
     + \left( \frac{\Delta I}{I} \right)^2
   \right]^\frac{1}{2} \nonumber
 \end{IEEEeqnarray}
@@ -184,7 +184,7 @@ While the experimental resistances were similar, their values were all higher th
 One possible explanation is that when measuring voltage and resistance, the multimeter was connected to the resistance coils through a small bit of copper wire.
 This copper wire section was not included when measuring $r$, but it was included when measuring $(R_\mathrm{m} + r)$.
 As a result, this would cause $R_\mathrm{m}$ to be higher than expected.
-This extra resistance would also have increased the measured value for $\Delta V$, thereby causing $R_{V/I}$ to be higher than expected.
+This extra resistance would also have increased the measured value for $V$, thereby causing $R_{V/I}$ to be higher than expected.
 Another possibility is that the temperature of the room did not match the reference temperature of 20 ℃.
 The table the resistivity values were taken from used a reference temperature of 20 ℃.
 If the room were warmer than 20 ℃, then the actual resistivity values would have been slightly higher than the $\rho$ values used for calculations.
