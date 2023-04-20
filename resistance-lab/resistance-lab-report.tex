@@ -241,7 +241,7 @@ Part 2 Series Circuit at 4 V
 }
 \begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm}
 \br
-  & \mch{$V$ (V)} & \mch{$I$ (mA)} \\
+  &           \mch{$V$ (V)} & \mch{$I$ (mA)} \\
 \mr
   $R_1$     & 1&084 & 0&001 & 96&5 & 0&1 \\
   $R_2$     & 2&915 & 0&001 & 97&1 & 0&1 \\
@@ -249,6 +249,27 @@ Part 2 Series Circuit at 4 V
 \br
 \end{tabular}\end{indented}\end{table}
 
+Table \ref{tab:parallel_circuit_measurements} contains the voltage and current measurements made of the parallel circuit at 4 V.
+$V_1$ is the voltage across resistor 1.
+$V_2$ is the voltage across resistor 2.
+$V_{1||2}$ is the voltage across both resistors.
+$I_1$ is the current through resistor 1.
+$I_2$ is the current through resistor 2.
+$I_{1||2}$ is the current next to the positive terminal of the power supply, right before reaching the junction connected to the two resistors.
+
+\begin{table}[htbp]
+\caption{\label{tab:parallel_circuit_measurements}
+Part 2 Parallel Circuit at 4 V
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm}
+\br
+ &             \mch{$V$ (V)} & \mch{$I$ (mA)} \\
+\mr
+  $R_1$      & 3&968 & 0&001 & 410&4 & 0&1 \\
+  $R_2$      & 3&927 & 0&001 & 155&6 & 0&1 \\
+  $R_{1||2}$ & 4&002 & 0&001 & 491&7 & 0&1 \\
+\br
+\end{tabular}\end{indented}\end{table}
 
 %%%%%%%%%%%%%%%%%%%% Uncertainty %%%%%%%%%%%%%%%%%%%%
 \section{Uncertainty}
