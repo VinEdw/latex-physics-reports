@@ -295,7 +295,7 @@ All the voltage, current, and resistance measurements in the experiment were mad
 If there were fluctuations in a particular reading with the multimeter (voltage, current, or resistance), then the uncertainty was taken to be the magnitude of the fluctuations, as that gives an upper bound for how much the value could have varied.
 If the reading with the multimeter (voltage, current, or resistance) was stable and did not fluctuate, then the uncertainty was taken to be the smallest increment of measure, since that was the limiting precision of the equipment.
 
-In part 1, $R_{V/I}$ was calculated using equation \ref{eq:r_from_vi}.
+In parts 1 and 2, $R_{V/I}$ was calculated using equation \ref{eq:r_from_vi}.
 \begin{IEEEeqnarray}{rCl}
   R_{V/I} & = & \frac{V}{I} \label{eq:r_from_vi}
 \end{IEEEeqnarray}
@@ -329,6 +329,24 @@ The uncertainty of $R_\mathrm{m}$ is given by equation \ref{eq:r_from_m_uncertai
   \right]^\frac{1}{2} \nonumber
 \end{IEEEeqnarray}
 
+Similarly in part 2, the true resistance values $R_1$ and $R_2$, referred to as just $R$, were calculated using equation \ref{eq:r_true_from_m}.
+Note that the combined value ($R + r$) was measured, as was the value for $r$.
+But $R$ was not measured, hence why it is being calculated as a difference of two values.
+\begin{IEEEeqnarray}{rCl}
+  R & = & (R + r) - r \label{eq:r_true_from_m}
+\end{IEEEeqnarray}
+The uncertainty of $R$ is given by equation \ref{eq:r_true_from_m_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta R & = & \left[
+    \left(\frac{\partial R}{\partial (R + r)} \Delta (R + r) \right)^2
+    + \left(\frac{\partial R}{\partial r} \Delta r \right)^2
+  \right]^\frac{1}{2} \label{eq:r_true_from_m_uncertainty} \\
+  & = & \left[
+    \left( \Delta (R + r) \right)^2
+    + \left( \Delta r \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
 In part 1, $R_\mathrm{th}$ was calculated using equation \ref{eq:r_th}.
 \begin{IEEEeqnarray}{rCl}
   R_\mathrm{th} & = & \frac{\rho L}{A} \label{eq:r_th} \\
@@ -337,6 +355,8 @@ In part 1, $R_\mathrm{th}$ was calculated using equation \ref{eq:r_th}.
 \end{IEEEeqnarray}
 Note that the values for $\rho$, $L$, and $D$ were assumed to be exact, without uncertainty.
 Thus, $R_\mathrm{th}$ would have no uncertainty as well.
+
+In part 2, $R_{1+2}$ the theoretical resistance for the two resistors in series
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
