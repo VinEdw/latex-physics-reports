@@ -356,7 +356,37 @@ In part 1, $R_\mathrm{th}$ was calculated using equation \ref{eq:r_th}.
 Note that the values for $\rho$, $L$, and $D$ were assumed to be exact, without uncertainty.
 Thus, $R_\mathrm{th}$ would have no uncertainty as well.
 
-In part 2, $R_{1+2}$ the theoretical resistance for the two resistors in series
+In part 2, $R_{1+2}$, the theoretical resistance for the two resistors in series, was calculated using equation \ref{eq:r_1_2_series}.
+\begin{IEEEeqnarray}{rCl}
+  R_{1+2} & = & R_1 + R_2 \label{eq:r_1_2_series}
+\end{IEEEeqnarray}
+The uncertainty of $R_{1+2}$ is given by equation \ref{eq:r_1_2_series_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta R_{1+2} & = & \left[
+    \left(\frac{\partial R_{1+2}}{\partial R_1} \Delta R_1 \right)^2
+    + \left(\frac{\partial R_{1+2}}{\partial R_2} \Delta R_2 \right)^2
+  \right]^\frac{1}{2} \label{eq:r_1_2_series_uncertainty} \\
+  & = & \left[
+    \left( \Delta R_1 \right)^2
+    + \left( \Delta R_2 \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
+In part 2, $R_{1||2}$, the theoretical resistance for the two resistors in parallel, was calculated using equation \ref{eq:r_1_2_parallel}.
+\begin{IEEEeqnarray}{rCl}
+  R_{1||2} & = & \left( R_1^{-1} + R_2^{-1} \right)^{-1} \label{eq:r_1_2_parallel}
+\end{IEEEeqnarray}
+The uncertainty of $R_{1||2}$ is given by equation \ref{eq:r_1_2_parallel_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta R_{1||2} & = & \left[
+    \left(\frac{\partial R_{1||2}}{\partial R_1} \Delta R_1 \right)^2
+    + \left(\frac{\partial R_{1||2}}{\partial R_2} \Delta R_2 \right)^2
+  \right]^\frac{1}{2} \label{eq:r_1_2_parallel_uncertainty} \\
+  & = & \left[
+    \left( \left[ R_1^{-1} + R_2^{-1} \right]^{-2} \frac{\Delta R_1}{R_1^2} \right)^2
+    + \left( \left[ R_1^{-1} + R_2^{-1} \right]^{-2} \frac{\Delta R_2}{R_2^2} \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
