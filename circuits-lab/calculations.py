@@ -121,3 +121,46 @@ cir_2.I[1], cir_2.I[2], cir_2.I[3], cir_2.I["E_1"] = np.linalg.solve(
 )
 cir_2.calculate_resistor_voltages()
 print(cir_2.describe())
+
+# ==================== Circuit 3 ====================
+# Givens
+cir_3 = Circuit("Circuit 3")
+cir_3.R[1] = 135
+cir_3.R[2] = R_2
+cir_3.R[3] = 82
+cir_3.R[4] = 95
+cir_3.V["E_1"] = 11
+
+# J_1:
+# I_E_1 = I_1 + I_2
+# I_1 + I_2 - I_E_1 = 0
+
+# J_2:
+# I_2 = I_3 + I_4
+# I_2 - I_3 - I_4 = 0
+
+# L_1:
+# E_1 - I_1 R_1 = 0
+# I_1 R_1 = E_1
+
+# L_2:
+# E_1 - I_2 R_2 - I_3 R_3 = 0
+# I_2 R_2 + I_3 R_3 = E_1
+
+# L_3:
+# E_1 - I_2 R_2 - I_4 R_4 = 0
+# I_2 R_2 + I_4 R_4 = E_1
+
+cir_3_matrix = np.array([
+    [1, 1, 0, 0, -1],
+    [0, 1, -1, -1, 0],
+    [cir_3.R[1], 0, 0, 0, 0],
+    [0, cir_3.R[2], cir_3.R[3], 0, 0],
+    [0, cir_3.R[2], 0, cir_3.R[4], 0]
+])
+cir_3.I[1], cir_3.I[2], cir_3.I[3], cir_3.I[4], cir_3.I["E_1"] = np.linalg.solve(
+    cir_3_matrix,
+    [0, 0, cir_3.V["E_1"], cir_3.V["E_1"], cir_3.V["E_1"]]
+)
+cir_3.calculate_resistor_voltages()
+print(cir_3.describe())
