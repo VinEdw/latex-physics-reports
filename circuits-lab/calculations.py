@@ -218,3 +218,49 @@ cir_5.I[1] = (cir_5.V["E_1"] - cir_5.V["E_2"]) / sum(cir_5.R.values())
 cir_5.set_currents_equal(1, [2, 3, "E_1", "E_2"])
 cir_5.calculate_resistor_voltages()
 print(cir_5.describe())
+
+# ==================== Circuit 6 ====================
+# Givens
+cir_6 = Circuit("Circuit 6")
+cir_6.R[1] = 25
+cir_6.R[2] = R_2
+cir_6.R[3] = 35
+cir_6.R[4] = 25
+cir_6.R[5] = 35
+cir_6.V["E_1"] = 40
+cir_6.V["E_2"] = 10
+
+# J_1:
+# I_E_1 = I_1 + I_3
+# I_1 + I_3 - I_E_1 = 0
+
+# J_2:
+# I_1 = I_2 + I_4
+# I_1 - I_2 - I_4 = 0
+
+# L_1:
+# E_1 - I_3 R_3 = 0
+# I_3 R_3 = E_1
+
+# L_2:
+# -I_1 R_1 - I_4 R_4 + I_3 R_3 = 0
+# I_1 R_1 - I_3 R_3 + I_4 R_4 = 0
+
+# L_3:
+# E_2 - I_2 R_2 - I_2 R_5 + I_4 R_4 = 0
+# I_2 (R_2 + R_5) - I_4 R_4 = E_2
+
+cir_6_matrix = np.array([
+    [1, 0, 1, 0, -1],
+    [1, -1, 0, -1, 0],
+    [0, 0, cir_6.R[3], 0, 0],
+    [cir_6.R[1], 0, -cir_6.R[3], cir_6.R[4], 0],
+    [0, cir_6.R[2] + cir_6.R[5], 0, -cir_6.R[4], 0],
+])
+cir_6.I[1], cir_6.I[2], cir_6.I[3], cir_6.I[4], cir_6.I["E_1"] = np.linalg.solve(
+    cir_6_matrix,
+    [0, 0, cir_6.V["E_1"], 0, cir_6.V["E_2"]]
+)
+cir_6.set_currents_equal(2, [5, "E_2"])
+cir_6.calculate_resistor_voltages()
+print(cir_6.describe())
