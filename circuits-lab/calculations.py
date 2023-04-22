@@ -201,3 +201,20 @@ cir_4.set_currents_equal(2, [3])
 cir_4.set_currents_equal(5, ["E_1"])
 cir_4.calculate_resistor_voltages()
 print(cir_4.describe())
+
+# ==================== Circuit 5 ====================
+# Givens
+cir_5 = Circuit("Circuit 5")
+cir_5.R[1] = 35
+cir_5.R[2] = R_2
+cir_5.R[3] = 45
+cir_5.V["E_1"] = 14
+cir_5.V["E_2"] = 5
+
+# L_1:
+# E_1 - I_1 R_1 - I_1 R_2 - E_2 - I_1 R_3 = 0
+# I_1 = (E_1 - E_2) / (R_1 + R_2 + R_3)
+cir_5.I[1] = (cir_5.V["E_1"] - cir_5.V["E_2"]) / sum(cir_5.R.values())
+cir_5.set_currents_equal(1, [2, 3, "E_1", "E_2"])
+cir_5.calculate_resistor_voltages()
+print(cir_5.describe())
