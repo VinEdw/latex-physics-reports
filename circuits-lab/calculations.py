@@ -29,7 +29,7 @@ class Circuit:
         for key in self.keys:
             V = self.V.get(key, np.nan)
             I = self.I.get(key, np.nan)
-            P[key] = V * I
+            P[key] = abs(V * I)
         return P
 
     def set_currents_equal(self, initial_key: int|str, new_keys: list) -> None:
