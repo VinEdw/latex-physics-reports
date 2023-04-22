@@ -64,6 +64,8 @@ class Circuit:
             df = df.rename(index={i: f"R_{i}"})
         # Append the df string with float values rounded to three sig figs
         result_str += df.to_string(float_format="%.3g")
+        # Append an extra newline at the end
+        result_str += "\n"
         return result_str
 
 # ==================== Circuit 1 ====================
@@ -82,3 +84,40 @@ cir_1.I[1] = cir_1.V["E_1"] / sum(cir_1.R.values())
 cir_1.set_currents_equal(1, [2, 3, 4, "E_1"])
 cir_1.calculate_resistor_voltages()
 print(cir_1.describe())
+
+# ==================== Circuit 2 ====================
+# Givens
+cir_2 = Circuit("Circuit 2")
+cir_2.R[1] = 85
+cir_2.R[2] = R_2
+cir_2.R[3] = 125
+cir_2.V["E_1"] = 9
+
+# J_1:
+# I_E_1 = I_1 + I_2 + I_3
+# I_1 + I_2 + I_3 - I_E_1 = 0
+
+# L_1:
+# E_1 - I_1 R_1 = 0
+# I_1 R_1 = E_1
+
+# L_2:
+# E_1 - I_2 R_2 = 0
+# I_2 R_2 = E_1
+
+# L_3:
+# E_1 - I_3 R_3 = 0
+# I_3 R_3 = E_1
+
+cir_2_matrix = np.array([
+    [1, 1, 1, -1],
+    [cir_2.R[1], 0, 0, 0],
+    [0, cir_2.R[2], 0, 0],
+    [0, 0, cir_2.R[3], 0],
+])
+cir_2.I[1], cir_2.I[2], cir_2.I[3], cir_2.I["E_1"] = np.linalg.solve(
+    cir_2_matrix,
+    [0, cir_2.V["E_1"], cir_2.V["E_1"], cir_2.V["E_1"]]
+)
+cir_2.calculate_resistor_voltages()
+print(cir_2.describe())
