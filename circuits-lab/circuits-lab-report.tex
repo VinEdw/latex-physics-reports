@@ -1,0 +1,64 @@
+\documentclass[12pt]{iopart} % Document class declaration
+
+% package "imports"
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+
+% Custom macros
+\gdef\mcm{r@{.}l@{ ± }r@{.}l} % Multi Column Measurement; Used for decimal aligning & ± aligning
+\gdef\mch#1{\multicolumn{4}{l}{#1}} % Multi Column Header; Used for decimal aligning & ± aligning
+\gdef\mcmnd{r@{ ± }l} % Multi Column Measurement No Decimal; Used for ± aligning when the values don't need a decimal point
+\gdef\mchnd#1{\multicolumn{2}{l}{#1}} % Multi Column Header No Decimal; Used for  ± aligning when the values don't need a decimal point
+\gdef\sci#1#2{#1 \times 10^{#2}}
+\gdef\units#1{~\mathrm{#1}}
+
+%%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%%%%%%
+\title{Circuits Lab}
+\author{Vincent Edwards}
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4B, CRN 42240
+  \item[]May 8, 2023
+  \item[]
+  \item[]$R_2 = 40 \units{\Omega}$
+\end{indented}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%% Purpose %%%%%%%%%%%%%%%%%%%%
+\section{Purpose}
+
+The goal of the exercise was to use Kirchhoff's rules to analyze 7 different circuits and calculate current, voltage, and power through each circuit element.
+For the first 4 circuits, the voltage and current calculations were compared to results obtained using an online circuit simulator.
+
+%%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
+\section{Results}
+
+%%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+%%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
+\section{Citations}
+
+\begin{thebibliography}{9}
+
+\bibitem{labpacket}
+  Karen Schnurbusch,
+  \textit{Physics 4B Lab Book},
+  Mt. San Antonio College,
+  2023,
+  pp. 71-74.
+
+\bibitem{equationsheet}
+  Karen Schnurbusch,
+  \textit{Physics 4B Equations},
+  Mt. San Antonio College,
+  2023,
+  pp. 4, 5.
+
+\end{thebibliography}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%
