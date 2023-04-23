@@ -448,15 +448,27 @@ A higher voltage measurement would lead to a higher calculated resistance.
 
 After measuring the resistance of the first two circuits containing only one of the nichrome coils at a time, both coils were connected in series, then in parallel.
 The theoretical resistances of these two circuits are in table \ref{tab:theoretical_resistances_part_2}, the experimental equivalent resistance values of the series circuit are in table \ref{tab:series_experimental_values}, and the experimental equivalent resistance values of the parallel circuit are in table \ref{tab:parallel_experimental_values}.
-
 For the series circuit, the experimental resistances $R_{V/I}$ were within uncertainty of each other and had a mean of $41.22 \units{\Omega}$.
 This resistance value is about $0.1 \units{\Omega}$ higher than the theoretical value of $R_{1+2} = 41.1 \pm 0.2 \units{\Omega}$, a difference smaller than the uncertainty.
 Thus, the result agrees with theory within uncertainty. 
 For the parallel circuit, the experimental resistances $R_{V/I}$ were within uncertainty of each other, or at least very close to matching within uncertainty, and had a mean of $8.18 \units{\Omega}$.
 This resistance value is about $0.06 \units{\Omega}$ lower than the theoretical value of $R_{1||2} = 8.24 \pm 0.07 \units{\Omega}$, a difference smaller than the uncertainty.
-Thus, the result agrees with theory within uncertainty. 
+Thus, the result agrees with theory within uncertainty.
 
-(Continue part 2 analysis questions 6-11).
+Measurements of voltage and current were made of the series and parallel circuits at $4 \units{V}$.
+The results for the two resistors in series are in table \ref{tab:series_circuit_measurements}, and the results for the two resistors in parallel are in table \ref{tab:parallel_circuit_measurements}.
+Focusing on the series circuit, the voltage across resistor 1 was $V_1 = 1.084 \pm 0.001 \units{V}$, the voltage across resistor 2 was $V_2 = 1.084 \pm 0.001 \units{V}$, and the voltage across both resistors was $V_{1+2} = 4.002 \pm 0.001 \units{V}$.
+Resistor 2 had a larger voltage than resistor 1, which is consistent with what theory predicts for resistors in series.
+Since resistors in series have the same current $I$, and $V = IR$, a larger resistance $R$ leads to a larger voltage $V$.
+The sum $V_1 + V_2 = 3.999 \pm 0.001 \units{V}$ is approximately equal to $V_{1+2}$, only about $0.003 \units{V}$ lower and just barely larger than the uncertainty.
+In theory, $V_1 + V_2 = V_{1+2}$ since voltages add together when traversing a section of a circuit, and the results got very close to demonstrating this.
+This small discrepancy is possibly due to the multimeter clips being connected to the resistors in such a way that a small section of resistor was skipped over in the separate measurements for $V_1$ and $V_2$, a section which was included in the overall measurement for $V_{1+2}$.
+Turning to the current measurements, the current between the resistors was $I_1 = 96.5 \pm 0.1 \units{mA}$, the current after the second resistor was $I_2 = 97.1 \pm 0.1 \units{mA}$, and the current next to the power supply was $I_{1+2} = 97.1 \pm 0.1 \units{mA}$.
+In theory, each of these current measurements should be identical since components connected in series have the same current.
+$I_2$ and $I_{1+2}$ had identical values, but $I_1$ was about $0.6 \units{mA}$ lower.
+One potential explanation is that when measuring $I_2$ and $I_{1+2}$, no extra wires needed to be added to the circuit; the components were simply rearranged.
+But to measure $I_1$, an extra wire needed to be added in order to connect the multimeter between the resistors.
+This extra wire would have increased the total resistance of the series circuit, thereby decreasing the measured current.
 
 %%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
 \section{Citations}
