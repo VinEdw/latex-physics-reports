@@ -470,6 +470,32 @@ One potential explanation is that when measuring $I_2$ and $I_{1+2}$, no extra w
 But to measure $I_1$, an extra wire needed to be added in order to connect the multimeter between the resistors.
 This extra wire would have increased the total resistance of the series circuit, thereby decreasing the measured current.
 
+Focusing on the parallel circuit, the voltage across resistor 1 was $V_1 = 3.968 \pm 0.001 \units{V}$, the voltage across resistor 2 was $V_2 = 3.927 \pm 0.001 \units{V}$, and the voltage across both resistors was $V_{1||2} = 4.002 \pm 0.001 \units{V}$.
+In theory, these voltage measurements should have been the same since components connected in parallel have the same voltage, but sadly the measurements did not match within uncertainty.
+$V_1$ was about $0.034 \units{V}$ lower than $V_{1||2}$, and $V_2$ was about $0.075 \units{V}$ lower than $V_{1||2}$.
+A possible explanation for these slight differences has to do with the placement of the multimeter clips.
+When measuring $V_{1||2}$, the clips were connected to the junctions where the two resistors connected to each other and the power supply.
+But when measuring $V_1$ and $V_2$, the clips were moved off the junctions and closer to their respective resistors.
+This would have lowered the length and resistance of the sections, thereby lowering the measured voltages.
+Turning to the current measurements, the current through resistor 1 was $I_1 = 410.4 \pm 0.1 \units{mA}$, the current through resistor 2 was $I_2 = 155.6 \pm 0.1 \units{mA}$, and the current next to the power supply was $I_{1||2} = 491.7 \pm 0.1 \units{mA}$.
+In theory, $I_1 + I_2 = I_{1||2}$ based on the junction rule.
+However, $I_1 + I_2 = 566.0 \pm 0.1 \units{mA}$, which is much greater than $I_{1||2}$.
+One potential explanation for the difference is that the DC power supply was turned off between each of these measurements, while the multimeter was being moved to a different part of the circuit.
+It was assumed that as long as the adjustment knobs on the power supply were not touched, it would restart to the same voltage it had previously.
+If that assumption is false, then then power supply may have restarted to a higher voltage during the measurements of $I_1$ and $I_2$, thereby increasing both current measurements.
+Another possibility has to do with the placement of the multimeter and its connector wires, which have some noticeable resistance.
+Initially, when measuring $I_{1||2}$, the multimeter was placed in series with the power supply and the two resistors in parallel.
+Those two resistors behave like one equivalent resistor with less resistance than either $R_1$ or $R_2$.
+Thus, the circuit behaves like a power supply connected in series with two resistors (one for the resistance of the multimeter wires, and a second for the equivalent resistor).
+This arrangement shall be referred to as arrangement 1.
+When measuring $I_1$ and $I_2$, the multimeter was moved to be in series with the respective resistor the current was being measured for.
+Thus, the loop the multimeter is connected to behaves like a power supply connected in series with two resistors (one for the resistance of the multimeter wires, and a second for the resistor of interest).
+This arrangement shall be referred to as arrangement 2.
+For two resistors in series with a power supply, since the same current passes through both of them, the resistor with the larger resistance has the larger voltage across it.
+Since the power supply and the multimeter wires were the same in both arrangements, but the effective resistance of the ``second'' resistor is higher in arrangement 2 than in arrangement 1, then the voltage across the resistor of interest must be slightly greater in arrangement 2.
+If the voltage is greater while the resistance of the individual resistor of interest is the same, then the current must be greater as well.
+Thus, the measurements for $I_1$ and $I_2$ would be slightly greater than expected because the multimeter had to be moved in series with them.
+
 %%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
 \section{Citations}
 
