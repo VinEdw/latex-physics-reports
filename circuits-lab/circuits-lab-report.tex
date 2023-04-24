@@ -164,6 +164,46 @@ Circuit 3 $V$, $I$, and $P$
 \br
 \end{tabular}\end{indented}\end{table}
 
+\begin{IEEEeqnarray*}{lrCl}
+  \mathrm{J_1}: & I_{\emf_1} & = & I_1 + I_2 \\
+  & I_1 + I_2 - I_{\emf_1} & = & 0 \\
+  \\
+  \mathrm{J_2}: & I_2 & = & I_3 + I_4 \\
+  & I_2 - I_2 - I_4 & = & 0 \\
+  \\
+  \mathrm{L_1}: & \emf_1 - I_1 R_1 & = & 0 \\
+  & I_1 R_1 & = & \emf_1 \\
+  \\
+  \mathrm{L_2}: & \emf_1 - I_2 R_2 - I_3 R_3 & = & 0 \\
+  & I_2 R_2 + I_3 R_3 & = & \emf_1 \\
+  \\
+  \mathrm{L_3}: & \emf_1 - I_2 R_2 - I_4 R_4 & = & 0 \\
+  & I_2 R_2 + I_4 R_4 & = & \emf_1
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \begin{bmatrix}
+    1 & 1 & 0 & 0 & -1 \\
+    0 & 1 & -1 & -1 & 0 \\
+    R_1 & 0 & 0 & 0 & 0 \\
+    0 & R_2 & R_3 & 0 & 0 \\
+    0 & R_2 & 0 & R_4 & 0
+  \end{bmatrix}
+  \begin{bmatrix}
+    I_1 \\ I_2 \\ I_3 \\ I_4 \\ I_{\emf_1}
+  \end{bmatrix}
+  & = &
+  \begin{bmatrix}
+    0 \\ 0 \\ \emf_1 \\ \emf_1 \\ \emf_1
+  \end{bmatrix} \\
+  \\
+  I_1 & = & 0.0815 \units{A} \\
+  I_2 & = & 0.131 \units{A} \\
+  I_3 & = & 0.0703 \units{A} \\
+  I_4 & = & 0.0607 \units{A} \\
+  I_{\emf_1} & = & 0.212 \units{A}
+\end{IEEEeqnarray*}
+
 \subsection{Circuit 4}
 
 \begin{figure}[htbp]
