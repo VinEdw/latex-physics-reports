@@ -350,7 +350,7 @@ Circuit 6 $V$, $I$, and $P$
     0 & R_2 + R_5 & 0 & -R_4 & 0 \\
   \end{bmatrix}
   \begin{bmatrix}
-    I_1 \\ I_2 \\ I_3 \\ I_4 \\ I_{\emf_1} \\
+    I_1 \\ I_2 \\ I_3 \\ I_4 \\ I_{\emf_1}
   \end{bmatrix}
   & = &
   \begin{bmatrix}
@@ -393,6 +393,51 @@ Circuit 7 $V$, $I$, and $P$
   $R_7$    & 1&12 & 0&0160 & 0&0179 \\
 \br
 \end{tabular}\end{indented}\end{table}
+
+\begin{IEEEeqnarray*}{lrCl}
+  \mathrm{J_1}: & I_1 & = & I_2 + I_3 \\
+  & I_1 - I_2 - I_3 & = & 0 \\
+  \\
+  \mathrm{J_2}: & I_2 + I_7 & = & I_6 \\
+  & I_2 - I_6 + I_7 & = & 0 \\
+  \\
+  \mathrm{J_3}: & I_3 & = & I_5 + I_7 \\
+  & I_3 - I_5 - I_7 & = & 0 \\
+  \\
+  \mathrm{L_1}: & \emf_1 - I_1 R_1 - I_3 R_3 - I_5 R_5 & = & 0 \\
+  & I_1 R_1 + I_3 R_3 + I_5 R_5 & = & \emf_1 \\
+  \\
+  \mathrm{L_2}: & -I_2 R_2 - I_2 R_4 + I_7 R_7 + I_3 R_3 & = & 0 \\
+  & I_2 (R_2 + R_4) - I_3 R_3 - I_7 R_7 & = & 0 \\
+  \\
+  \mathrm{L_3}: & -I_5 R_5 + I_6 R_6 + I_7 R_7 & = & 0 \\
+  & I_5 R_5 - I_6 R_6 - I_7 R_7 & = & \emf_2 \\
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \begin{bmatrix}
+    1 & -1 & -1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 & -1 & 1 \\
+    0 & 0 & 1 & -1 & 0 & -1 \\
+    R_1 & 0 & R_3 & R_5 & 0 & 0 \\
+    0 & R_2 + R_4 & -R_3 & 0 & 0 & -R_7 \\
+    0 & 0 & 0 & R_5 & -R_6 & - R_7
+  \end{bmatrix}
+  \begin{bmatrix}
+    I_1 \\ I_2 \\ I_3 \\ I_5 \\ I_ 6 \\ I_7
+  \end{bmatrix}
+  & = &
+  \begin{bmatrix}
+    0 \\ 0 \\ 0 \\ \emf_1 \\ 0 \\ 0
+  \end{bmatrix} \\
+  \\
+  I_1 & = & 0.200 \units{A} \\
+  I_2 & = & 0.0646 \units{A} \\
+  I_3 & = & 0.135 \units{A} \\
+  I_5 & = & 0.119 \units{A} \\
+  I_6 & = & 0.0806 \units{A} \\
+  I_7 & = & 0.0160 \units{A}
+\end{IEEEeqnarray*}
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
