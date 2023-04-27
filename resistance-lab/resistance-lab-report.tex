@@ -1,0 +1,541 @@
+\documentclass[12pt]{iopart} % Document class declaration
+
+% package "imports"
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+
+% Custom macros
+\gdef\mcm{r@{.}l@{ ± }r@{.}l} % Multi Column Measurement; Used for decimal aligning & ± aligning
+\gdef\mch#1{\multicolumn{4}{l}{#1}} % Multi Column Header; Used for decimal aligning & ± aligning
+\gdef\mcmnd{r@{ ± }l} % Multi Column Measurement No Decimal; Used for ± aligning when the values don't need a decimal point
+\gdef\mchnd#1{\multicolumn{2}{l}{#1}} % Multi Column Header No Decimal; Used for  ± aligning when the values don't need a decimal point
+\gdef\sci#1#2{#1 \times 10^{#2}}
+\gdef\units#1{~\mathrm{#1}}
+
+%%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%%%%%%
+\title{Resistance Lab}
+\author{Vincent Edwards, Ali Mortada, Andrew Bringas}
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4B, CRN 42240
+  \item[]April 26, 2023
+\end{indented}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%% Purpose %%%%%%%%%%%%%%%%%%%%
+\section{Purpose}
+
+For part 1, the goal was to examine how material, cross-sectional area, and length impact resistance.
+For each coil of wire, resistance was determined in three ways: based on measurements of voltage and current, based on the resistance readings from the multimeter, and based on the dimensions of the wires and the resistivity of the materials.
+The results of the three methods of determining resistance were compared.
+
+For part 2, the goal was to examine voltage, current, and resistance for two resistors in series and two resistors in parallel.
+For each nichrome resistor, resistance was determined in two ways: based on measurements of voltage and current, and based on the resistance readings from the multimeter.
+The results of these two methods were compared.
+The readings from the multimeter were accepted as the true resistance values, which were then used to calculated the theoretical resistance of the resistors in series and the resistors in parallel.
+These theoretical resistances were compared to experimental values found by setting up the circuits and measuring voltage and current.
+In addition, measurements of voltage and current were made at different parts of the series and parallel circuits in order to see if the matched what theory predicts.
+
+%%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
+\section{Results}
+
+Table \ref{tab:resistance_coils} contains the properties of the resistance coils used in part 1.
+$\rho$ is the resistivity of the material.
+$L$ is the length of the coil of wire.
+$D$ is the diameter of the wire.
+The values for $\rho$, $L$, and $D$ were assumed to be exact, without uncertainty.
+In addition, note that Nickel-Silver is a copper alloy consisting of copper, nickel, and zinc or manganese.
+The exact composition of the alloy used in the experiment is unknown.
+Thus, the resistivity was approximated to be $\sci{44}{-8} \units{\Omega~m}$, the value for Manganin (Cu 84\%, Mn 12\%, Ni 4\%), an alloy of similar composition.
+
+\begin{table}[htbp]
+\caption{\label{tab:resistance_coils}
+Part 1 Resistance Coils
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}llrrr}
+\br
+  Coil & Material      & $\rho~(\mathrm{\Omega~m})$ & $L$ (cm) & $D$ (cm) \\
+\mr
+  1    & Nickel-Silver & $\sci{44}{-8}$             &       40 & 0.0254 \\
+  2    & Nickel-Silver & $\sci{44}{-8}$             &       80 & 0.0254 \\
+  3    & Nickel-Silver & $\sci{44}{-8}$             &      120 & 0.0254 \\
+  4    & Nickel-Silver & $\sci{44}{-8}$             &      160 & 0.0254 \\
+  5    & Nickel-Silver & $\sci{44}{-8}$             &      200 & 0.0254 \\
+  6    & Nickel-Silver & $\sci{44}{-8}$             &      200 & 0.0320 \\
+  7    & Copper        & $\sci{1.72}{-8}$           &     2000 & 0.0254 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:measurements_part_1} contains the measurements made during part 1.
+$V$ is the voltage across the resistance coil.
+$I$ is the current through the resistance coil.
+($R_\mathrm{m} + r$) is the resistance, measured using the multimeter, of the resistance coil and the wires connecting it to the multimeter.
+$r$ is the resistance, measured using the multimeter to be $0.1 \pm 0.1 \units{\Omega}$, of just the wires used for connecting the multimeter to the resistance coil.
+
+\begin{table}[htbp]
+\caption{\label{tab:measurements_part_1}
+Part 1 Measurements \\
+Note: $r$, the resistance of the two wires connected to the multimeter, was measured to be $0.1 \pm 0.1 \units{\Omega}$.
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm\mcm}
+\br
+  Coil & \mch{$V$ (V)} & \mch{$I$ (mA)}   & \mch{$R_\mathrm{m} + r$ (Ω)} \\
+\mr
+  1    & 0&214 & 0&001        & 55&07 & 0&05     & 4&0 & 0&1        \\
+  2    & 0&400 & 0&001        & 49&72 & 0&01     & 8&3 & 0&1        \\
+  3    & 0&536 & 0&001        & 44&53 & 0&02     & 12&0 & 0&1       \\
+  4    & 0&662 & 0&001        & 41&70 & 0&01     & 15&9 & 0&1       \\
+  5    & 0&772 & 0&001        & 38&19 & 0&01     & 20&3 & 0&1       \\
+  6    & 0&538 & 0&001        & 45&44 & 0&01     & 11&7 & 0&1       \\
+  7    & 0&357 & 0&001        & 51&31 & 0&01     & 7&3 & 0&1        \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:resistances_part_1} contains the two experimental values for resistance in the coil ($R_{V/I}$ and $R_{\mathrm{m}}$) and the theoretical value ($R_{\mathrm{th}}$).
+$R_{V/I}$ is the experimental resistance determined using the measured values for $V$ and $I$.
+$R_{\mathrm{m}}$ is the experimental resistance determined using the readings from the multimeter.
+$R_{\mathrm{th}}$ is the theoretical resistance determined using the dimensions of the wires ($L$ and $D$) and the resistivity of the material ($\rho$).
+
+\begin{table}[htbp]
+\caption{\label{tab:resistances_part_1}
+Part 1 Experimental and Theoretical Resistances
+}
+  \begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm r@{.}l}
+\br
+  Coil & \mch{$R_{V/I}$ (Ω)} & \mch{$R_{\mathrm{m}}$ (Ω)} & \multicolumn{2}{l}{$R_{\mathrm{th}}$ (Ω)} \\
+\mr
+  1    & 3&89 & 0&02         & 3&9 & 0&1                  & 3&47      \\
+  2    & 8&05 & 0&02         & 8&2 & 0&1                  & 6&95      \\
+  3    & 12&04 & 0&02        & 11&9 & 0&1                 & 10&42     \\
+  4    & 15&88 & 0&02        & 15&8 & 0&1                 & 13&89     \\
+  5    & 20&21 & 0&03        & 20&2 & 0&1                 & 17&37     \\
+  6    & 11&84 & 0&02        & 11&6 & 0&1                 & 10&94     \\
+  7    & 6&96 & 0&02         & 7&2 & 0&1                  & 6&79      \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Figure \ref{fig:resistance_vs_length} plots resistance ($R_{V/I}$, $R_\mathrm{m}$, and $R_\mathrm{th}$) versus length ($L$) for the first five resistance coils used in part 1.
+Those coils were chosen for the graph as they all had the same material and diameter.
+Since the graphs seemed linear with a zero y-intercept (and that's what theory predicts), a proportional fit was applied.
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{resistance-vs-length-graph.png}
+  \end{indented}
+  \caption{\label{fig:resistance_vs_length}
+  Resistance vs Length (Constant $\rho$ and $A$)
+  }
+\end{figure}
+
+Table \ref{tab:true_resistances_part_2} contains the resistances measured using a multimeter of the two nichrome resistors used in part 2.
+($R + r$) is the resistance, measured using the multimeter, of the nichrome resistor and the wires connecting it to the multimeter.
+$r$ is the resistance, measured using the multimeter to be $0.9 \pm 0.1 \units{\Omega}$, of just the wires used for connecting the multimeter to the nichrome resistor.
+$R$ is the calculated resistance of the nichrome resistor based on these measurements.
+These resistance values, $R_1 = 11.4 \pm 0.1 \units{\Omega}$ and $R_2 = 29.7 \pm 0.1 \units{\Omega}$, will be referred to as the true values. 
+
+\begin{table}[htbp]
+\caption{\label{tab:true_resistances_part_2}
+Part 2 True Resistances \\
+Note: $r$, the resistance of the two wires connected to the multimeter, was measured to be $0.9 \pm 0.1 \units{\Omega}$.
+}
+  \begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm}
+\br
+    & \mch{$R + r$ (Ω)} & \mch{$R$ (Ω)} \\
+\mr
+  1 & 12&3 & 0&1        & 11&4 & 0&1 \\
+  2 & 30&6 & 0&1        & 29&7 & 0&1 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:theoretical_resistances_part_2} has the theoretical resistances for part 2.
+$R_{1+2}$ is the theoretical equivalent resistance for the two resistors in series.
+$R_{1||2}$ is the theoretical equivalent resistance for the two resistors in parallel.
+
+\begin{table}[htbp]
+\caption{\label{tab:theoretical_resistances_part_2}
+Part 2 Theoretical Resistances
+}
+  \begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm}
+\br
+  & \mch{Resistance (Ω)} \\
+\mr
+  $R_{1+2}$  & 41&1 & 0&2 \\
+  $R_{1||2}$ & 8&24 & 0&07 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:R_1_experimental_values} contains the values for the circuit with just $R_1$ connected to the power supply.
+$V$ is the voltage across the nichrome resistor.
+$I$ is the current through the nichrome resistor.
+$R_{V/I}$ is the experimental resistance determined using the measured values for $V$ and $I$.
+
+\begin{table}[htbp]
+\caption{\label{tab:R_1_experimental_values}
+Part 2 $R_1$ Experimental Values
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}\mcm\mcm\mcm}
+\br
+  \mch{$V$ (V)} & \mch{$I$ (mA)} & \mch{$R_{V/I}$ (Ω)} \\
+\mr
+  0&000 & 0&001 &  0&00 & 0&01   & \multicolumn{4}{l}{undefined} \\ 
+  0&744 & 0&001 &  66&8 & 0&1    & 11&14 & 0&02     \\
+  1&491 & 0&001 & 134&0 & 0&1    & 11&13 & 0&01     \\
+  2&257 & 0&001 & 202&8 & 0&1    & 11&129 & 0&007   \\
+  3&000 & 0&001 & 269&6 & 0&1    & 11&128 & 0&006   \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:R_2_experimental_values} contains the values for the circuit with just $R_2$ connected to the power supply.
+$V$ is the voltage across the nichrome resistor.
+$I$ is the current through the nichrome resistor.
+$R_{V/I}$ is the experimental resistance determined using the measured values for $V$ and $I$.
+
+\begin{table}[htbp]
+\caption{\label{tab:R_2_experimental_values}
+Part 2 $R_2$ Experimental Values
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}\mcm\mcm\mcm}
+\br
+  \mch{$V$ (V)} & \mch{$I$ (mA)} & \mch{$R_{V/I}$ (Ω)} \\
+\mr
+  0&000 & 0&001 &  0&00  & 0&01 & \multicolumn{4}{l}{undefined} \\ 
+  0&746 & 0&001 &  24&96 & 0&01 & 29&89 & 0&04   \\
+  1&500 & 0&001 &  50&16 & 0&01 & 29&90 & 0&02    \\
+  2&255 & 0&001 &  75&4  & 0&1  & 29&91 & 0&04   \\
+  2&998 & 0&001 & 100&3  & 0&1  & 29&89 & 0&03   \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:series_experimental_values} contains the values for the circuit with $R_1$ and $R_2$ connected to the power supply in series.
+$V$ is the voltage across both nichrome resistors.
+$I$ is the current through both nichrome resistors.
+$R_{V/I}$ is the experimental resistance determined using the measured values for $V$ and $I$.
+
+\begin{table}[htbp]
+\caption{\label{tab:series_experimental_values}
+Part 2 $R_{1+2}$ Experimental Values
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}\mcm\mcm\mcm}
+\br
+  \mch{$V$ (V)} & \mch{$I$ (mA)} & \mch{$R_{V/I}$ (Ω)} \\
+\mr
+  0&000 & 0&001 &  0&00 & 0&01 & \multicolumn{4}{l}{undefined} \\ 
+  0&757 & 0&001 & 18&37 & 0&01 & 41&21 & 0&06  \\
+  1&496 & 0&001 & 36&29 & 0&01 & 41&22 & 0&03  \\
+  2&254 & 0&001 & 54&69 & 0&01 & 41&21 & 0&02  \\
+  3&001 & 0&001 & 72&8  & 0&1  & 41&22 & 0&06  \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:parallel_experimental_values} contains the values for the circuit with $R_1$ and $R_2$ connected to the power supply in parallel.
+$V$ is the voltage across both nichrome resistors.
+$I$ is the current through both nichrome resistors.
+$R_{V/I}$ is the experimental resistance determined using the measured values for $V$ and $I$.
+
+\begin{table}[htbp]
+\caption{\label{tab:parallel_experimental_values}
+Part 2 $R_{1||2}$ Experimental Values
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}\mcm\mcm\mcm}
+\br
+  \mch{$V$ (V)} & \mch{$I$ (mA)} & \mch{$R_{V/I}$ (Ω)} \\
+\mr
+  0&000 & 0&001 &   0&00 & 0&01  & \multicolumn{4}{l}{undefined} \\ 
+  0&749 & 0&001 &  91&4 & 0&1    & 8&19 & 0&01    \\
+  1&502 & 0&001 & 183&5 & 0&1    & 8&185 & 0&007  \\
+  2&252 & 0&001 & 275&5 & 0&1    & 8&174 & 0&005  \\
+  3&000 & 0&001 & 367&6 & 0&1    & 8&161 & 0&004  \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:series_circuit_measurements} contains the voltage and current measurements made of the series circuit at 4 V.
+$V_1$ is the voltage across resistor 1.
+$V_2$ is the voltage across resistor 2.
+$V_{1+2}$ is the voltage across both resistors.
+$I_1$ is the current between the resistors, after coming from the power supply and through resistor 1.
+$I_2$ is the current after resistor 2, right before reaching the negative terminal of the power supply.
+$I_{1+2}$ is the current next to the positive terminal of the power supply, right before reaching the first resistor.
+
+\begin{table}[htbp]
+\caption{\label{tab:series_circuit_measurements}
+Part 2 Series Circuit at 4 V
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm}
+\br
+  &           \mch{$V$ (V)} & \mch{$I$ (mA)} \\
+\mr
+  $R_1$     & 1&084 & 0&001 & 96&5 & 0&1 \\
+  $R_2$     & 2&915 & 0&001 & 97&1 & 0&1 \\
+  $R_{1+2}$ & 4&002 & 0&001 & 97&1 & 0&1 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+Table \ref{tab:parallel_circuit_measurements} contains the voltage and current measurements made of the parallel circuit at 4 V.
+$V_1$ is the voltage across resistor 1.
+$V_2$ is the voltage across resistor 2.
+$V_{1||2}$ is the voltage across both resistors.
+$I_1$ is the current through resistor 1.
+$I_2$ is the current through resistor 2.
+$I_{1||2}$ is the current next to the positive terminal of the power supply, right before reaching the junction connected to the two resistors.
+
+\begin{table}[htbp]
+\caption{\label{tab:parallel_circuit_measurements}
+Part 2 Parallel Circuit at 4 V
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}l\mcm\mcm}
+\br
+ &             \mch{$V$ (V)} & \mch{$I$ (mA)} \\
+\mr
+  $R_1$      & 3&968 & 0&001 & 410&4 & 0&1 \\
+  $R_2$      & 3&927 & 0&001 & 155&6 & 0&1 \\
+  $R_{1||2}$ & 4&002 & 0&001 & 491&7 & 0&1 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+%%%%%%%%%%%%%%%%%%%% Uncertainty %%%%%%%%%%%%%%%%%%%%
+\section{Uncertainty}
+
+All the voltage, current, and resistance measurements in the experiment were made using a multimeter.
+If there were fluctuations in a particular reading with the multimeter (voltage, current, or resistance), then the uncertainty was taken to be the magnitude of the fluctuations, as that gives an upper bound for how much the value could have varied.
+If the reading with the multimeter (voltage, current, or resistance) was stable and did not fluctuate, then the uncertainty was taken to be the smallest increment of measure, since that was the limiting precision of the equipment.
+
+In parts 1 and 2, $R_{V/I}$ was calculated using equation \ref{eq:r_from_vi}.
+\begin{IEEEeqnarray}{rCl}
+  R_{V/I} & = & \frac{V}{I} \label{eq:r_from_vi}
+\end{IEEEeqnarray}
+The uncertainty of $R_{V/I}$ is given by equation \ref{eq:r_from_vi_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta R_{V/I} & = & \left[
+    \left(\frac{\partial R_{V/I}}{\partial V} \Delta V \right)^2
+    + \left(\frac{\partial R_{V/I}}{\partial I} \Delta I \right)^2
+  \right]^\frac{1}{2} \label{eq:r_from_vi_uncertainty} \\
+  & = & \frac{V}{I} \left[
+    \left( \frac{\Delta V}{V} \right)^2
+    + \left( \frac{\Delta I}{I} \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
+In part 1, $R_\mathrm{m}$ was calculated using equation \ref{eq:r_from_m}.
+Note that the combined value ($R_\mathrm{m} + r$) was measured, as was the value for $r$.
+But $R_\mathrm{m}$ was not measured, hence why it is being calculated as a difference of two values.
+\begin{IEEEeqnarray}{rCl}
+  R_\mathrm{m} & = & (R_\mathrm{m} + r) - r \label{eq:r_from_m}
+\end{IEEEeqnarray}
+The uncertainty of $R_\mathrm{m}$ is given by equation \ref{eq:r_from_m_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta R_\mathrm{m} & = & \left[
+    \left(\frac{\partial R_\mathrm{m}}{\partial (R_\mathrm{m} + r)} \Delta (R_\mathrm{m} + r) \right)^2
+    + \left(\frac{\partial R_\mathrm{m}}{\partial r} \Delta r \right)^2
+  \right]^\frac{1}{2} \label{eq:r_from_m_uncertainty} \\
+  & = & \left[
+    \left( \Delta (R_\mathrm{m} + r) \right)^2
+    + \left( \Delta r \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
+Similarly in part 2, the true resistance values $R_1$ and $R_2$, referred to as just $R$, were calculated using equation \ref{eq:r_true_from_m}.
+Note that the combined value ($R + r$) was measured, as was the value for $r$.
+But $R$ was not measured, hence why it is being calculated as a difference of two values.
+\begin{IEEEeqnarray}{rCl}
+  R & = & (R + r) - r \label{eq:r_true_from_m}
+\end{IEEEeqnarray}
+The uncertainty of $R$ is given by equation \ref{eq:r_true_from_m_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta R & = & \left[
+    \left(\frac{\partial R}{\partial (R + r)} \Delta (R + r) \right)^2
+    + \left(\frac{\partial R}{\partial r} \Delta r \right)^2
+  \right]^\frac{1}{2} \label{eq:r_true_from_m_uncertainty} \\
+  & = & \left[
+    \left( \Delta (R + r) \right)^2
+    + \left( \Delta r \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
+In part 1, $R_\mathrm{th}$ was calculated using equation \ref{eq:r_th}.
+\begin{IEEEeqnarray}{rCl}
+  R_\mathrm{th} & = & \frac{\rho L}{A} \label{eq:r_th} \\
+  & = & \frac{\rho L}{\pi (D/2)^2} \nonumber \\
+  & = & \frac{4 \rho L}{\pi D^2} \nonumber
+\end{IEEEeqnarray}
+Note that the values for $\rho$, $L$, and $D$ were assumed to be exact, without uncertainty.
+Thus, $R_\mathrm{th}$ would have no uncertainty as well.
+
+In part 2, $R_{1+2}$, the theoretical resistance for the two resistors in series, was calculated using equation \ref{eq:r_1_2_series}.
+\begin{IEEEeqnarray}{rCl}
+  R_{1+2} & = & R_1 + R_2 \label{eq:r_1_2_series}
+\end{IEEEeqnarray}
+The uncertainty of $R_{1+2}$ is given by equation \ref{eq:r_1_2_series_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta R_{1+2} & = & \left[
+    \left(\frac{\partial R_{1+2}}{\partial R_1} \Delta R_1 \right)^2
+    + \left(\frac{\partial R_{1+2}}{\partial R_2} \Delta R_2 \right)^2
+  \right]^\frac{1}{2} \label{eq:r_1_2_series_uncertainty} \\
+  & = & \left[
+    \left( \Delta R_1 \right)^2
+    + \left( \Delta R_2 \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
+In part 2, $R_{1||2}$, the theoretical resistance for the two resistors in parallel, was calculated using equation \ref{eq:r_1_2_parallel}.
+\begin{IEEEeqnarray}{rCl}
+  R_{1||2} & = & \left( R_1^{-1} + R_2^{-1} \right)^{-1} \label{eq:r_1_2_parallel}
+\end{IEEEeqnarray}
+The uncertainty of $R_{1||2}$ is given by equation \ref{eq:r_1_2_parallel_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta R_{1||2} & = & \left[
+    \left(\frac{\partial R_{1||2}}{\partial R_1} \Delta R_1 \right)^2
+    + \left(\frac{\partial R_{1||2}}{\partial R_2} \Delta R_2 \right)^2
+  \right]^\frac{1}{2} \label{eq:r_1_2_parallel_uncertainty} \\
+  & = & \left[
+    \left( \left[ R_1^{-1} + R_2^{-1} \right]^{-2} \frac{\Delta R_1}{R_1^2} \right)^2
+    + \left( \left[ R_1^{-1} + R_2^{-1} \right]^{-2} \frac{\Delta R_2}{R_2^2} \right)^2
+  \right]^\frac{1}{2} \nonumber
+\end{IEEEeqnarray}
+
+%%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+In part 1, the resistances of 7 different resistance coils were determined using three different techniques.
+Descriptions of the coils are in table \ref{tab:resistance_coils}, and the calculated resistance values are in table \ref{tab:resistances_part_1}.
+The experimental resistances $R_{V/I}$ and $R_\mathrm{m}$ had similar values for all the coils.
+Coils 1, 4, and 5 had resistance values that overlapped within uncertainty, while the rest of the coils (2, 3, 6, and 7) had values that were still fairly close and almost within uncertainty.
+While the experimental resistances were similar, their values were all higher than the corresponding theoretical resistances $R_\mathrm{th}$.
+One possible explanation is that when measuring voltage and resistance, the multimeter was connected to the resistance coils through a small bit of copper wire.
+This copper wire section was not included when measuring $r$, but it was included when measuring $(R_\mathrm{m} + r)$.
+As a result, this would cause $R_\mathrm{m}$ to be higher than expected.
+This extra resistance would also have increased the measured value for $V$, thereby causing $R_{V/I}$ to be higher than expected.
+Another possibility is that the temperature of the room did not match the reference temperature of 20 ℃.
+The table the resistivity values were taken from used a reference temperature of 20 ℃.
+If the room were warmer than 20 ℃, then the actual resistivity values would have been slightly higher than the $\rho$ values used for calculations.
+This would cause $R_\mathrm{th}$ to be lower than expected.
+
+Resistance coils 1 through 5 were all made of the same material and had the same cross-sectional area, but they had different lengths.
+Figure \ref{fig:resistance_vs_length} plots resistance ($R_{V/I}$, $R_\mathrm{m}$, and $R_\mathrm{th}$) versus length ($L$).
+The graphs are linear with y-intercepts forced to zero.
+Thus, the data indicates that the resistance of a wire/coil is proportional to its length.
+
+Resistance coils 5 and 6 were made of the same material and had the same length, but they had different cross-sectional areas.
+The experimental resistances for coil 5 ($R_{V/I} = 20.21 \pm 0.03 \units{\Omega}$, $R_\mathrm{m} = 20.2 \pm 0.1 \units{\Omega}$) were higher than the experimental resistances for coil 6 ($R_{V/I} = 11.84 \pm 0.02 \units{\Omega}$, $R_\mathrm{m} = 11.6 \pm 0.1 \units{\Omega}$).
+The cross-sectional area of coil 5 ($A = \frac{1}{4} \pi (0.0254 \units{cm})^2 = \sci{5.07}{-4} \units{cm^2}$) was lower than the cross-sectional area of coil 6 ($A = \frac{1}{4} \pi (0.0320 \units{cm})^2 = \sci{8.04}{-4} \units{cm^2}$).
+Thus, the data suggests that as cross-sectional area increases, resistances decreases.
+
+Resistance coil 7, made out of copper, was 10 times longer than coil 5, made out of nickel-silver, with the same cross-sectional area. 
+Since it has already been shown that resistance is proportional to length, then dividing the experimental resistance values for coil 7 by 10 would allow us to compare the resistances of two wires of identical dimensions but different materials.
+Thus, our hypothetical $200 \units{cm}$ long copper resistance coil of diameter $0.0254 \units{cm}$ would have experimental resistances $R_{V/I} = 0.696 \pm 0.002 \units{\Omega}$ and $R_\mathrm{m} = 0.72 \pm 0.01 \units{\Omega}$.
+For comparison, coil 5 had experimental resistances $R_{V/I} = 20.21 \pm 0.03 \units{\Omega}$ and $R_\mathrm{m} = 20.2 \pm 0.1 \units{\Omega}$.
+The resistance of coil 5 was much higher than the resistance of the hypothetical copper wire with identical length and diameter.
+This supports the idea that resistance depends on material, with some materials having more resistance for a given wire shape than others.
+
+In part 2, the resistance of two nichrome coils were measured, and those measurements were used to determine the resistance of four different circuits.
+The true values for both resistors are in table \ref{tab:true_resistances_part_2}, the experimental values of the first coil are in table \ref{tab:R_1_experimental_values}, and the experimental values of the second coil are in table \ref{tab:R_2_experimental_values}.
+For resistor 1, the experimental resistances $R_{V/I}$ were within uncertainty of each other and had a mean of $11.13 \units{\Omega}$.
+In other words, the experimental resistance stayed the same even though voltage vas varied, demonstrating that resistance is a property of the wire independent of voltage.
+But, this resistance value is about $0.3 \units{\Omega}$ lower than the true value of $R_1 = 11.4 \pm 0.1 \units{\Omega}$, a difference larger than the uncertainty.
+One possible explanation is that the alligator clips from the multimeter were not connected to ends of the resistor in the exact same spot each time.
+The ends of the nichrome resistor had bits of free wire that were not wrapped around the dowel.
+The multimeter wirers were clipped to those free ends, but care was not taken to make sure that the clips were connected to the same location each time.
+When measuring the voltage, the clips may have been connected slightly closer together than when measuring the resistance.
+As a result, the voltage drop measured would be for a slightly smaller length of resistor, and would thus be lower than expected.
+A smaller voltage measurement would lead to a smaller calculated resistance.
+For resistor 2, the experimental resistances $R_{V/I}$ were within uncertainty of each other and had a mean of $29.90 \units{\Omega}$.
+In other words, the experimental resistance stayed the same even though voltage vas varied, demonstrating that resistance is a property of the wire independent of voltage.
+But, this resistance value is about $0.2 \units{\Omega}$ higher than the true value of $R_2 = 29.7 \pm 0.1 \units{\Omega}$, a difference larger than the uncertainty.
+One possible explanation is that the alligator clips from the multimeter were not connected to ends of the resistor in the exact same spot each time.
+When measuring the voltage, the clips may have been connected slightly further apart than when measuring the resistance.
+As a result, the voltage drop measured would be for a slightly larger length of resistor, and would thus be higher than expected.
+A higher voltage measurement would lead to a higher calculated resistance.
+
+After measuring the resistance of the first two circuits containing only one of the nichrome coils at a time, both coils were connected in series, then in parallel.
+The theoretical resistances of these two circuits are in table \ref{tab:theoretical_resistances_part_2}, the experimental equivalent resistance values of the series circuit are in table \ref{tab:series_experimental_values}, and the experimental equivalent resistance values of the parallel circuit are in table \ref{tab:parallel_experimental_values}.
+For the series circuit, the experimental resistances $R_{V/I}$ were within uncertainty of each other and had a mean of $41.22 \units{\Omega}$.
+This resistance value is about $0.1 \units{\Omega}$ higher than the theoretical value of $R_{1+2} = 41.1 \pm 0.2 \units{\Omega}$, a difference smaller than the uncertainty.
+Thus, the result agrees with theory within uncertainty. 
+For the parallel circuit, the experimental resistances $R_{V/I}$ were within uncertainty of each other, or at least very close to matching within uncertainty, and had a mean of $8.18 \units{\Omega}$.
+This resistance value is about $0.06 \units{\Omega}$ lower than the theoretical value of $R_{1||2} = 8.24 \pm 0.07 \units{\Omega}$, a difference smaller than the uncertainty.
+Thus, the result agrees with theory within uncertainty.
+
+Measurements of voltage and current were made of the series and parallel circuits at $4 \units{V}$.
+The results for the two resistors in series are in table \ref{tab:series_circuit_measurements}, and the results for the two resistors in parallel are in table \ref{tab:parallel_circuit_measurements}.
+Focusing on the series circuit, the voltage across resistor 1 was $V_1 = 1.084 \pm 0.001 \units{V}$, the voltage across resistor 2 was $V_2 = 1.084 \pm 0.001 \units{V}$, and the voltage across both resistors was $V_{1+2} = 4.002 \pm 0.001 \units{V}$.
+Resistor 2 had a larger voltage than resistor 1, which is consistent with what theory predicts for resistors in series.
+Since resistors in series have the same current $I$, and $V = IR$, a larger resistance $R$ leads to a larger voltage $V$.
+The sum $V_1 + V_2 = 3.999 \pm 0.001 \units{V}$ is approximately equal to $V_{1+2}$, only about $0.003 \units{V}$ lower and just barely larger than the uncertainty.
+In theory, $V_1 + V_2 = V_{1+2}$ since voltages add together when traversing a section of a circuit, and the results got very close to demonstrating this.
+This small discrepancy is possibly due to the multimeter clips being connected to the resistors in such a way that a small section of resistor was skipped over in the separate measurements for $V_1$ and $V_2$, a section which was included in the overall measurement for $V_{1+2}$.
+Turning to the current measurements, the current between the resistors was $I_1 = 96.5 \pm 0.1 \units{mA}$, the current after the second resistor was $I_2 = 97.1 \pm 0.1 \units{mA}$, and the current next to the power supply was $I_{1+2} = 97.1 \pm 0.1 \units{mA}$.
+In theory, each of these current measurements should be identical since components connected in series have the same current.
+$I_2$ and $I_{1+2}$ had identical values, but $I_1$ was about $0.6 \units{mA}$ lower.
+One potential explanation is that when measuring $I_2$ and $I_{1+2}$, no extra wires needed to be added to the circuit; the components were simply rearranged.
+But to measure $I_1$, an extra wire needed to be added in order to connect the multimeter between the resistors.
+This extra wire would have increased the total resistance of the series circuit, thereby decreasing the measured current.
+
+Focusing on the parallel circuit, the voltage across resistor 1 was $V_1 = 3.968 \pm 0.001 \units{V}$, the voltage across resistor 2 was $V_2 = 3.927 \pm 0.001 \units{V}$, and the voltage across both resistors was $V_{1||2} = 4.002 \pm 0.001 \units{V}$.
+In theory, these voltage measurements should have been the same since components connected in parallel have the same voltage, but sadly the measurements did not match within uncertainty.
+$V_1$ was about $0.034 \units{V}$ lower than $V_{1||2}$, and $V_2$ was about $0.075 \units{V}$ lower than $V_{1||2}$.
+A possible explanation for these slight differences has to do with the placement of the multimeter clips.
+When measuring $V_{1||2}$, the clips were connected to the junctions where the two resistors connected to each other and the power supply.
+But when measuring $V_1$ and $V_2$, the clips were moved off the junctions and closer to their respective resistors.
+This would have lowered the length and resistance of the sections, thereby lowering the measured voltages.
+Turning to the current measurements, the current through resistor 1 was $I_1 = 410.4 \pm 0.1 \units{mA}$, the current through resistor 2 was $I_2 = 155.6 \pm 0.1 \units{mA}$, and the current next to the power supply was $I_{1||2} = 491.7 \pm 0.1 \units{mA}$.
+$I_1$ is larger than $I_2$, which is consistent with what theory predicts.
+The resistors had about the same voltage across them since they were connected in parallel, so the resistor with less resistance, $R_1$, would have more current.
+In theory, $I_1 + I_2 = I_{1||2}$ based on the junction rule.
+However, $I_1 + I_2 = 566.0 \pm 0.1 \units{mA}$, which is much greater than $I_{1||2}$.
+One potential explanation for the difference is that the DC power supply was turned off between each of these measurements, while the multimeter was being moved to a different part of the circuit.
+It was assumed that as long as the adjustment knobs on the power supply were not touched, it would restart to the same voltage it had previously.
+If that assumption is false, then then power supply may have restarted to a higher voltage during the measurements of $I_1$ and $I_2$, thereby increasing both current measurements.
+Another possibility has to do with the placement of the multimeter and its connector wires, which have some noticeable resistance.
+Initially, when measuring $I_{1||2}$, the multimeter was placed in series with the power supply and the two resistors in parallel.
+Those two resistors behave like one equivalent resistor with less resistance than either $R_1$ or $R_2$.
+Thus, the circuit behaves like a power supply connected in series with two resistors (one for the resistance of the multimeter wires, and a second for the equivalent resistor).
+This arrangement shall be referred to as arrangement 1.
+When measuring $I_1$ and $I_2$, the multimeter was moved to be in series with the respective resistor the current was being measured for.
+Thus, the loop the multimeter is connected to behaves like a power supply connected in series with two resistors (one for the resistance of the multimeter wires, and a second for the resistor of interest).
+This arrangement shall be referred to as arrangement 2.
+For two resistors in series with a power supply, since the same current passes through both of them, the resistor with the larger resistance has the larger voltage across it.
+Since the power supply and the multimeter wires were the same in both arrangements, but the effective resistance of the ``second'' resistor is higher in arrangement 2 than in arrangement 1, then the voltage across the resistor of interest must be slightly greater in arrangement 2.
+If the voltage is greater while the resistance of the individual resistor of interest is the same, then the current must be greater as well.
+Thus, the measurements for $I_1$ and $I_2$ would be slightly greater than expected because the multimeter had to be moved in series with them.
+
+Comparing the series circuit to the parallel circuit at $4 \units{V}$, a few things are noticed.
+To start, $V_{1+2} = 4.002 \pm 0.001 \units{V}$ was equal to $V_{1||2} = 4.002 \pm 0.001 \units{V}$.
+It makes sense that these values were close together, because both circuits had the power supply adjusted in such a way that voltage across the resistors was measured to be around $4 \units{V}$.
+Comparing the currents, $I_{1+2} = 97.1 \pm 0.1 \units{mA}$ was lesser than $I_{1||2} = 491.7 \pm 0.1 \units{mA}$.
+This result is consistent with what theory predicts.
+Adding resistors in series causes the overall resistance to increase, while adding resistors in parallel causes the overall resistance to decrease.
+Since both circuits had the same voltage across their resistors, the circuit with greater equivalent resistance (the series circuit) had less current.
+Zooming in on just resistor 1, the voltage across it in the series circuit was $1.084 \pm 0.001 \units{V}$ while in the parallel circuit it was $3.968 \pm 0.001 \units{V}$.
+It makes sense that voltage across it was greater in the parallel circuit than in the series circuit.
+In the parallel circuit, the resistor gets the full voltage from the power supply.
+But in the series circuit, the resistor has to split/share the voltage with the other resistors.
+Comparing the currents, it was $96.5 \pm 0.1 \units{mA}$ in the series circuit and $410.4 \pm 0.1 \units{mA}$ in the parallel circuit.
+It again makes sense that current through resistor 1 was greater in the parallel circuit than in the series circuit.
+As was just stated, the voltage across resistor 1 was greater in the parallel circuit than in the series circuit.
+Since the resistance is the same in both cases, the greater the voltage the larger the current.
+
+%%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
+\section{Citations}
+
+\begin{thebibliography}{9}
+
+\bibitem{labpacket}
+  Karen Schnurbusch,
+  \textit{Physics 4B Lab Book},
+  Mt. San Antonio College,
+  2023,
+  pp. 65-70.
+
+\bibitem{equationsheet}
+  Karen Schnurbusch,
+  \textit{Physics 4B Equations},
+  Mt. San Antonio College,
+  2023,
+  pp. 4, 10.
+
+\end{thebibliography}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%
