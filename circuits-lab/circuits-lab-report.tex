@@ -42,6 +42,7 @@ For the first 4 circuits, the voltage and current calculations were compared to 
 The following sections contain the theoretical voltage, current, and power for each circuit element for each of the 7 circuits.
 In addition, there is an annotated circuit diagram for each circuit.
 In each case, the voltage across a resistor was calculated with $V = IR$, and the power dissipated by a circuit element with $P = VI$.
+$R_2 = 40 \units{\Omega}$ for each circuit.
 
 \subsection{Circuit 1}
 
@@ -492,6 +493,35 @@ All the voltage and current values match the calculations to 3 significant figur
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
+
+The goal of the exercise was to use Kirchhoff's rules to analyze 7 different circuits and calculate current, voltage, and power for each circuit element.
+Kirchhoff's junction rule states that the sum of the current into a junction equals the sum of the current out of the junction.
+This rule is a result of conservation of charge.
+\begin{IEEEeqnarray*}{rCl}
+  \sum I_\mathrm{in} & = & \sum I_\mathrm{out}
+\end{IEEEeqnarray*}
+Kirchhoff's loop rule states that sum of all the voltages on a closed loop of circuit must equal 0.
+This rule is a result of conservation of energy.
+\begin{IEEEeqnarray*}{rCl}
+  \sum \Delta V & = & 0
+\end{IEEEeqnarray*}
+Since the voltages of the power supplies and the resistances for each resistor were known, the main unknowns were the currents through the series sections of the circuits.
+Kirchhoff's rules could be used to set up systems of equations to solve for those unknown currents.
+The junction rule needed to be applied 1 less than the total number of junctions in the circuit.
+The loop rule needed to be applied the same number of times as internal spaces in the circuit diagram.
+This yields the same number of equations as unknowns.
+From there, the voltage across each resistor could be calculated using Ohm's law,
+\begin{IEEEeqnarray*}{rCl}
+  V & = & I R
+\end{IEEEeqnarray*}
+and the power dissipated by each component could be calculated as the product of current and voltage.
+\begin{IEEEeqnarray*}{rCl}
+  P & = & V I
+\end{IEEEeqnarray*}
+
+For the first 4 circuits, the voltage and current calculations were compared to results obtained using an online circuit simulator.
+All the voltage and current values matched the calculations to 3 significant figures.
+This supports the idea that the Kirchhoff's rules were applied correctly.
 
 %%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
 \section{Citations}
