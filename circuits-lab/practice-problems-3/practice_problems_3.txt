@@ -48,9 +48,10 @@ U_2 = 0.000207 J
 Part d.
 C_eq = (C_1**-1 + C_2**-1)**-1
 R_eq = R_3 + (R_1**-1 + R_2**-1)**-1
+V_max = E * R_2 / (R_1 + R_2)
 tau = R_eq * C_eq
-q_1(t) = C_eq * E * R_2 / (R_1 + R_2) * (1 - e**(-t / tau ))
+q_1(t) = C_eq * V_max * (1 - e**(-t / tau ))
 q_2(t) = q_1(t)
-i_3(t) = E * R_2 / (R_1 + R_2) / R_eq * e**(-t / tau )
+i_3(t) = V_max / R_eq * e**(-t / tau )
 i_2(t) = (i_3(t) * R_3 + q_1(t) / C_1 + q_2(t) / C_2) / R_2
 i_1(t) = (E - i_3(t) * R_3 - q_1(t) / C_1 - q_2(t) / C_2) / R_1
