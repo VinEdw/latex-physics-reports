@@ -514,14 +514,19 @@ From there, the voltage across each resistor could be calculated using Ohm's law
 \begin{IEEEeqnarray*}{rCl}
   V & = & I R
 \end{IEEEeqnarray*}
-and the power dissipated by each component could be calculated as the product of current and voltage.
+and the power supplied/dissipated by each component could be calculated as the product of current and voltage.
 \begin{IEEEeqnarray*}{rCl}
   P & = & V I
 \end{IEEEeqnarray*}
+In line with conservation of energy, the total power supplied should equal the total power dissipated.
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated}
+\end{IEEEeqnarray*}
+This check was loosely used on all the circuits to make sure the results seemed plausible.
 
 For the first 4 circuits, the voltage and current calculations were compared to results obtained using an online circuit simulator.
 All the voltage and current values matched the calculations to 3 significant figures.
-This supports the idea that the Kirchhoff's rules were applied correctly.
+This supports the idea that Kirchhoff's rules were applied correctly.
 
 %%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
 \section{Citations}
