@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \usepackage{IEEEtrantools}
 \usepackage{amsmath}
+\usepackage{amssymb}
 
 % Custom macros
 \gdef\mcm{r@{.}l@{ ± }r@{.}l} % Multi Column Measurement; Used for decimal aligning & ± aligning
@@ -76,6 +77,13 @@ Circuit 1 $V$, $I$, and $P$
   & I_1 & = & \frac{\emf_1}{R_1 + R_2 + R_3 + R_4} \\
   & I_1 & = & 0.0440 \units{A}
 \end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_4 \\
+  0.527 \units{W} & \stackrel{\checkmark}{=} & 0.527 \units{W}
+\end{IEEEeqnarray*}
+
 \newpage
 
 \subsection{Circuit 2}
@@ -138,6 +146,13 @@ Circuit 2 $V$, $I$, and $P$
   I_3 & = & 0.0720 \units{A} \\
   I_{\emf_1} & = & 0.403 \units{A}
 \end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 \\
+  3.63 \units{W} & \stackrel{\checkmark}{=} & 3.63 \units{W}
+\end{IEEEeqnarray*}
+
 \newpage
 
 \subsection{Circuit 3}
@@ -206,6 +221,13 @@ Circuit 3 $V$, $I$, and $P$
   I_4 & = & 0.0607 \units{A} \\
   I_{\emf_1} & = & 0.212 \units{A}
 \end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_4 \\
+  2.34 \units{W} & \stackrel{\checkmark}{=} & 2.34 \units{W}
+\end{IEEEeqnarray*}
+
 \newpage
 
 \subsection{Circuit 4}
@@ -265,6 +287,13 @@ Circuit 4 $V$, $I$, and $P$
   I_2 & = & 0.0333 \units{A} \\
   I_5 & = & 0.0613 \units{A} \\
 \end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_4 + P_5 \\
+  0.613 \units{W} & \stackrel{\checkmark}{=} & 0.613 \units{W}
+\end{IEEEeqnarray*}
+
 \newpage
 
 \subsection{Circuit 5}
@@ -299,6 +328,13 @@ Circuit 5 $V$, $I$, and $P$
   & I_1 & = & \frac{\emf_1 - \emf_2}{R_1 + R_2 + R_3} \\
   & I_1 & = & 0.0750 \units{A}
 \end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_{\emf_2} \\
+  1.05 \units{W} & \stackrel{\checkmark}{=} & 1.05 \units{W}
+\end{IEEEeqnarray*}
+
 \newpage
 
 \subsection{Circuit 6}
@@ -369,6 +405,13 @@ Circuit 6 $V$, $I$, and $P$
   I_4 & = & 0.629 \units{A} \\
   I_{\emf_1} & = & 2.11 \units{A}
 \end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} + P_{\emf_2} & = & P_1 + P_2 + P_3 + P_4 + P_5 \\
+  88.0 \units{W} & \stackrel{\checkmark}{=} & 88.0 \units{W}
+\end{IEEEeqnarray*}
+
 \newpage
 
 \subsection{Circuit 7}
@@ -445,6 +488,13 @@ Circuit 7 $V$, $I$, and $P$
   I_6 & = & 0.0806 \units{A} \\
   I_7 & = & 0.0160 \units{A}
 \end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_4 + P_5 + P_6 + P_7 \\
+  2.40 \units{W} & \stackrel{\checkmark}{=} & 2.40 \units{W}
+\end{IEEEeqnarray*}
+
 \newpage
 
 %%%%%%%%%%%%%%%%%%%% Simulations %%%%%%%%%%%%%%%%%%%%
@@ -518,11 +568,14 @@ and the power supplied/dissipated by each component could be calculated as the p
 \begin{IEEEeqnarray*}{rCl}
   P & = & V I
 \end{IEEEeqnarray*}
+
 In line with conservation of energy, the total power supplied should equal the total power dissipated.
 \begin{IEEEeqnarray*}{rCl}
   \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated}
 \end{IEEEeqnarray*}
-This check was loosely used on all the circuits to make sure the results seemed plausible.
+This check was used on all the circuits to make sure the results seemed plausible.
+All the circuits passed this check to three significant figures.
+Note that the unrounded values for power were used for these checks in order to avoid rounding error.
 
 For the first 4 circuits, the voltage and current calculations were compared to results obtained using an online circuit simulator.
 All the voltage and current values matched the calculations to 3 significant figures.
