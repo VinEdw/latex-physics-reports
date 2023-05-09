@@ -555,12 +555,16 @@ This rule is a result of conservation of energy.
 \begin{IEEEeqnarray*}{rCl}
   \sum \Delta V & = & 0
 \end{IEEEeqnarray*}
+
 Since the voltages of the power supplies and the resistances for each resistor were known, the main unknowns were the currents through the series sections of the circuits.
+Components connected in series have the same current through them due to conservation of charge (the rate of charge entering the section needs to equal the rate of charge exiting).
+As such, a current label was added to each of these sections on the circuit diagram.
 Kirchhoff's rules could be used to set up systems of equations to solve for those unknown currents.
-The junction rule needed to be applied 1 less than the total number of junctions in the circuit.
-The loop rule needed to be applied the same number of times as internal spaces in the circuit diagram.
+The junction rule needs to be applied 1 time less than the total number of junctions in the circuit.
+The loop rule needs to be applied the same number of times as internal spaces in the circuit diagram.
 This yields the same number of equations as unknowns.
-From there, the voltage across each resistor could be calculated using Ohm's law,
+
+Once the currents were known, the voltage across each resistor could be calculated using Ohm's law,
 \begin{IEEEeqnarray*}{rCl}
   V & = & I R
 \end{IEEEeqnarray*}
