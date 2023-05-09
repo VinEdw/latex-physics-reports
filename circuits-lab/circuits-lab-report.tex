@@ -1,0 +1,616 @@
+\documentclass[12pt]{iopart} % Document class declaration
+
+% package "imports"
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Custom macros
+\gdef\mcm{r@{.}l@{ ± }r@{.}l} % Multi Column Measurement; Used for decimal aligning & ± aligning
+\gdef\mch#1{\multicolumn{4}{l}{#1}} % Multi Column Header; Used for decimal aligning & ± aligning
+\gdef\mcmnd{r@{ ± }l} % Multi Column Measurement No Decimal; Used for ± aligning when the values don't need a decimal point
+\gdef\mchnd#1{\multicolumn{2}{l}{#1}} % Multi Column Header No Decimal; Used for  ± aligning when the values don't need a decimal point
+\gdef\sci#1#2{#1 \times 10^{#2}}
+\gdef\units#1{~\mathrm{#1}}
+
+\gdef\emf{\mathcal{E}}
+
+%%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%%%%%%
+\title{Circuits Lab}
+\author{Vincent Edwards}
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4B, CRN 42240
+  \item[]May 8, 2023
+  \item[]
+  \item[]$R_2 = 40 \units{\Omega}$
+\end{indented}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%% Purpose %%%%%%%%%%%%%%%%%%%%
+\section{Purpose}
+
+The goal of the exercise was to use Kirchhoff's rules to analyze 7 different circuits and calculate current, voltage, and power for each circuit element.
+For the first 4 circuits, the voltage and current calculations were compared to results obtained using an online circuit simulator.
+
+%%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
+\section{Results}
+
+The following sections contain the theoretical voltage, current, and power for each circuit element for each of the 7 circuits.
+In addition, there is an annotated circuit diagram for each circuit.
+In each case, the voltage across a resistor was calculated with $V = IR$, and the power dissipated by a circuit element with $P = VI$.
+$R_2 = 40 \units{\Omega}$ for each circuit.
+
+\subsection{Circuit 1}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-1.png}
+  \end{indented}
+  \caption{\label{fig:circuit_1}
+  Circuit 1
+  }
+\end{figure}
+
+\begin{table}[htbp]
+\caption{\label{tab:circuit_1}
+Circuit 1 $V$, $I$, and $P$
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}lr@{.}lr@{.}lr@{.}l}
+\br
+  & \multicolumn{2}{l}{$V \units{(V)}$} & \multicolumn{2}{l}{$I \units{(A)}$} & \multicolumn{2}{l}{$P \units{(W)}$} \\
+\mr
+  $\emf_1$ & 12&0 & 0&0440 & 0&527 \\
+  $R_1$    & 4&84 & 0&0440 & 0&213 \\
+  $R_2$    & 1&76 & 0&0440 & 0&0773 \\
+  $R_3$    & 1&98 & 0&0440 & 0&0869 \\
+  $R_4$    & 3&43 & 0&0440 & 0&151 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+\begin{IEEEeqnarray*}{LrCl}
+  \mathrm{L_1}: & \emf_1 - I_1 R_1 - I_1 R_2 - I_1 R_3 - I_1 R_4 & = & 0 \\
+  & I_1 & = & \frac{\emf_1}{R_1 + R_2 + R_3 + R_4} \\
+  & I_1 & = & 0.0440 \units{A}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_4 \\
+  0.527 \units{W} & \stackrel{\checkmark}{=} & 0.527 \units{W}
+\end{IEEEeqnarray*}
+
+\newpage
+
+\subsection{Circuit 2}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-2.png}
+  \end{indented}
+  \caption{\label{fig:circuit_2}
+  Circuit 2
+  }
+\end{figure}
+
+\begin{table}[htbp]
+\caption{\label{tab:circuit_2}
+Circuit 2 $V$, $I$, and $P$
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}lr@{.}lr@{.}lr@{.}l}
+\br
+  & \multicolumn{2}{l}{$V \units{(V)}$} & \multicolumn{2}{l}{$I \units{(A)}$} & \multicolumn{2}{l}{$P \units{(W)}$} \\
+\mr
+  $\emf_1$ & 9&00 & 0&403 & 3&63 \\
+  $R_1$    & 9&00 & 0&106 & 0&953 \\
+  $R_2$    & 9&00 & 0&225 & 2&02 \\
+  $R_3$    & 9&00 & 0&0720 & 0&648 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+\begin{IEEEeqnarray*}{LrCl}
+  \mathrm{J_1}: & I_{\emf_1} & = & I_1 + I_2 + I_3 \\
+  & I_1 + I_2 + I_3 - I_{\emf_1} & = & 0 \\
+  \\
+  \mathrm{L_1}: & \emf_1 - I_1 R_1 & = & 0 \\
+  & I_1 R_1 & = & \emf_1 \\
+  \\
+  \mathrm{L_2}: & \emf_1 - I_2 R_2 & = & 0 \\
+  & I_2 R_2 & = & \emf_1 \\
+  \\
+  \mathrm{L_3}: & \emf_1 - I_3 R_3 & = & 0 \\
+  & I_3 R_3 & = & \emf_1
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \begin{bmatrix}
+    1 & 1 & 1 & -1 \\
+    R_1 & 0 & 0 & 0 \\
+    0 & R_2 & 0 & 0 \\
+    0 & 0 & R_3 & 0
+  \end{bmatrix}
+  \begin{bmatrix}
+    I_1 \\ I_2 \\ I_3 \\ I_{\emf_1}
+  \end{bmatrix}
+  & = &
+  \begin{bmatrix}
+    0 \\ \emf_1 \\ \emf_1 \\ \emf_1
+  \end{bmatrix} \\
+  \\
+  I_1 & = & 0.106 \units{A} \\
+  I_2 & = & 0.225 \units{A} \\
+  I_3 & = & 0.0720 \units{A} \\
+  I_{\emf_1} & = & 0.403 \units{A}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 \\
+  3.63 \units{W} & \stackrel{\checkmark}{=} & 3.63 \units{W}
+\end{IEEEeqnarray*}
+
+\newpage
+
+\subsection{Circuit 3}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-3.png}
+  \end{indented}
+  \caption{\label{fig:circuit_3}
+  Circuit 3
+  }
+\end{figure}
+
+\begin{table}[htbp]
+\caption{\label{tab:circuit_3}
+Circuit 3 $V$, $I$, and $P$
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}lr@{.}lr@{.}lr@{.}l}
+\br
+  & \multicolumn{2}{l}{$V \units{(V)}$} & \multicolumn{2}{l}{$I \units{(A)}$} & \multicolumn{2}{l}{$P \units{(W)}$} \\
+\mr
+  $\emf_1$ & 11&0 & 0&212 & 2&34 \\
+  $R_1$    & 11&0 & 0&0815 & 0&896 \\
+  $R_2$    & 5&24 & 0&131 & 0&686 \\
+  $R_3$    & 5&76 & 0&0703 & 0&405 \\
+  $R_4$    & 5&76 & 0&0607 & 0&350 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+\begin{IEEEeqnarray*}{LrCl}
+  \mathrm{J_1}: & I_{\emf_1} & = & I_1 + I_2 \\
+  & I_1 + I_2 - I_{\emf_1} & = & 0 \\
+  \\
+  \mathrm{J_2}: & I_2 & = & I_3 + I_4 \\
+  & I_2 - I_3 - I_4 & = & 0 \\
+  \\
+  \mathrm{L_1}: & \emf_1 - I_1 R_1 & = & 0 \\
+  & I_1 R_1 & = & \emf_1 \\
+  \\
+  \mathrm{L_2}: & \emf_1 - I_2 R_2 - I_3 R_3 & = & 0 \\
+  & I_2 R_2 + I_3 R_3 & = & \emf_1 \\
+  \\
+  \mathrm{L_3}: & \emf_1 - I_2 R_2 - I_4 R_4 & = & 0 \\
+  & I_2 R_2 + I_4 R_4 & = & \emf_1
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \begin{bmatrix}
+    1 & 1 & 0 & 0 & -1 \\
+    0 & 1 & -1 & -1 & 0 \\
+    R_1 & 0 & 0 & 0 & 0 \\
+    0 & R_2 & R_3 & 0 & 0 \\
+    0 & R_2 & 0 & R_4 & 0
+  \end{bmatrix}
+  \begin{bmatrix}
+    I_1 \\ I_2 \\ I_3 \\ I_4 \\ I_{\emf_1}
+  \end{bmatrix}
+  & = &
+  \begin{bmatrix}
+    0 \\ 0 \\ \emf_1 \\ \emf_1 \\ \emf_1
+  \end{bmatrix} \\
+  \\
+  I_1 & = & 0.0815 \units{A} \\
+  I_2 & = & 0.131 \units{A} \\
+  I_3 & = & 0.0703 \units{A} \\
+  I_4 & = & 0.0607 \units{A} \\
+  I_{\emf_1} & = & 0.212 \units{A}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_4 \\
+  2.34 \units{W} & \stackrel{\checkmark}{=} & 2.34 \units{W}
+\end{IEEEeqnarray*}
+
+\newpage
+
+\subsection{Circuit 4}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-4.png}
+  \end{indented}
+  \caption{\label{fig:circuit_4}
+  Circuit 4
+  }
+\end{figure}
+
+\begin{table}[htbp]
+\caption{\label{tab:circuit_4}
+Circuit 4 $V$, $I$, and $P$
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}lr@{.}lr@{.}lr@{.}l}
+\br
+  & \multicolumn{2}{l}{$V \units{(V)}$} & \multicolumn{2}{l}{$I \units{(A)}$} & \multicolumn{2}{l}{$P \units{(W)}$} \\
+\mr
+  $\emf_1$ & 10&0 & 0&0613 & 0&613 \\
+  $R_1$    & 2&80 & 0&0280 & 0&0783 \\
+  $R_2$    & 1&33 & 0&0333 & 0&0443 \\
+  $R_3$    & 2&73 & 0&0333 & 0&0907 \\
+  $R_4$    & 1&26 & 0&0280 & 0&0353 \\
+  $R_5$    & 5&94 & 0&0613 & 0&364 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+\begin{IEEEeqnarray*}{LrCl}
+  \mathrm{J_1}: & I_5 & = & I_1 + I_2 \\
+  & I_1 + I_2 - I_5 & = & 0 \\
+  \\
+  \mathrm{L_1}: & \emf_1 - I_1 R_1 - I_1 R_4 - I_5 R_5 & = & 0 \\
+  & I_1 (R_1 + R_4) + I_5 R_5 & = & \emf_1 \\
+  \\
+  \mathrm{L_2}: & \emf_1 - I_2 R_2 - I_2 R_3 - I_5 R_5 & = & 0 \\
+  & I_2 (R_2 + R_3) + I_5 R_5 & = & \emf_1
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \begin{bmatrix}
+    1 & 1 & -1 \\
+    R_1 + R_4 & 0 & R_5 \\
+    0 & R_2 + R_3 & R_5
+  \end{bmatrix}
+  \begin{bmatrix}
+    I_1 \\ I_2 \\ I_5
+  \end{bmatrix}
+  & = &
+  \begin{bmatrix}
+    0 \\ \emf_1 \\ \emf_1
+  \end{bmatrix} \\
+  \\
+  I_1 & = & 0.0280 \units{A} \\
+  I_2 & = & 0.0333 \units{A} \\
+  I_5 & = & 0.0613 \units{A} \\
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_4 + P_5 \\
+  0.613 \units{W} & \stackrel{\checkmark}{=} & 0.613 \units{W}
+\end{IEEEeqnarray*}
+
+\newpage
+
+\subsection{Circuit 5}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-5.png}
+  \end{indented}
+  \caption{\label{fig:circuit_5}
+  Circuit 5
+  }
+\end{figure}
+
+\begin{table}[htbp]
+\caption{\label{tab:circuit_5}
+Circuit 5 $V$, $I$, and $P$
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}lr@{.}lr@{.}lr@{.}l}
+\br
+  & \multicolumn{2}{l}{$V \units{(V)}$} & \multicolumn{2}{l}{$I \units{(A)}$} & \multicolumn{2}{l}{$P \units{(W)}$} \\
+\mr
+  $\emf_1$ & 14&0 & 0&0750 & 1&05 \\
+  $\emf_2$ & 5&00 & 0&0750 & 0&375 \\
+  $R_1$    & 2&62 & 0&0750 & 0&197 \\
+  $R_2$    & 3&00 & 0&0750 & 0&225 \\
+  $R_3$    & 3&38 & 0&0750 & 0&253 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+\begin{IEEEeqnarray*}{LrCl}
+  \mathrm{L_1}: & \emf_1 - I_1 R_1 - I_1 R_2 - \emf_2 - I_1 R_3 & = & 0 \\
+  & I_1 & = & \frac{\emf_1 - \emf_2}{R_1 + R_2 + R_3} \\
+  & I_1 & = & 0.0750 \units{A}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_{\emf_2} \\
+  1.05 \units{W} & \stackrel{\checkmark}{=} & 1.05 \units{W}
+\end{IEEEeqnarray*}
+
+\newpage
+
+\subsection{Circuit 6}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-6.png}
+  \end{indented}
+  \caption{\label{fig:circuit_6}
+  Circuit 6
+  }
+\end{figure}
+
+\begin{table}[htbp]
+\caption{\label{tab:circuit_6}
+Circuit 6 $V$, $I$, and $P$
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}lr@{.}lr@{.}lr@{.}l}
+\br
+  & \multicolumn{2}{l}{$V \units{(V)}$} & \multicolumn{2}{l}{$I \units{(A)}$} & \multicolumn{2}{l}{$P \units{(W)}$} \\
+\mr
+  $\emf_1$ & 40&0 & 2&11 & 84&6 \\
+  $\emf_2$ & 10&0 & 0&343 & 3&43 \\
+  $R_1$    & 24&3 & 0&971 & 23&6 \\
+  $R_2$    & 13&7 & 0&343 & 4&70 \\
+  $R_3$    & 40&0 & 1&14 & 45&7 \\
+  $R_4$    & 15&7 & 0&629 & 9&88 \\
+  $R_5$    & 12&0 & 0&343 & 4&11 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+\begin{IEEEeqnarray*}{LrCl}
+  \mathrm{J_1}: & I_{\emf_1} & = & I_1 + I_3 \\
+  & I_1 + I_3 - I_{\emf_1} & = & 0 \\
+  \\
+  \mathrm{J_2}: & I_1 & = & I_2 + I_4 \\
+  & I_1 - I_2 - I_4 & = & 0 \\
+  \\
+  \mathrm{L_1}: & \emf_1 - I_3 R_3 & = & 0 \\
+  & I_3 R_3 & = & \emf_1 \\
+  \\
+  \mathrm{L_2}: & -I_1 R_1 - I_4 R_4 + I_3 R_3 & = & 0 \\
+  & I_1 R_1 - I_3 R_3 + I_4 R_4 & = & 0 \\
+  \\
+  \mathrm{L_3}: & \emf_2 - I_2 R_2 - I_2 R_5 + I_4 R_4 & = & 0 \\
+  & I_2 (R_2 + R_5) - I_4 R_4 & = & \emf_2 \\
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \begin{bmatrix}
+    1 & 0 & 1 & 0 & -1 \\
+    1 & -1 & 0 & -1 & 0 \\
+    0 & 0 & R_3 & 0 & 0 \\
+    R_1 & 0 & -R_3 & R_4 & 0 \\
+    0 & R_2 + R_5 & 0 & -R_4 & 0 \\
+  \end{bmatrix}
+  \begin{bmatrix}
+    I_1 \\ I_2 \\ I_3 \\ I_4 \\ I_{\emf_1}
+  \end{bmatrix}
+  & = &
+  \begin{bmatrix}
+    0 \\ 0 \\ \emf_1 \\ 0 \\ \emf_2
+  \end{bmatrix} \\
+  \\
+  I_1 & = & 0.971 \units{A} \\
+  I_2 & = & 0.343 \units{A} \\
+  I_3 & = & 1.14 \units{A} \\
+  I_4 & = & 0.629 \units{A} \\
+  I_{\emf_1} & = & 2.11 \units{A}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} + P_{\emf_2} & = & P_1 + P_2 + P_3 + P_4 + P_5 \\
+  88.0 \units{W} & \stackrel{\checkmark}{=} & 88.0 \units{W}
+\end{IEEEeqnarray*}
+
+\newpage
+
+\subsection{Circuit 7}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-7.png}
+  \end{indented}
+  \caption{\label{fig:circuit_7}
+  Circuit 7
+  }
+\end{figure}
+
+\begin{table}[htbp]
+\caption{\label{tab:circuit_7}
+Circuit 7 $V$, $I$, and $P$
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}lr@{.}lr@{.}lr@{.}l}
+\br
+  & \multicolumn{2}{l}{$V \units{(V)}$} & \multicolumn{2}{l}{$I \units{(A)}$} & \multicolumn{2}{l}{$P \units{(W)}$} \\
+\mr
+  $\emf_1$ & 12&0 & 0&200 & 2&40 \\
+  $R_1$    & 2&00 & 0&200 & 0&399 \\
+  $R_2$    & 2&58 & 0&0646 & 0&167 \\
+  $R_3$    & 4&05 & 0&135 & 0&547 \\
+  $R_4$    & 2&58 & 0&0646 & 0&167 \\
+  $R_5$    & 5&95 & 0&119 & 0&709 \\
+  $R_6$    & 4&83 & 0&0806 & 0&390 \\
+  $R_7$    & 1&12 & 0&0160 & 0&0179 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+\begin{IEEEeqnarray*}{LrCl}
+  \mathrm{J_1}: & I_1 & = & I_2 + I_3 \\
+  & I_1 - I_2 - I_3 & = & 0 \\
+  \\
+  \mathrm{J_2}: & I_2 + I_7 & = & I_6 \\
+  & I_2 - I_6 + I_7 & = & 0 \\
+  \\
+  \mathrm{J_3}: & I_3 & = & I_5 + I_7 \\
+  & I_3 - I_5 - I_7 & = & 0 \\
+  \\
+  \mathrm{L_1}: & \emf_1 - I_1 R_1 - I_3 R_3 - I_5 R_5 & = & 0 \\
+  & I_1 R_1 + I_3 R_3 + I_5 R_5 & = & \emf_1 \\
+  \\
+  \mathrm{L_2}: & -I_2 R_2 - I_2 R_4 + I_7 R_7 + I_3 R_3 & = & 0 \\
+  & I_2 (R_2 + R_4) - I_3 R_3 - I_7 R_7 & = & 0 \\
+  \\
+  \mathrm{L_3}: & -I_5 R_5 + I_6 R_6 + I_7 R_7 & = & 0 \\
+  & I_5 R_5 - I_6 R_6 - I_7 R_7 & = & \emf_2 \\
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \begin{bmatrix}
+    1 & -1 & -1 & 0 & 0 & 0 \\
+    0 & 1 & 0 & 0 & -1 & 1 \\
+    0 & 0 & 1 & -1 & 0 & -1 \\
+    R_1 & 0 & R_3 & R_5 & 0 & 0 \\
+    0 & R_2 + R_4 & -R_3 & 0 & 0 & -R_7 \\
+    0 & 0 & 0 & R_5 & -R_6 & - R_7
+  \end{bmatrix}
+  \begin{bmatrix}
+    I_1 \\ I_2 \\ I_3 \\ I_5 \\ I_ 6 \\ I_7
+  \end{bmatrix}
+  & = &
+  \begin{bmatrix}
+    0 \\ 0 \\ 0 \\ \emf_1 \\ 0 \\ 0
+  \end{bmatrix} \\
+  \\
+  I_1 & = & 0.200 \units{A} \\
+  I_2 & = & 0.0646 \units{A} \\
+  I_3 & = & 0.135 \units{A} \\
+  I_5 & = & 0.119 \units{A} \\
+  I_6 & = & 0.0806 \units{A} \\
+  I_7 & = & 0.0160 \units{A}
+\end{IEEEeqnarray*}
+
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated} \\
+  P_{\emf_1} & = & P_1 + P_2 + P_3 + P_4 + P_5 + P_6 + P_7 \\
+  2.40 \units{W} & \stackrel{\checkmark}{=} & 2.40 \units{W}
+\end{IEEEeqnarray*}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%% Simulations %%%%%%%%%%%%%%%%%%%%
+\section{Simulations}
+
+Circuits 1 through 4 were simulated using the Circuit Simulator Applet (located at https://www.falstad.com/circuit/ ).
+All the voltage and current values match the calculations to 3 significant figures (Yay!).
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-1-simulation.png}
+  \end{indented}
+  \caption{\label{fig:circuit_1_simulation}
+  Circuit 1 Simulation
+  }
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-2-simulation.png}
+  \end{indented}
+  \caption{\label{fig:circuit_2_simulation}
+  Circuit 2 Simulation
+  }
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-3-simulation.png}
+  \end{indented}
+  \caption{\label{fig:circuit_3_simulation}
+  Circuit 3 Simulation
+  }
+\end{figure}
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{media/circuit-4-simulation.png}
+  \end{indented}
+  \caption{\label{fig:circuit_4_simulation}
+  Circuit 4 Simulation
+  }
+\end{figure}
+
+\clearpage
+
+%%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+The goal of the exercise was to use Kirchhoff's rules to analyze 7 different circuits and calculate current, voltage, and power for each circuit element.
+Kirchhoff's junction rule states that the sum of the current into a junction equals the sum of the current out of the junction.
+This rule is a result of conservation of charge.
+\begin{IEEEeqnarray*}{rCl}
+  \sum I_\mathrm{in} & = & \sum I_\mathrm{out}
+\end{IEEEeqnarray*}
+Kirchhoff's loop rule states that sum of all the voltages on a closed loop of circuit must equal 0.
+This rule is a result of conservation of energy.
+\begin{IEEEeqnarray*}{rCl}
+  \sum \Delta V & = & 0
+\end{IEEEeqnarray*}
+
+Since the voltages of the power supplies and the resistances for each resistor were known, the main unknowns were the currents through the series sections of the circuits.
+Components connected in series have the same current through them due to conservation of charge (the rate of charge entering the section needs to equal the rate of charge exiting).
+As such, a current label was added to each of these sections on the circuit diagram.
+Kirchhoff's rules could be used to set up systems of equations to solve for those unknown currents.
+The junction rule needs to be applied 1 time less than the total number of junctions in the circuit.
+The loop rule needs to be applied the same number of times as internal spaces in the circuit diagram.
+This yields the same number of equations as unknowns.
+
+Once the currents were known, the voltage across each resistor could be calculated using Ohm's law,
+\begin{IEEEeqnarray*}{rCl}
+  V & = & I R
+\end{IEEEeqnarray*}
+and the power supplied/dissipated by each component could be calculated as the product of current and voltage.
+\begin{IEEEeqnarray*}{rCl}
+  P & = & V I
+\end{IEEEeqnarray*}
+
+In line with conservation of energy, the total power supplied should equal the total power dissipated.
+\begin{IEEEeqnarray*}{rCl}
+  \sum P_\mathrm{supplied} & = & \sum P_\mathrm{dissipated}
+\end{IEEEeqnarray*}
+This check was used on all the circuits to make sure the results seemed plausible.
+All the circuits passed this check to three significant figures.
+Note that the unrounded values for power were used for these checks in order to avoid rounding error.
+
+For the first 4 circuits, the voltage and current calculations were compared to results obtained using an online circuit simulator.
+All the voltage and current values matched the calculations to 3 significant figures.
+This supports the idea that Kirchhoff's rules were applied correctly.
+
+%%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
+\section{Citations}
+
+\begin{thebibliography}{9}
+
+\bibitem{labpacket}
+  Karen Schnurbusch,
+  \textit{Physics 4B Lab Book},
+  Mt. San Antonio College,
+  2023,
+  pp. 71-74.
+
+\bibitem{equationsheet}
+  Karen Schnurbusch,
+  \textit{Physics 4B Equations},
+  Mt. San Antonio College,
+  2023,
+  pp. 4, 5.
+
+\bibitem{circuitsimulator}
+  Paul Falstad,
+  \textit{Circuit Simulator Applet},
+  https://www.falstad.com/circuit/
+  Accessed 26 April 2023.
+
+\end{thebibliography}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%
