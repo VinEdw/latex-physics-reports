@@ -155,10 +155,11 @@ doc_name = "phasor_diagrams"
 md_fname = f"{doc_name}.md"
 pdf_fname = f"{doc_name}.pdf"
 for df in df_list:
-    doc_str += f"## {df.name}\n\n"
+    section_header = df.name.replace("_", " ").title()
+    doc_str += f"## {section_header}\n\n"
     for i, trial in df.iterrows():
         fname = trial["fname"]
-        fig_str = f"![]({fname})"
+        fig_str = f"![phasor diagram {trial['title']}]({fname})"
         doc_str += f"{fig_str}\n"
     doc_str += "\n"
 with open(md_fname, mode="w", encoding="utf-8") as f:
