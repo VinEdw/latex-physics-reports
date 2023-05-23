@@ -57,14 +57,14 @@ def create_phasor_diagram(fname, title, offset, V_R, V_L, V_C, E_0):
     ax.axes.set_aspect("equal")
     # Plot the phasors
     # V_R
-    plot_phasor(ax, V_R, offset, "V_R", "r")
+    plot_phasor(ax, V_R, offset, "$V_R$", "r")
     # V_L
-    plot_phasor(ax, V_L, offset + np.pi / 2, "V_L", "b")
+    plot_phasor(ax, V_L, offset + np.pi / 2, "$V_L$", "b")
     # V_C
-    plot_phasor(ax, V_C, offset - np.pi / 2, "V_C", "g")
+    plot_phasor(ax, V_C, offset - np.pi / 2, "$V_C$", "g")
     # E_0
     phi = np.arctan((V_L - V_C) / V_R)
-    plot_phasor(ax, E_0, offset + phi, "Ɛ_0", "y")
+    plot_phasor(ax, E_0, offset + phi, "$\\mathcal{E}_0$", "y")
     # Put the legend in the quadrant opposite the offset angle
     offset_quadrant = get_angle_quadrant(offset)
     section_map = {1: "lower left",
