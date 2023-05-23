@@ -38,6 +38,12 @@ def create_phasor_diagram(fname, title, offset, V_R, V_L, V_C, E_0):
     fig, ax = plt.subplots()
     # Set the title
     ax.set_title(title)
+    # Initialize the plot limits to that of the resistor voltage
+    # Ensures plot is fit to the phasors
+    V_R_lims = np.array(polar_to_cartesian(V_R, offset))
+    max_lim = np.max(np.abs(V_R_lims))
+    ax.set_xlim(left=-max_lim, right=max_lim)
+    ax.set_ylim(bottom=-max_lim, top=max_lim)
     # Hide the top and right spines
     ax.spines["top"].set_visible(False)
     ax.spines["right"].set_visible(False)
