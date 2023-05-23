@@ -105,7 +105,7 @@ df_2 = pd.DataFrame([[400, 39.27e-3],
 df_2.name = "part_2"
 df_2["E_0"] = E_0
 df_2["R"] = R_2_3
-df_2["C"] = 0
+df_2["C"] = np.inf
 df_2["L"] = L
 
 # Part 3
@@ -129,7 +129,6 @@ for df in df_list:
     df["omega"] = 2 * np.pi * df["f"]
     df["X_L"] = df["omega"] * df["L"]
     df["X_C"] = 1/(df["omega"] * df["C"])
-    df["X_C"] = df["X_C"].replace(np.inf, 0)
     df["Z"] = np.sqrt(df["R"]**2 + (df["X_L"] - df["X_C"])**2)
     df["I_0_th"] = df["E_0"] / df["Z"]
     df["V_R"] = df["I_0_ex"] * df["R"]
