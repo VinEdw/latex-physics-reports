@@ -3,6 +3,16 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
+def get_angle_quadrant(angle):
+    """
+    Determine the quadrant of the input angle in radians.
+    Return an integer between 1 and 4 inclusive.
+    """
+    quadrant_size = np.pi / 2
+    quadrant_count = np.floor(angle / quadrant_size)
+    quadrant_num = quadrant_count % 4 + 1
+    return quadrant_num
+
 def polar_to_cartesian(r, theta):
     """
     Convert the given polar coordinates (r, theta) to Cartesian (x, y).
@@ -49,8 +59,14 @@ def create_phasor_diagram(fname, title, offset, V_R, V_L, V_C, E_0):
     # E_0
     phi = np.arctan((V_L - V_C) / V_R)
     plot_phasor(ax, E_0, offset + phi, "Ɛ_0", "y")
-    # Turn on the legend
-    ax.legend(loc="lower left")
+    # Put the legend in the quadrant opposite the offset angle
+    offset_quadrant = get_angle_quadrant(offset)
+    section_map = {1: "lower left",
+                   2: "lower right",
+                   3: "upper right",
+                   4: "upper left"}
+    section = section_map[offset_quadrant]
+    ax.legend(loc=section)
     fig.savefig(fname)
     
 # Measured values for the circuit components
