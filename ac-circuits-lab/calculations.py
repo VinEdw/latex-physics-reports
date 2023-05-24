@@ -134,7 +134,7 @@ for df in df_list:
     df["V_R"] = df["I_0_ex"] * df["R"]
     df["V_L"] = df["I_0_ex"] * df["X_L"]
     df["V_C"] = df["I_0_ex"] * df["X_C"]
-    df["fname"] = df.apply(lambda x: f"media/{df.name}_{x['f']:.0f}_hz.png", axis=1)
+    df["fname"] = df.apply(lambda x: f"media/{df.name}_{x['f']:.0f}_hz.eps", axis=1)
     df["title"] = df.apply(lambda x: f"{x['f']:.0f} Hz", axis=1)
     # Print the name of the dataframe and the desired columns
     print(df.name)
