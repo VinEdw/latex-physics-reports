@@ -1,4 +1,3 @@
-import subprocess
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -148,20 +147,11 @@ for df in df_list:
         offset = np.pi / 3
         create_phasor_diagram(trial["fname"], trial["title"], offset, trial["V_R"], trial["V_L"], trial["V_C"], trial["E_0"])
 
-# Create a markdown file with all the figures in it and render it with pandoc
-doc_str = "# AC Circuits Lab Phasor Diagrams\n\n"
-doc_name = "phasor_diagrams"
-md_fname = f"{doc_name}.md"
-pdf_fname = f"{doc_name}.pdf"
+# Print out each of the image statements for a LaTeX file
 for df in df_list:
-    section_header = df.name.replace("_", " ").title()
-    doc_str += f"## {section_header}\n\n"
+    print(df.name)
     for i, trial in df.iterrows():
         fname = trial["fname"]
-        fig_str = f"![phasor diagram {trial['title']}]({fname})"
-        doc_str += f"{fig_str}\n"
-    doc_str += "\n"
-with open(md_fname, mode="w", encoding="utf-8") as f:
-    f.write(doc_str)
-cmd = f"pandoc {md_fname} -o {pdf_fname} -V pagestyle=empty"
-subprocess.run(cmd.split())
+        fig_str = f"\\includegraphics{{{fname}}}"
+        print(fig_str)
+    print()
