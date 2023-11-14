@@ -1,0 +1,382 @@
+\documentclass[12pt]{iopart} % Document class declaration
+
+% package "imports"
+\usepackage{graphicx}
+\usepackage{IEEEtrantools}
+
+% Custom macros
+\gdef\mcm{r@{.}l@{ ± }r@{.}l} % Multi Column Measurement; Used for decimal aligning & ± aligning
+\gdef\mch#1{\multicolumn{4}{l}{#1}} % Multi Column Header; Used for decimal aligning & ± aligning
+\gdef\mcmnd{r@{ ± }l} % Multi Column Measurement No Decimal; Used for ± aligning when the values don't need a decimal point
+\gdef\mchnd#1{\multicolumn{2}{l}{#1}} % Multi Column Header No Decimal; Used for  ± aligning when the values don't need a decimal point
+\gdef\sci#1#2{#1 \times 10^{#2}}
+\gdef\units#1{~\mathrm{#1}}
+
+%%%%%%%%%%%%%%%%%%%% Document Starts %%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%% Title Page %%%%%%%%%%%%%%%%%%%%
+\title{Fiber Optic Project}
+\author{Vincent Edwards, Ali Mortada}
+\vspace{10pt}
+\begin{indented}
+  \item[]Mt.~San Antonio College, Physics 4C, CRN 20889
+  \item[]Nov 30, 2023
+\end{indented}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%% Purpose %%%%%%%%%%%%%%%%%%%%
+\section{Purpose and Hypothesis}
+
+The goal of the experiment is to examine the relationship between the
+speed of light in a vacuum and wavelength of light.
+Using the \emph{Industrial Fiber Optics Speed of Light Apparatus} and an
+oscilloscope, the time for light to pass through a fiber optic cable of
+known length and index of refraction can be measured.
+From there, the speed of light can be calculated.
+Wavelength will be varied by soldering different colored LEDs onto the apparatus.
+In theory, wave speed should be independent of wavelength.
+
+%%%%%%%%%%%%%%%%%%%% Materials %%%%%%%%%%%%%%%%%%%%
+\section{Materials}
+
+\begin{itemize}
+\item
+  Caliper
+\item
+  Tray
+
+  \begin{itemize}
+  \item
+    Large enough to support the long fiber optic cable
+  \item
+    As lightweight as possible
+  \end{itemize}
+\item
+  Balance 1
+
+  \begin{itemize}
+  \item
+    Able to support the short fiber optic cable
+  \item
+    More precision, lower weight limit
+  \end{itemize}
+\item
+  Balance 2
+
+  \begin{itemize}
+  \item
+    Able to support the tray and the long fiber optic cable
+    simultaneously
+  \item
+    Less precision, higher weight limit
+  \end{itemize}
+\item
+  \emph{Industrial Fiber Optics Speed of Light Apparatus}
+
+  \begin{itemize}
+  \item
+    Also referred to as the ``speed of light kit''
+  \item
+    Top part is the circuit board, which is screwed onto a base
+  \end{itemize}
+\item
+  110 VAC-to-DC power adapter
+\item
+  Short fiber optic cable
+
+  \begin{itemize}
+  \item
+    About 15 cm long
+  \end{itemize}
+\item
+  Long fiber optic cable
+
+  \begin{itemize}
+  \item
+    About 20 m long
+  \end{itemize}
+\item
+  Dual-channel oscilloscope and its power cable
+\item
+  2 oscilloscope probes
+\item
+  Fiber optic red LED
+
+  \begin{itemize}
+  \item
+    IF-E96E
+  \item
+    Included with the speed of light kit
+  \end{itemize}
+\item
+  Fiber optic green LED
+
+  \begin{itemize}
+  \item
+    IF-E93
+  \end{itemize}
+\item
+  Fiber optic blue LED
+
+  \begin{itemize}
+  \item
+    IF-E92B
+  \end{itemize}
+\item
+  Phillips head screwdriver
+\item
+  Pliers
+\item
+  Circuit board holder
+\item
+  Soldering iron
+\item
+  Solder
+\item
+  Desoldering solder sucker \textbf{OR} Desoldering wick
+\item
+  If fiber preparation is required
+
+  \begin{itemize}
+  \item
+    600-grit polishing paper
+  \item
+    Polishing liquid (water, glycerin, or light oil)
+  \item
+    Sharp knife or single-edge razor blade
+  \end{itemize}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%% Procedures %%%%%%%%%%%%%%%%%%%%
+\section{Procedures}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Check the ends of the fiber optic cable to see if they are polished
+  and flat. If not, they need to be prepared.
+
+  \begin{itemize}
+  \item
+    Cut 1 to 2 mm off the end of the fiber cable with the sharp knife or
+    single-edge razor blade. Try to get as square a cut as possible.
+  \item
+    Wet the 600-grit polishing paper with the polishing liquid (water,
+    glycerin, or light oil) and place the paper, abrasive side facing
+    up, on a hard surface.
+  \item
+    Polish the end of the fiber by moving it in a ``figure 8'' pattern
+    while holding it perpendicular against the polishing paper.
+  \item
+    Check the end of the fiber. If it is cloudy, not flat, or has
+    scratches, repeat the previous step.
+  \item
+    Repeat the previous two steps for both ends of each fiber.
+  \end{itemize}
+\item
+  If needed, desolder the two pins that connect the fiber optic LED to
+  the speed of light kit. Afterwards, different fiber optic LEDs can be
+  swapped in and out of the slot without re-soldering.
+
+  \begin{itemize}
+  \item
+    Unscrew the 6 screws connecting the top of the speed of light kit,
+    the circuit board, to its base.
+  \item
+    Remove the screw and nut keeping the LED secure on the circuit
+    board. Pliers might be helpful for keeping the nut in place while
+    the screw is loosened.
+  \item
+    Wet with water the sponge used for cooling the tip of the soldering
+    iron.
+  \item
+    Plug in and turn on the soldering iron. Wait for it to get hot
+    (about 750°F).
+  \item
+    Turn on the overhead vent to capture any fumes.
+  \item
+    Use the circuit board holder to keep the board secure, with the pins
+    to be desoldered easily accessible.
+  \item
+    Use the soldering iron to melt the solder at the pins where the
+    fiber optic LED is connected to the circuit board. Use the solder
+    sucker or the desoldering wick to remove the solder, and ultimately
+    remove the LED. Alternatively, use pliers to gently wiggle and pull
+    the LED away from the board. At the same time, use the soldering
+    iron to heat each pin.
+  \item
+    Reattach the LED and secure it with the screw and nut.
+  \item
+    Reconnect the circuit board to its base, and secure it with the 6
+    screws.
+  \end{itemize}
+\item
+  Measure the length of the short fiber optic cable.
+
+  \begin{itemize}
+  \item
+    Using the caliber, measure the length of the short fiber cable. Make
+    sure the cable is straight.
+  \end{itemize}
+\item
+  Measure the mass of both the short and long fiber optic cables.
+
+  \begin{itemize}
+  \item
+    Using balance 1, measure the mass of the short fiber optic cable.
+  \item
+    Place the tray on balance 2 and zero the balance.
+  \item
+    Place the long fiber optic cable on the tray, and measure the mass
+    of the cable using balance 2.
+  \end{itemize}
+\item
+  Connect both the speed of light kit and the dual-channel oscilloscope
+  to power and to each other.
+
+  \begin{itemize}
+  \item
+    Connect the oscilloscope to power and turn it on.
+  \item
+    Connect one of the oscilloscope probes to channel 1, and the other
+    probe to channel 2.
+  \item
+    Connect the probe of channel 1 to the blue test point marked
+    ``REFERENCE'' on the speed of light kit. Connect the ground lead of
+    the same probe to the test point labeled ``GND'' just below the
+    ``REFERENCE'' test point.
+  \item
+    Connect the probe of channel 2 to the blue test point marked
+    ``DELAY'' on the speed of light kit. Connect the ground lead of the
+    same probe to the test point labeled ``GND'' just below the
+    ``DELAY'' test point.
+  \item
+    Using the 110 VAC-to-DC power adapter, connect the speed of light
+    kit to power.
+  \end{itemize}
+\item
+  Calibrate the speed of light kit using the short fiber optic cable.
+
+  \begin{itemize}
+  \item
+    Turn the ``Calibration Delay'' knob on the speed of light kit to the
+    12 o'clock position.
+  \item
+    Loosen the fiber optic cinch nuts on the fiber optic LED and
+    detector. Insert one end of the short fiber optic cable into the LED
+    until it is seated, then lightly tighten the cinch nut. Afterwards,
+    insert the other end of the cable into the detector until it is
+    seated, then lightly tighten the cinch nut.
+  \item
+    Set the triggering mode of the oscilloscope to auto, channel 1,
+    rising edge. Adjust the trigger level so that the pulses on channels
+    1 and 2 can be seen.
+  \item
+    Adjust the voltage scaling and offset for both channels so that the
+    pulses can be clearly seen.
+  \item
+    Adjust the time scaling and offset such that only one pulse from
+    each channel is fully visible on the screen.
+  \item
+    Using the measure functionality, set the oscilloscope to measure the
+    time between the first rising edge of channel 1 and the following
+    first rising edge of channel 2 at the 50\% crossing (Channel Delay
+    FRFR{[}1-2{]}). Make sure the statistics display is on.
+  \item
+    Using the measure functionality, set the oscilloscope to measure the
+    time between the first rising edge of channel 2 and the following
+    first rising edge of channel 1 at the 50\% crossing (Channel Delay
+    FRFR{[}2-1{]}). Make sure the statistics display is on.
+  \item
+    If pulse 1 occurs before pulse 2, then FRFR{[}1-2{]} will give a
+    reading and FRFR{[}2-1{]} will not. If pulse 2 occurs before pulse
+    1, then FRFR{[}2-1{]} will give a reading and FRFR{[}1-2{]} will
+    not. Turning the ``Calibration Delay'' knob on the speed of light
+    kit will move pulse 2 left and right, changing the time it occurs.
+    Adjust the calibration knob such that the two pulses occur at the
+    same time. This will be the case when FRFR{[}1-2{]} and
+    FRFR{[}2-1{]} repeatedly toggle between which one is giving a
+    reading.
+  \end{itemize}
+\item
+  Measure the time for light to pass through the long fiber optic cable.
+
+  \begin{itemize}
+  \item
+    Loosen the fiber optic cinch nuts on the fiber optic LED and
+    detector. Remove the short fiber optic cable.
+  \item
+    Insert one end of the long fiber optic cable into the LED until it
+    is seated, then lightly tighten the cinch nut. Afterwards, insert
+    the other end of the cable into the detector until it is seated,
+    then lightly tighten the cinch nut.
+  \item
+    If needed, adjust the time scaling and offset such that only one
+    pulse from each channel is fully visible on the screen.
+  \item
+    FRFR{[}1-2{]} should be giving a reading, while FRFR{[}2-1{]} should
+    not be reading. Turn the statistics menu off and back on, as this
+    will clear the data it has measured already. Allow FRFR{[}1-2{]} to
+    take at least 1000 time measurements. Then, record the mean and
+    standard deviation.
+  \item
+    With the measurement made, the speed of light kit and oscilloscope
+    can be turned off. Loosen the fiber optic cinch nuts and remove the
+    long fiber optic cable.
+  \end{itemize}
+\item
+  Switch out the fiber optic LED for one of a different color.
+
+  \begin{itemize}
+  \item
+    Unscrew the 6 screws connecting the top of the speed of light kit,
+    the circuit board, to its base.
+  \item
+    Remove the screw and nut keeping the LED secure on the circuit
+    board. Pliers might be helpful for keeping the nut in place while
+    the screw is loosened.
+  \item
+    Pull out the old fiber optic LED.
+  \item
+    Attach the new fiber optic LED and secure it with the screw and nut.
+  \item
+    Reconnect the circuit board to its base, and secure it with the 6
+    screws.
+  \end{itemize}
+\item
+  Repeat steps 5-8 for the each fiber optic LED color (red, green,
+  blue).
+
+  \begin{itemize}
+  \item
+    The kit starts with the red LED installed, so start with that color
+    and install it back at the end.
+  \end{itemize}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%% Results %%%%%%%%%%%%%%%%%%%%
+\section{Results}
+
+%%%%%%%%%%%%%%%%%%%% Uncertainty %%%%%%%%%%%%%%%%%%%%
+\section{Uncertainty}
+
+%%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
+\section{Conclusion}
+
+%%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
+\section{Citations}
+
+\begin{thebibliography}{9}
+
+\bibitem{equationsheet}
+  Karen Schnurbusch,
+  \textit{Physics 4C Equations},
+  Mt. San Antonio College,
+  2023,
+  pp. 4, 10.
+
+\end{thebibliography}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%% Document Ends %%%%%%%%%%%%%%%%%%%%
