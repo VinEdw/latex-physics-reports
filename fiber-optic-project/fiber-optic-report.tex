@@ -416,6 +416,13 @@ The length of the short cable ($l$) was measured using a caliper.
 It had a labeled uncertainty of 0.2 mm, so that was used as the uncertainty.
 The masses ($m$ and $M$) were measured using an electronic balance that reported values to within $0.01 \units{g}$, so that was used as the uncertainty.
 
+The material the fiber optic cable is made of has an index of refraction ($n$) of 1.49, according to the datasheet.
+Thus, light slows down when traveling in the cable compared to the speed of light in a vacuum ($c$, accepted value of $\sci{3.00}{8} \units{m/s}$).
+Equation \ref{eq:index_of_refraction} can be used to calculate the speed of light in the cable ($v$).
+\begin{IEEEeqnarray}{rCl}
+  v & = & \frac{c}{n} \label{eq:index_of_refraction}
+\end{IEEEeqnarray}
+
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
 
