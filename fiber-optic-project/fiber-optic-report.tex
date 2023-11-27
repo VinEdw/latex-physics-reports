@@ -387,6 +387,7 @@ Table \ref{tab:main_measurements} contains the main measurements made for the va
 $\lambda$ is the peak wavelength output by the LED used.
 $M$ is the mass of the long fiber optic cable used.
 $t$ is the travel time for the light pulse to pass through the long fiber optic cable.
+Note that only trial 1 had a successful measurement for $t$.
 
 \begin{table}[htbp]
 \caption{\label{tab:main_measurements}
@@ -407,7 +408,26 @@ Note: UTD means ``unable to detect''
 \br
 \end{tabular}\end{indented}\end{table}
 
+Table \ref{tab:speed_of_light} contains the calculated speed of light ($c$) for the trials.
+Since a successful time measurement was only made for trial 1, only one experimental speed of light value could be calculated.
 
+\begin{table}[htbp]
+\caption{\label{tab:speed_of_light}
+Calculated Speed of Light
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}ll}
+\br
+  Trial & $c$ (m/s) \\
+\mr
+  1     & $\sci{(2.93 \pm 0.07)}{8}$ \\
+  2     & NA \\
+  3     & NA \\
+  4     & NA \\
+  5     & NA \\
+  6     & NA \\
+  7     & NA \\
+\br
+\end{tabular}\end{indented}\end{table}
 
 %%%%%%%%%%%%%%%%%%%% Uncertainty and Equations %%%%%%%%%%%%%%%%%%%%
 \section{Uncertainty and Equations}
@@ -428,10 +448,33 @@ The linear density can be calculated using equation \ref{eq:linear_density}, whi
 \begin{IEEEeqnarray}{rCl}
   \mu & = & \frac{m}{l} \label{eq:linear_density}
 \end{IEEEeqnarray}
-  From there, the length of the long cable $L$ can be calculated using equation \ref{eq:long_cable_length}.
+From there, the length of the long cable $L$ can be calculated using equation \ref{eq:long_cable_length}.
 \begin{IEEEeqnarray}{rCl}
-  L & = & \frac{M}{\mu} \label{eq:long_cable_length} \\
-    & = & \frac{Ml}{m} \nonumber
+  L & = & \frac{M}{\mu} \\
+    & = & \frac{Ml}{m} \label{eq:long_cable_length}
+\end{IEEEeqnarray}
+
+Taking the distance traveled ($L$) and dividing by the time ($t$) gives the speed of light in the cable ($v$), as shown in equation \ref{eq:distance_over_time}.
+That equation can then be combined with earlier equations and rearranged to yield equation \ref{eq:speed_of_light} an expression for the speed of light in a vacuum ($c$) in terms of the measured quantities.
+\begin{IEEEeqnarray}{rCl}
+  v & = & \frac{L}{t} \label{eq:distance_over_time} \\
+  \frac{c}{n} & = & \frac{Ml/m}{t} \\
+  c & = & \frac{nMl}{tm} \label{eq:speed_of_light}
+\end{IEEEeqnarray}
+The uncertainty in $c$ is given by equation \ref{eq:speed_of_light_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta c & = & \left[
+     \left(\frac{\partial c}{\partial l} \Delta l \right)^2 +
+     \left(\frac{\partial c}{\partial t} \Delta t \right)^2 +
+     \left(\frac{\partial c}{\partial M} \Delta M \right)^2 +
+     \left(\frac{\partial c}{\partial m} \Delta m \right)^2
+  \right]^\frac{1}{2} \\
+  \Delta c & = & \frac{nMl}{tm} \left[
+     \left(\frac{\Delta l}{l} \right)^2 +
+     \left(\frac{\Delta t}{t} \right)^2 +
+     \left(\frac{\Delta M}{M} \right)^2 +
+     \left(\frac{\Delta m}{m} \right)^2
+  \right]^\frac{1}{2} \label{eq:speed_of_light_uncertainty}
 \end{IEEEeqnarray}
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
