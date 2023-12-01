@@ -493,13 +493,6 @@ This difference is within uncertainty.
 However, since none of the time measurements using different wavelengths of light were successful, there is not enough data to compare the speed of light for different wavelengths.
 The hypothesis cannot be supported nor rejected.
 
-The speed of the blue, green and infrared LEDs could not be calculated.
-This was because the travel time either could not be detected through the short cable (which was the case for the blue and green LEDs) or could not be detected clearly through any of the long cables (which was the case for the infrared LED).
-For the blue and green LEDs, this was possibly a result of the photodiode, which was used to detect the light pulses, was less sensitive to lower wavelengths.
-According to the data sheet for the photodiode, the peak sensitivity is between $900$ and $950 \units{nm}$.
-Figure \ref{fig:respones_wavelength_graph} shows that the sensitivity for the red LED's wavelength, $645 \units{nm}$, is around 60\%.
-However, the sensitivity for the green LED's wavelength, $522 \units{nm}$, is only around 30\%, and the sensitivity for the blue LED's wavelength, $470 \units{nm}$, is too low to be shown on the graph.
-
 \begin{figure}[htbp]
   \begin{indented}
   \item[]\includegraphics[width=0.83\textwidth]{detector-response-vs-wavelength.png}
@@ -509,10 +502,28 @@ However, the sensitivity for the green LED's wavelength, $522 \units{nm}$, is on
   }
 \end{figure}
 
+The speed of light ($c$) with the blue, green, and infrared LEDs could not be calculated since the travel time ($t$) could not be measured successfully.
+For the blue and green LEDs, the light could not be detected after passing through the short cable.
+This was possibly a result of the photodiode, the component used to detect the light pulses, being less sensitive to lower wavelengths of visible light.
+According to the data sheet for the photodiode, the peak sensitivity is between $900$ and $950 \units{nm}$.
+Figure \ref{fig:respones_wavelength_graph} shows that the sensitivity for the red LED's wavelength, $645 \units{nm}$, is around 60\%.
+But, the sensitivity for the green LED's wavelength, $522 \units{nm}$, is only around 30\%, and the sensitivity for the blue LED's wavelength, $470 \units{nm}$, is too low to be shown on the graph.
+
+Since the blue and green LEDs did not have their light detected due to sensitivity issues, perhaps using an LED with a wavelength the photodiode was more sensitive to would work.
 The infrared LED's wavelength, $940 \units{nm}$, was very close to the photodiode's peak sensitivity.
-This is possibly why it was able to be detected through the short cable, while the green and blue LEDs could not be detected.
-However, the infrared LED could not be detected clearly through any of the long cables.
-Thus, the photodiode's inability to detect the infrared LED was possibly due to the LED's intensity being too low, especially since there was no cinch to focus the light through the cable, as there was with the red, green, and blue LEDs.
+As a result, the light could be detected through the short fiber optic cable.
+But when connected through the 20 m long cable, the light could not be detected; the oscilloscope reading was identical to noise with no LED connected.
+Perhaps the light from the infrared LED was too dim and was dissipating before it could reach the detector, especially since there was no cinch to focus the light through the cable.
+If that were the case, then passing the light through a shorter fiber optic cable would allow more light to reach the detector.
+Trying this with a 10 m fiber optic cable, the infrared light could still not be detected, so even shorter cables were tested.
+Trying this with the 1 m and 0.5 m cables, the infrared light could be detected.
+However, the resulting voltage curve on the oscilloscope was wobbly/noisy.
+With the red LED, the voltage had a steady increase up to the global maximum.
+But with the infrared LED, the voltage would increase, decrease for a bit, and increase again repeatedly until reaching the global maximum.
+As a result, the time measurement would fluctuate so much (equaling 0 at some instances) so as to make it unusable.
+Perhaps the infrared LED, which was not designed for fiber optic uses, did not have a switching time fast enough to keep up with being blinked 500,000 times per second.
+If so, the LED would not have fully dimmed before being given voltage again.
+Some light would continuously be traveling through the cable, thereby adding noise and small fluctuations in the voltage graph as those stray photons hit the detector.
 
 %%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
 \section{Citations}
