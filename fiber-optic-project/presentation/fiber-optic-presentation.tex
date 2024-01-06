@@ -1,0 +1,127 @@
+\documentclass{beamer}
+
+% Theme choice
+\usetheme{antibes}
+
+% Title page details
+\title{Fiber Optic Speed of Light Kit}
+\subtitle{Lab Project}
+\author{Vincent~Edwards \and Ali~Mortada}
+\institute{Mt.~San Antonio College, Physics 4C, CRN 20889}
+\date{December 12, 2023}
+
+\begin{document}
+
+% Title slide
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Outline
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+% Purpose and hypothesis
+\section{Purpose and Hypothesis}
+\begin{frame}{Purpose and Hypothesis}
+  \begin{itemize}
+    \item Purpose: Examine the relationship between wavelength ($\lambda$) and speed of light in a vacuum ($c$)
+    \item Hypothesis: The speed of light is independent of wavelength
+  \end{itemize}
+  \begin{center}
+    \includegraphics[width=0.75\textwidth]{speed-of-light-apparatus.jpg}
+  \end{center}
+\end{frame}
+
+% Main Materials
+\section{Main Materials}
+\begin{frame}{Main Materials}
+  \begin{itemize}
+    \item Speed of Light Apparatus
+    \item Short and long fiber optic cables
+    \item Dual-channel oscilloscope
+    \item Red, green, blue, and infrared LEDs
+    \item Soldering iron and solder sucker
+  \end{itemize}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{oscilloscope.jpg}
+  \end{center}
+\end{frame}
+
+% Procedures
+\section{Procedures}
+\begin{frame}{Procedures}
+  \begin{columns}
+    % First column
+    \begin{column}{0.6\textwidth}
+      \begin{enumerate}
+        \item Polish ends of fiber optic cables
+        \item Desolder pins connecting LED to the kit
+        \item Measure short cable length
+        \item Measure mass of both cables
+        \item Connect speed of light kit and oscilloscope together
+        \item Calibrate kit using the short cable
+        \item Measure time for light to travel through long cable
+        \item Repeat for different colored LEDs
+      \end{enumerate}
+    \end{column}
+
+    % Second column
+    \begin{column}{0.4\textwidth}
+      \includegraphics[width=\textwidth]{fiber-optic-cable.jpg}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% Equations
+\section{Equations}
+\begin{frame}{Equations}
+  Light slows down in the cable
+  \begin{equation}
+    c = n v
+  \end{equation}
+
+  Long cable length can be determined with linear density
+  \begin{equation}
+    L = \frac{M}{\mu} = \frac{Ml}{m}
+  \end{equation}
+
+  Speed is distance traveled divided by time
+  \begin{equation}
+    v = \frac{L}{t}    
+  \end{equation}
+
+  Combining these equations together
+  \begin{equation}
+    c = \frac{nMl}{tm}
+  \end{equation}
+\end{frame}
+
+% Results
+\section{Results}
+\begin{frame}{Results}
+  \begin{itemize}
+    \item Red light worked fine ($c = (2.93 \pm 0.07) \times 10^8~\mathrm{m/s}$)
+    \item Blue and green light not detected through short cable (photodetector less sensitive to lower visible wavelengths)
+    \item Infrared light not detected through long cable (dissipating earlier)
+    \item Infrared light not detected clearly through shortened cables (switching time not fast enough)
+  \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.4\textheight]{../detector-response-vs-wavelength.png}
+  \end{center}
+\end{frame}
+
+% Conclusions
+\section{Conclusions}
+\begin{frame}{Conclusions}
+  \begin{itemize}
+    \item Not enough data to support or reject hypothesis
+    \item Speed of Light Kit is a one-trick pony
+  \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{pensive-emoji.png}
+  \end{center}
+\end{frame}
+
+\end{document}

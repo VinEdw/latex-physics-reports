@@ -21,7 +21,7 @@
 \vspace{10pt}
 \begin{indented}
   \item[]Mt.~San Antonio College, Physics 4C, CRN 20889
-  \item[]Nov 30, 2023
+  \item[]Dec 5, 2023
 \end{indented}
 \newpage
 
@@ -97,6 +97,8 @@ In theory, wave speed should be independent of wavelength.
   \begin{itemize}
   \item
     About 20 m long
+  \item
+    Note that cables shorter than 20 m may be tried if the light cannot be detected through it, but could be detected through the short cable
   \end{itemize}
 \item
   Dual-channel oscilloscope and its power cable
@@ -225,7 +227,7 @@ In theory, wave speed should be independent of wavelength.
 
   \begin{itemize}
   \item
-    Using the caliber, measure the length of the short fiber cable. Make
+    Using the caliper, measure the length of the short fiber cable. Make
     sure the cable is straight.
   \end{itemize}
 \item
@@ -277,6 +279,7 @@ In theory, wave speed should be independent of wavelength.
     until it is seated, then lightly tighten the cinch nut. Afterwards,
     insert the other end of the cable into the detector until it is
     seated, then lightly tighten the cinch nut.
+    If the LED does not have cinch nuts, then simply hold the end of the cable steady against the LED.
   \item
     Set the triggering mode of the oscilloscope to auto, channel 1,
     rising edge. Adjust the trigger level so that the pulses on channels
@@ -320,6 +323,7 @@ In theory, wave speed should be independent of wavelength.
     is seated, then lightly tighten the cinch nut. Afterwards, insert
     the other end of the cable into the detector until it is seated,
     then lightly tighten the cinch nut.
+    If the LED does not have cinch nuts, then simply hold the end of the cable steady against the LED.
   \item
     If needed, adjust the time scaling and offset such that only one
     pulse from each channel is fully visible on the screen.
@@ -361,6 +365,9 @@ In theory, wave speed should be independent of wavelength.
   \item
     The kit starts with the red LED installed, so start with that color
     and install it back at the end.
+  \item
+    Note that cables shorter than 20 m may be tried as the long fiber optic cable if the light cannot be detected through it, but could be detected through the short cable.
+    This was tried for the infrared LED.
   \end{itemize}
 \end{enumerate}
 
@@ -387,6 +394,7 @@ Table \ref{tab:main_measurements} contains the main measurements made for the va
 $\lambda$ is the peak wavelength output by the LED used.
 $M$ is the mass of the long fiber optic cable used.
 $t$ is the travel time for the light pulse to pass through the long fiber optic cable.
+Note that only trial 1 had a successful measurement for $t$.
 
 \begin{table}[htbp]
 \caption{\label{tab:main_measurements}
@@ -407,7 +415,49 @@ Note: UTD means ``unable to detect''
 \br
 \end{tabular}\end{indented}\end{table}
 
+Table \ref{tab:long_fiber_lengths} contains the calculated lengths of the long fiber optic cable ($L$) used for each trial.
+For trials 1 through 4, a roughly 20 m cable was used.
+For trials 5 through 7, the length was reduced each trial to 10 m, 1 m, and 0.5 m in an attempt to get the infrared light to pass through the cable without dissipating.
 
+\begin{table}[htbp]
+\caption{\label{tab:long_fiber_lengths}
+Calculated Long Fiber Optic Cable Length
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}ll}
+\br
+  Trial & $L$ (m) \\
+\mr
+  1     &  19.6 \\
+  2     &  19.6 \\
+  3     &  19.6 \\
+  4     &  19.6 \\
+  5     & \09.7 \\
+  6     & \00.98 \\
+  7     & \00.488 \\
+\br
+\end{tabular}\end{indented}\end{table}
+
+
+Table \ref{tab:speed_of_light} contains the calculated speed of light ($c$) for the trials.
+Since a successful time measurement was only made for trial 1, only one experimental speed of light value could be calculated.
+
+\begin{table}[htbp]
+\caption{\label{tab:speed_of_light}
+Calculated Speed of Light
+}
+\begin{indented}\lineup\item[]\begin{tabular}{@{}ll}
+\br
+  Trial & $c$ (m/s) \\
+\mr
+  1     & $\sci{(2.93 \pm 0.07)}{8}$ \\
+  2     & NA \\
+  3     & NA \\
+  4     & NA \\
+  5     & NA \\
+  6     & NA \\
+  7     & NA \\
+\br
+\end{tabular}\end{indented}\end{table}
 
 %%%%%%%%%%%%%%%%%%%% Uncertainty and Equations %%%%%%%%%%%%%%%%%%%%
 \section{Uncertainty and Equations}
@@ -428,14 +478,75 @@ The linear density can be calculated using equation \ref{eq:linear_density}, whi
 \begin{IEEEeqnarray}{rCl}
   \mu & = & \frac{m}{l} \label{eq:linear_density}
 \end{IEEEeqnarray}
-  From there, the length of the long cable $L$ can be calculated using equation \ref{eq:long_cable_length}.
+From there, the length of the long cable $L$ can be calculated using equation \ref{eq:long_cable_length}.
 \begin{IEEEeqnarray}{rCl}
-  L & = & \frac{M}{\mu} \label{eq:long_cable_length} \\
-    & = & \frac{Ml}{m} \nonumber
+  L & = & \frac{M}{\mu} \\
+    & = & \frac{Ml}{m} \label{eq:long_cable_length}
+\end{IEEEeqnarray}
+
+Taking the distance traveled ($L$) and dividing by the time ($t$) gives the speed of light in the cable ($v$), as shown in equation \ref{eq:distance_over_time}.
+That equation can then be combined with earlier equations and rearranged to yield equation \ref{eq:speed_of_light} an expression for the speed of light in a vacuum ($c$) in terms of the measured quantities.
+\begin{IEEEeqnarray}{rCl}
+  v & = & \frac{L}{t} \label{eq:distance_over_time} \\
+  \frac{c}{n} & = & \frac{Ml/m}{t} \\
+  c & = & \frac{nMl}{tm} \label{eq:speed_of_light}
+\end{IEEEeqnarray}
+The uncertainty in $c$ is given by equation \ref{eq:speed_of_light_uncertainty}.
+\begin{IEEEeqnarray}{rCl}
+  \Delta c & = & \left[
+     \left(\frac{\partial c}{\partial l} \Delta l \right)^2 +
+     \left(\frac{\partial c}{\partial t} \Delta t \right)^2 +
+     \left(\frac{\partial c}{\partial M} \Delta M \right)^2 +
+     \left(\frac{\partial c}{\partial m} \Delta m \right)^2
+  \right]^\frac{1}{2} \\
+  \Delta c & = & \frac{nMl}{tm} \left[
+     \left(\frac{\Delta l}{l} \right)^2 +
+     \left(\frac{\Delta t}{t} \right)^2 +
+     \left(\frac{\Delta M}{M} \right)^2 +
+     \left(\frac{\Delta m}{m} \right)^2
+  \right]^\frac{1}{2} \label{eq:speed_of_light_uncertainty}
 \end{IEEEeqnarray}
 
 %%%%%%%%%%%%%%%%%%%% Conclusion %%%%%%%%%%%%%%%%%%%%
 \section{Conclusion}
+
+The calculated value of the speed of light in a vacuum ($c$) with the red LED was $\sci{(2.93 \pm 0.07)}{8} \units{m/s}$.
+The experimental value is about $\sci{0.07}{8} \units{m/s}$ lower than the accepted value, $\sci{3.00}{8} \units{m/s}$.
+This difference is within uncertainty.
+However, since none of the time measurements using different wavelengths of light were successful, there is not enough data to compare the speed of light for different wavelengths.
+The hypothesis cannot be supported nor rejected.
+
+\begin{figure}[htbp]
+  \begin{indented}
+  \item[]\includegraphics[width=0.83\textwidth]{detector-response-vs-wavelength.png}
+  \end{indented}
+  \caption{\label{fig:respones_wavelength_graph}
+  Detector Response vs Wavelength
+  }
+\end{figure}
+
+The speed of light ($c$) with the blue, green, and infrared LEDs could not be calculated since the travel time ($t$) could not be measured successfully.
+For the blue and green LEDs, the light could not be detected after passing through the short cable.
+This was possibly a result of the photodiode, the component used to detect the light pulses, being less sensitive to lower wavelengths of visible light.
+According to the data sheet for the photodiode, the peak sensitivity is between $900$ and $950 \units{nm}$.
+Figure \ref{fig:respones_wavelength_graph} shows that the sensitivity for the red LED's wavelength, $645 \units{nm}$, is around 60\%.
+But, the sensitivity for the green LED's wavelength, $522 \units{nm}$, is only around 30\%, and the sensitivity for the blue LED's wavelength, $470 \units{nm}$, is too low to be shown on the graph.
+
+Since the blue and green LEDs did not have their light detected due to sensitivity issues, perhaps using an LED with a wavelength the photodiode was more sensitive to would work.
+The infrared LED's wavelength, $940 \units{nm}$, was very close to the photodiode's peak sensitivity.
+As a result, the light could be detected through the short fiber optic cable.
+But when connected through the 20 m long cable, the light could not be detected; the oscilloscope reading was identical to noise with no LED connected.
+Perhaps the light from the infrared LED was too dim and was dissipating before it could reach the detector, especially since there was no cinch to focus the light through the cable.
+If that were the case, then passing the light through a shorter fiber optic cable would allow more light to reach the detector.
+Trying this with a 10 m fiber optic cable, the infrared light could still not be detected, so even shorter cables were tested.
+Trying this with the 1 m and 0.5 m cables, the infrared light could be detected.
+However, the resulting voltage curve on the oscilloscope was wobbly/noisy.
+With the red LED, the voltage had a steady increase up to the global maximum.
+But with the infrared LED, the voltage would increase, decrease for a bit, and increase again repeatedly until reaching the global maximum.
+As a result, the time measurement would fluctuate so much (equaling 0 at some instances) so as to make it unusable.
+Perhaps the infrared LED, which was not designed for fiber optic uses, did not have a switching time fast enough to keep up with being blinked 500,000 times per second.
+If so, the LED would not have fully dimmed before being given voltage again.
+Some light would continuously be traveling through the cable, thereby adding noise and small fluctuations in the voltage graph as those stray photons hit the detector.
 
 %%%%%%%%%%%%%%%%%%%% Citations %%%%%%%%%%%%%%%%%%%%
 \section{Citations}
@@ -453,43 +564,43 @@ The linear density can be calculated using equation \ref{eq:linear_density}, whi
   Industrial Fiber Optics,
   \textit{Fiber Optic Speed of Light Apparatus Instruction Manual},
   2018,
-  https://i-fiberoptics.com/pdf/if-sl\_man.pdf
+  \mbox{https://i-fiberoptics.com/pdf/if-sl\_man.pdf}
 
 \bibitem{red_led}
   Industrial Fiber Optics,
   \textit{Fiber Optic Red LED Manual IF-E96E},
   2/20,
-  https://i-fiberoptics.com/pdf/ife96e-2-20.pdf
+  \mbox{https://i-fiberoptics.com/pdf/ife96e-2-20.pdf}
 
 \bibitem{green_led}
   Industrial Fiber Optics,
   \textit{Fiber Optic Green LED Manual IF-E93},
   11/20,
-  https://i-fiberoptics.com/pdf/ife93-11-20.pdf
+  \mbox{https://i-fiberoptics.com/pdf/ife93-11-20.pdf}
 
 \bibitem{blue_led}
   Industrial Fiber Optics,
   \textit{Fiber Optic Blue LEDs Manual IF-E92},
   2/20,
-  https://i-fiberoptics.com/pdf/ife92-2-20.pdf
+  \mbox{https://i-fiberoptics.com/pdf/ife92-2-20.pdf}
 
 \bibitem{photodiode}
   Industrial Fiber Optics,
   \textit{Fiber Optic Photodiode Manual IF-D91B},
   1/20,
-  https://i-fiberoptics.com/pdf/ifd91b-1-20.pdf
+  \mbox{https://i-fiberoptics.com/pdf/ifd91b-1-20.pdf}
 
 \bibitem{cable}
   Mitsubishi Chemical Corporation,
   \textit{SH-4001 Manual},
   2019,
-  https://i-fiberoptics.com/pdf/sh-4001.pdf
+  \mbox{https://i-fiberoptics.com/pdf/sh-4001.pdf}
 
 \bibitem{infrared_led}
   Everlight
   \textit{Technical Data Sheet 5mm Infrared LED IR333-A},
   2005,
-  https://cdn-shop.adafruit.com/datasheets/IR333\_A\_datasheet.pdf
+  \mbox{https://cdn-shop.adafruit.com/datasheets/IR333\_A\_datasheet.pdf}
 
 \end{thebibliography}
 
