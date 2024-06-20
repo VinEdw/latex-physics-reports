@@ -1,0 +1,32 @@
+lab-packet:
+  type: reference
+  title: Physics 4B Lab Book
+  author: Schnurbusch, Karen
+  organization: Mt. San Antonio College
+  date: 2023
+  page-range: 11-16
+
+equation-sheet:
+  type: reference
+  title: Physics 4B Equations
+  author: Schnurbusch, Karen
+  organization: Mt. San Antonio College
+  date: 2023
+  page-range: 2, 7
+
+specific-heats:
+  type: web
+  title: Solids - Specific Heats
+  author: Engineering ToolBox
+  date: 2003
+  url:
+    value: https://www.engineeringtoolbox.com/specific-heat-solids-d_154.html
+    date: 2023-03-04
+
+malachite:
+  type: web
+  title: Malachite
+  author: King, Hobart M.
+  url:
+    value: https://geology.com/minerals/malachite.shtml
+    date: 2023-03-07
